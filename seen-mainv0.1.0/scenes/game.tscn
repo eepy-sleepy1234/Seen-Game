@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=43 format=4 uid="uid://bhwgqpohs37bx"]
 
 [ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" path="res://scripts/labstory.gd" id="1_y1vc2"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="3_gee14"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_6ij3u"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Fonts/HyperOxide-1j96j.ttf" id="5_iywne"]
 [ext_resource type="Script" path="res://scripts/textbox.gd" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="6_67qj3"]
@@ -328,6 +329,21 @@ _data = {
 "open": SubResource("Animation_u5sy4")
 }
 
+[sub_resource type="Animation" id="Animation_tdapp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_fnlxj"]
 resource_name = "fade in"
 length = 2.0
@@ -342,21 +358,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tdapp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_410p6"]
@@ -523,6 +524,7 @@ is_ghost = -4
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+script = ExtResource("4_6ij3u")
 
 [node name="not ghost particles" type="CPUParticles2D" parent="player"]
 position = Vector2(3.8147e-06, -1.43051e-06)
