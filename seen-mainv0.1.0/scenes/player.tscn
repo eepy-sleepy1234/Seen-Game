@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://imvruh1b8nns"]
+[gd_scene load_steps=33 format=3 uid="uid://imvruh1b8nns"]
 
 [ext_resource type="Texture2D" uid="uid://c1nreybu1noxr" path="res://assets/Player/Scientist Sheet.png" id="1_3vyb7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cnfe3fnv7y80s" path="res://assets/Player/Scientist.png" id="3_i5exe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_3vyb7")
@@ -74,6 +75,18 @@ region = Rect2(224, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ew8u"]
+atlas = ExtResource("3_i5exe")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on07a"]
+atlas = ExtResource("3_i5exe")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k4ba"]
+atlas = ExtResource("3_i5exe")
+region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("1_3vyb7")
@@ -217,6 +230,28 @@ animations = [{
 "name": &"side_ghost",
 "speed": 6.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"surprised",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ew8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on07a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k4ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on07a")
+}],
+"loop": true,
+"name": &"typing",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y4r1p")
@@ -264,7 +299,9 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jej6c")
-animation = &"side"
+animation = &"typing"
+frame = 2
+frame_progress = 0.701245
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.55271e-15, 2.5)

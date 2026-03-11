@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xljf3jdifuvr"
-path="res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"
+uid="uid://c2dnqyoivcncn"
+path="res://.godot/imported/Nurse.png-8c2d43b7b9d9506eb31d945c4e87a51e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Npc/Old Guy.png"
-dest_files=["res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"]
+source_file="res://assets/Npc/Nurse.png"
+dest_files=["res://.godot/imported/Nurse.png-8c2d43b7b9d9506eb31d945c4e87a51e.ctex"]
 
 [params]
 

@@ -71,16 +71,19 @@ func _physics_process(_delta):
 			else:
 				sprite.play("idle_ghost")
 		else:
-			if last_direction == 1:
-				sprite.play("idle_up")
-			elif last_direction == 3:
-				sprite.play("idle")
-			elif last_direction == 2:
-				sprite.play("idle_side")
-			elif last_direction == 4:
-				sprite.play("idle_side")
+			if Globals.story_progress in [2, 5, 7]:
+				sprite.play("typing")
 			else:
-				sprite.play("idle")
+				if last_direction == 1:
+					sprite.play("idle_up")
+				elif last_direction == 3:
+					sprite.play("idle")
+				elif last_direction == 2:
+					sprite.play("idle_side")
+				elif last_direction == 4:
+					sprite.play("idle_side")
+				else:
+					sprite.play("idle")
 	if prev_ghost_state < 0 and is_ghost >= 0:
 		ghost_particles.emitting = true
 	elif prev_ghost_state >= 0 and is_ghost < 0:
