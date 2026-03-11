@@ -32,27 +32,27 @@ func _physics_process(_delta):
 		set_collision_layer_value(2, false)
 		modulate.a = 1
 		
-	if Input.is_action_pressed("move_right") and Globals.listening:
+	if direction.x > 0:
 		sprite.flip_h = true
 		last_direction = 2
 		if is_ghost >= 0:
 			sprite.play("side_ghost")
 		else:
 			sprite.play("side")
-	elif Input.is_action_pressed("move_left") and Globals.listening:
+	elif direction.x < 0:
 		sprite.flip_h = false
 		last_direction = 4
 		if is_ghost >= 0:
 			sprite.play("side_ghost")
 		else:
 			sprite.play("side")
-	elif Input.is_action_pressed("move_up") and Globals.listening:
+	elif direction.y < 0:
 		last_direction = 1
 		if is_ghost >= 0:
 			sprite.play("up_ghost")
 		else:
 			sprite.play("up")
-	elif Input.is_action_pressed("move_down") and Globals.listening:
+	elif direction.y > 0:
 		last_direction = 3
 		if is_ghost >= 0:
 			sprite.play("down_ghost")

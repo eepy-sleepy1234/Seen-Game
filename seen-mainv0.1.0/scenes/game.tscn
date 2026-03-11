@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=47 format=4 uid="uid://bhwgqpohs37bx"]
 
 [ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" path="res://scripts/labstory.gd" id="1_y1vc2"]
@@ -360,10 +360,89 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_2qoi1"]
+resource_name = "fade out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_410p6"]
 _data = {
 "RESET": SubResource("Animation_tdapp"),
-"fade in": SubResource("Animation_fnlxj")
+"fade in": SubResource("Animation_fnlxj"),
+"fade out": SubResource("Animation_2qoi1")
+}
+
+[sub_resource type="Animation" id="Animation_b1jyw"]
+resource_name = "red flash"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(4, 4),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.47451)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_whafb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3spj"]
+_data = {
+"RESET": SubResource("Animation_whafb"),
+"red flash": SubResource("Animation_b1jyw")
 }
 
 [sub_resource type="Animation" id="Animation_kxgbt"]
@@ -661,6 +740,17 @@ libraries = {
 }
 autoplay = "fade in"
 
+[node name="red flash" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 4873.0
+offset_bottom = 2865.0
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash"]
+libraries = {
+"": SubResource("AnimationLibrary_j3spj")
+}
+
 [node name="npc" parent="." instance=ExtResource("3_gee14")]
 position = Vector2(170, -50)
 rotation = 1.5509
@@ -705,8 +795,8 @@ position = Vector2(-341, -30)
 texture = ExtResource("8_hbokf")
 
 [node name="jorny" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-434, -130)
-scale = Vector2(0.4, 0.4)
+position = Vector2(-435, -123)
+scale = Vector2(0.28, 0.28)
 my_text = "that's my wife"
 
 [node name="whiteboard" parent="." instance=ExtResource("8_8v1ou")]
@@ -719,3 +809,9 @@ position = Vector2(-282, -25)
 scale = Vector2(0.44, 1)
 script = ExtResource("11_i1euv")
 my_progress = 1
+
+[node name="button" parent="." instance=ExtResource("8_8v1ou")]
+position = Vector2(-467, -117)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_i1euv")
+my_progress = 3

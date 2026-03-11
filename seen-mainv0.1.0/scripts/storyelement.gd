@@ -17,6 +17,7 @@ func _input(_event: InputEvent) -> void:
 		if Globals.story_progress == my_progress:
 			Globals.story_progress += 1
 			Globals.listening = false
+			player.direction = Vector2(0, 0)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	player_in_range = true
