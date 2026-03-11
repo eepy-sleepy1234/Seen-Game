@@ -25,7 +25,32 @@ func _ready() -> void:
 	await wait_for_progress(2)
 	await get_tree().create_timer(2).timeout
 	Globals.listening = true
-	Globals.story_progress = 3
+	Globals.story_progress += 1
+	new_text = "\n - check the readings on the tank"
+	for i in new_text:
+		objectives.text += i
+		await get_tree().create_timer(0.01).timeout
+	await wait_for_progress(4)
+	await get_tree().create_timer(2).timeout
+	textbox.write_text("everything looks good")
+	await get_tree().create_timer(2.5).timeout
+	textbox.close_box()
+	Globals.listening = true
+	new_text = "\n - fiddle with the test tubes to pass the time"
+	for i in new_text:
+		objectives.text += i
+		await get_tree().create_timer(0.01).timeout
+	await wait_for_progress(5)
+	await get_tree().create_timer(2).timeout
+	Globals.listening = true
+	Globals.story_progress += 1
+	new_text = "\n - do some more work on the computers"
+	for i in new_text:
+		objectives.text += i
+		await get_tree().create_timer(0.01).timeout
+	await wait_for_progress(7)
+	await get_tree().create_timer(3).timeout
+	Globals.story_progress += 1
 	top.play("oh no")
 	bottom.play("oh no")
 	camera.screen_shake(20, 1)
@@ -39,7 +64,7 @@ func _ready() -> void:
 		objectives.text += i
 		await get_tree().create_timer(0.01).timeout
 	textbox.close_box()
-	await wait_for_progress(4)
+	await wait_for_progress(9)
 	red_flash.stop(false)
 	top.play("default")
 	bottom.play("default")

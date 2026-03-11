@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="3_gee14"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_6ij3u"]
-[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Fonts/HyperOxide-1j96j.ttf" id="5_iywne"]
+[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="5_iywne"]
 [ext_resource type="Script" path="res://scripts/textbox.gd" id="5_p57ef"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="6_67qj3"]
 [ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="7_cdd2p"]
@@ -383,10 +383,8 @@ _data = {
 "fade out": SubResource("Animation_2qoi1")
 }
 
-[sub_resource type="Animation" id="Animation_b1jyw"]
-resource_name = "red flash"
-length = 2.0
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_whafb"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -394,10 +392,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(4, 4),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.47451)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -412,8 +410,9 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_whafb"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_b1jyw"]
+resource_name = "red flash"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -421,10 +420,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(4, 4),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.47451)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -814,4 +813,22 @@ my_progress = 1
 position = Vector2(-467, -117)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("11_i1euv")
+my_progress = 8
+
+[node name="readings" parent="." instance=ExtResource("8_8v1ou")]
+position = Vector2(-371, -10)
+scale = Vector2(0.28, 0.28)
+script = ExtResource("11_i1euv")
 my_progress = 3
+
+[node name="tubes" parent="." instance=ExtResource("8_8v1ou")]
+position = Vector2(-452, 1)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("11_i1euv")
+my_progress = 4
+
+[node name="the same computers" parent="." instance=ExtResource("8_8v1ou")]
+position = Vector2(-284, -26)
+scale = Vector2(0.4, 1)
+script = ExtResource("11_i1euv")
+my_progress = 6

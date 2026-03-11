@@ -19,6 +19,8 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and Globals.listening:
 		if my_text != "" and player_in_range:
 			if not open:
+				if Globals.story_progress == 3:
+					my_text = "now is not the time"
 				textbox.write_text(my_text)
 				open = true
 			else:

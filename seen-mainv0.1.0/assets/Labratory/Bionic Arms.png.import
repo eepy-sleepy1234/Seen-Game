@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xljf3jdifuvr"
-path="res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"
+uid="uid://bfqloyuu1qgfb"
+path="res://.godot/imported/Bionic Arms.png-769bddd3b6ab62757b056b32ba66964c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Npc/Old Guy.png"
-dest_files=["res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"]
+source_file="res://assets/Labratory/Bionic Arms.png"
+dest_files=["res://.godot/imported/Bionic Arms.png-769bddd3b6ab62757b056b32ba66964c.ctex"]
 
 [params]
 

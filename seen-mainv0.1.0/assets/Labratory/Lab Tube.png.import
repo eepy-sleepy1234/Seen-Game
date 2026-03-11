@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xljf3jdifuvr"
-path="res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"
+uid="uid://t1unryogynwt"
+path="res://.godot/imported/Lab Tube.png-afa946ab3377fc2eb1f87585a2e1ec8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Npc/Old Guy.png"
-dest_files=["res://.godot/imported/Old Guy.png-e0412e9159959debf258c0dc38bc2c89.ctex"]
+source_file="res://assets/Labratory/Lab Tube.png"
+dest_files=["res://.godot/imported/Lab Tube.png-afa946ab3377fc2eb1f87585a2e1ec8f.ctex"]
 
 [params]
 
