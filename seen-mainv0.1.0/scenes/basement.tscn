@@ -1,11 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dd65bmg1sswdc"]
+[gd_scene load_steps=14 format=4 uid="uid://dd65bmg1sswdc"]
 
 [ext_resource type="Texture2D" uid="uid://do8wrddj6lpsm" path="res://assets/Hospital/Basement.png" id="1_852lj"]
 [ext_resource type="Script" path="res://scripts/basement.gd" id="1_o6uhq"]
 [ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="2_yixit"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_1gk2v"]
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
-[ext_resource type="Texture2D" uid="uid://xljf3jdifuvr" path="res://assets/Npc/Old Guy.png" id="6_jjh2e"]
+[ext_resource type="Texture2D" uid="uid://c6parek72qxuy" path="res://assets/Npc/Old Ghost Guy.png" id="6_wmoos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -748,18 +748,30 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7yab1")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o250a"]
-atlas = ExtResource("6_jjh2e")
+[sub_resource type="AtlasTexture" id="AtlasTexture_trmdb"]
+atlas = ExtResource("6_wmoos")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0whj"]
+atlas = ExtResource("6_wmoos")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_keflw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o250a")
+"texture": SubResource("AtlasTexture_trmdb")
 }],
 "loop": true,
-"name": &"default",
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0whj")
+}],
+"loop": true,
+"name": &"side",
 "speed": 5.0
 }]
 
@@ -778,7 +790,7 @@ tile_map_data = PackedByteArray("AAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD7//7/AAAAAAI
 tile_set = SubResource("TileSet_qeqt0")
 
 [node name="player" parent="." instance=ExtResource("2_yixit")]
-position = Vector2(-262, -125)
+position = Vector2(-263, -119)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(7, 7)
@@ -793,6 +805,8 @@ offset_bottom = -98.0
 
 [node name="npc" parent="." instance=ExtResource("5_18rnf")]
 position = Vector2(-165, -156)
+scale = Vector2(0.87999, 0.87999)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
 sprite_frames = SubResource("SpriteFrames_keflw")
+animation = &"side"
