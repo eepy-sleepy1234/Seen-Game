@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=40 format=4 uid="uid://bhwgqpohs37bx"]
 
 [ext_resource type="Script" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
@@ -394,6 +394,8 @@ animations = [{
 radius = 20.0
 height = 54.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k4xu"]
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_xmhd7")
 
@@ -591,3 +593,6 @@ position = Vector2(-265, -25)
 scale = Vector2(0.4, 1)
 script = ExtResource("12_yrm3w")
 my_progress = 6
+
+[node name="yes rico, kaboom" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8k4xu")
