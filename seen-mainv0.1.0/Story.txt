@@ -1,0 +1,97 @@
+*Enter Labratory*
+-Objectives:
+  (Add Here)
+
+Work on computer(one to the right of the room)
+
+time passes
+
+Something goes wrong with main tube
+Tube switches animation to the one with emergency computer flashing red
+Red overlay on entire screen
+
+- Guy says : " I need to shut down the main tube"  (Or something like that)
+
+-New Objective: press Emergency stop button (located on the top left of the roon
+
+Once pressed everything goes silent
+
+-guy says: "Phew"
+
+- seconds pass (dont let player move character during this time)
+
+-guy runs to center computer and waits for a second
+
+-guy jumps a  little and spite changes to shocked sprite (will add in future)
+-explosion happens(will create spritesheet for)
+
+
+
+Hospital:
+
+Wait a little bit befor guy wakes up, make bed animate slowly between its first two frames
+
+
+
+switch to frame three,wait a second, have nurse lady Jump a little and say"Your Finaly Awake Let Me Go get the doctor for you"
+
+Animate nurse lady to leave the room, once the nurse  turns her back play animation 4+ on the bed.
+
+
+BaseMent:
+
+Fall to the floor, after stand up.
+
+Objective- Talk to old ghost
+
+old ghost:
+	Hey there haven't seen you, must be a newly dead.
+You:
+	I cant be dead i just talked with a nurse:
+Old ghost:
+	Go walk through those barrels to see
+
+new objective- Walk Through Barrels
+
+Old Ghost(from across the room):
+	Told You So
+new objective - Talk to old ghost
+
+Old Ghost:
+	My Names Super Epic Cool Old Ghost Guy, SEPCOGG for short
+You:
+	I'm scientist guy
+Old Ghost:
+	Thats a weird name
+You:
+	...
+
+You:
+	Well Im leaving i need to figure out what's going on
+
+Old Ghost Guy:
+	WAIT I NEED YOUR HELP
+You:
+	Sigh.. What do you need
+Old Ghost Guy:
+	Give this to a member of the SEGM
+
+
+objective:
+	exit basement
+
+
+Once at the basement door say:
+	Its locked i  need to find something to unlock it
+Objective:
+	find basement key 
+
+Basement key should be located at the bottom right in some crates that are accessible  through ghost mode
+
+once found:
+	objective:
+		unlock leave basement
+
+Basement Key should appear in inventory slot(discuss later where it goes)
+You should be able to drop things that are in inventory using g(top right should give tip saying drop things using g)
+
