@@ -76,6 +76,11 @@ You:
 Old Ghost Guy:
 	Give this to a member of the SEGM
 
+You:
+	What's the SEGM?
+
+Old Ghost Guy:
+	Just give it to a ghost wearing a suit.
 
 objective:
 	exit basement
@@ -95,3 +100,44 @@ once found:
 Basement Key should appear in inventory slot(discuss later where it goes)
 You should be able to drop things that are in inventory using g(top right should give tip saying drop things using g)
 
+Objective: find a member of the SEGM
+
+(member of the SEGM is located basically right outside the exit door)
+
+Once interacted:
+
+	You:
+		Are you a member of the SEGM
+	SEGM member:
+		Depends, who's askin
+	You:
+		Im asking
+	SEGM member:
+		Oh Right, yeah I am, who wondering
+	You:
+		Still me
+	SEGM membe:
+		Oh Right, Why
+	You:
+		I was given something to devliver to you
+	You give it to them
+	You:
+		What does SEGM even mean?
+	SEGM member:
+		Whos askin
+	You:
+		Still me
+	SEGM member:
+		oh right
+	SEGM member:
+		it stands for Super Evil Ghost Mafia
+	You:
+		Thats a stupid thing to abriviate
+	SEGM member:
+		What was that?
+ 	You:
+		Nothing
+	SEGM member:
+		Boss will be hearing about this
+
+Objective: return to hospital
