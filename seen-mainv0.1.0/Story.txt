@@ -132,7 +132,7 @@ Once interacted:
 	SEGM member:
 		it stands for Super Evil Ghost Mafia
 	You:
-		Thats a stupid thing to abriviate
+		That's a stupid thing to abbreviate
 	SEGM member:
 		What was that?
  	You:
