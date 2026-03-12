@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=45 format=4 uid="uid://bhwgqpohs37bx"]
 
 [ext_resource type="Script" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
 [ext_resource type="Script" path="res://scripts/storyelement.gd" id="12_yrm3w"]
+[ext_resource type="Texture2D" uid="uid://8fmww77nsj66" path="res://assets/Laboratory/Explosion.png" id="14_5x2lg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_m2clf")
@@ -394,7 +395,41 @@ animations = [{
 radius = 20.0
 height = 54.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugn3e"]
+atlas = ExtResource("14_5x2lg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mm7r"]
+atlas = ExtResource("14_5x2lg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x4iu"]
+atlas = ExtResource("14_5x2lg")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq6y4"]
+atlas = ExtResource("14_5x2lg")
+region = Rect2(128, 128, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8k4xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugn3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mm7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x4iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq6y4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_xmhd7")
@@ -595,4 +630,9 @@ script = ExtResource("12_yrm3w")
 my_progress = 6
 
 [node name="yes rico, kaboom" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 100
+position = Vector2(-370, -37)
 sprite_frames = SubResource("SpriteFrames_8k4xu")
+frame = 3
+frame_progress = 1.0

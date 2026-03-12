@@ -8,6 +8,7 @@ extends Node2D
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
 @onready var player: CharacterBody2D = $player
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
+@onready var yes_rico__kaboom: AnimatedSprite2D = $"yes rico, kaboom"
 @export var next_scene: PackedScene = preload("uid://btq6kag0yd6k")
 var new_text = ""
 
@@ -96,5 +97,8 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	camera.screen_shake(20, 10)
 	blackout.play("fade out")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
+	yes_rico__kaboom.visible = true
+	yes_rico__kaboom.play("default")
+	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_packed(next_scene)
