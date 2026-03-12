@@ -1,20 +1,21 @@
-[gd_scene load_steps=47 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=39 format=4 uid="uid://bhwgqpohs37bx"]
 
-[ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Script" path="res://scripts/labstory.gd" id="1_y1vc2"]
-[ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="3_gee14"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="4_6ij3u"]
-[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="5_iywne"]
-[ext_resource type="Script" path="res://scripts/textbox.gd" id="5_p57ef"]
-[ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="6_67qj3"]
-[ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="7_cdd2p"]
-[ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="8_8v1ou"]
-[ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="8_hbokf"]
-[ext_resource type="Script" path="res://scripts/storyelement.gd" id="11_i1euv"]
+[ext_resource type="Script" path="res://scripts/labstory.gd" id="1_xmhd7"]
+[ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
+[ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="3_frc63"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_7i2uf"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
+[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="6_eryih"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
+[ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
+[ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
+[ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="9_rrnpu"]
+[ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
+[ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
+[ext_resource type="Script" path="res://scripts/storyelement.gd" id="12_yrm3w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
-texture = ExtResource("1_yqjtg")
+texture = ExtResource("2_m2clf")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -102,7 +103,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_p57ef")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
-texture = ExtResource("1_yqjtg")
+texture = ExtResource("2_m2clf")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -194,194 +195,6 @@ colors = PackedColorArray(0.117647, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_u73n0"]
 colors = PackedColorArray(0.0901961, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Animation" id="Animation_0tnpc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 318)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_gee14"]
-resource_name = "close"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.37841, 2.37841),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.37842, 2.37841),
-"update": 0,
-"values": [Vector2(1, 318), Vector2(1, 500)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_u5sy4"]
-resource_name = "open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.297302, 0.277392),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.297302, 0.297302),
-"update": 0,
-"values": [Vector2(1, 500), Vector2(1, 318)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
-_data = {
-"RESET": SubResource("Animation_0tnpc"),
-"close": SubResource("Animation_gee14"),
-"open": SubResource("Animation_u5sy4")
-}
-
-[sub_resource type="Animation" id="Animation_tdapp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fnlxj"]
-resource_name = "fade in"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2qoi1"]
-resource_name = "fade out"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_410p6"]
-_data = {
-"RESET": SubResource("Animation_tdapp"),
-"fade in": SubResource("Animation_fnlxj"),
-"fade out": SubResource("Animation_2qoi1")
-}
 
 [sub_resource type="Animation" id="Animation_whafb"]
 length = 0.001
@@ -482,23 +295,23 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5agp4"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(0, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_euygx"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(64, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ri7ra"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(128, 0, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlh4k"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(0, 96, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orj3r"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(64, 96, 64, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1atw5"]
@@ -530,23 +343,23 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8igje"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(0, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o814w"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(64, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tns1f"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(128, 48, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23nty"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(0, 144, 64, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qghpo"]
-atlas = ExtResource("6_67qj3")
+atlas = ExtResource("8_740sf")
 region = Rect2(64, 144, 64, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6kax"]
@@ -582,7 +395,7 @@ radius = 20.0
 height = 54.0
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_y1vc2")
+script = ExtResource("1_xmhd7")
 
 [node name="normal tiles" type="TileMapLayer" parent="."]
 position = Vector2(-323, 2)
@@ -594,7 +407,7 @@ position = Vector2(-323, 2)
 tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD7//z/AAAAAAEAAAD7//3/AAAAAAIAAAD7//7/AAAAAAMAAAD7////AAAAAAQAAAD7/wAAAAAAAAUAAAD8//v/AAABAAAAAAD8//z/AAABAAEAAAD8//3/AAABAAIAAAD8//7/AAABAAMAAAD8////AAABAAQAAAD8/wAAAAABAAUAAAD9//v/AAACAAAAAAD9//z/AAACAAEAAAD9//3/AAACAAIAAAD9//7/AAACAAMAAAD9////AAACAAQAAAD9/wAAAAACAAUAAAD+//v/AAADAAAAAAD+//z/AAADAAEAAAD+//3/AAADAAIAAAD+//7/AAADAAMAAAD+////AAADAAQAAAD+/wAAAAADAAUAAAD///v/AAAEAAAAAAD///z/AAAEAAEAAAD///3/AAAEAAIAAAD///7/AAAEAAMAAAD/////AAAEAAQAAAD//wAAAAAEAAUAAAAAAPv/AAAFAAAAAAAAAPz/AAAFAAEAAAAAAP3/AAAFAAIAAAAAAP7/AAAFAAMAAAAAAP//AAAFAAQAAAAAAAAAAAAFAAUAAAD7/wEAAAAAAAYAAAD8/wEAAAABAAYAAAD9/wEAAAACAAYAAAD+/wEAAAADAAYAAAD//wEAAAAEAAYAAAAAAAEAAAAFAAYAAAABAPv/AAAGAAAAAAABAPz/AAAGAAEAAAABAP3/AAAGAAIAAAABAP7/AAAGAAMAAAABAP//AAAGAAQAAAABAAAAAAAGAAUAAAABAAEAAAAGAAYAAAA=")
 tile_set = SubResource("TileSet_gee14")
 
-[node name="player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="player" parent="." instance=ExtResource("3_frc63")]
 position = Vector2(-371, 21)
 is_ghost = -4
 
@@ -602,7 +415,7 @@ is_ghost = -4
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-script = ExtResource("4_6ij3u")
+script = ExtResource("4_7i2uf")
 
 [node name="not ghost particles" type="CPUParticles2D" parent="player"]
 position = Vector2(3.8147e-06, -1.43051e-06)
@@ -648,51 +461,7 @@ color_ramp = SubResource("Gradient_u73n0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="textbox" type="MarginContainer" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -330.0
-offset_right = 1.0
-offset_bottom = 74.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 60
-script = ExtResource("5_p57ef")
-
-[node name="Panel" type="Panel" parent="CanvasLayer/textbox"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/textbox"]
-layout_mode = 2
-theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 32
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/textbox/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/textbox/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("5_iywne")
-theme_override_font_sizes/font_size = 45
-text = "placeholder"
-autowrap_mode = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/textbox"]
-libraries = {
-"": SubResource("AnimationLibrary_vtaks")
-}
+[node name="textbox" parent="CanvasLayer" instance=ExtResource("5_f2ctl")]
 
 [node name="objectivetitlebox" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 88.0
@@ -706,7 +475,7 @@ layout_mode = 2
 [node name="objectivetitle" type="Label" parent="CanvasLayer/objectivetitlebox/HBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_fonts/font = ExtResource("6_eryih")
 theme_override_font_sizes/font_size = 80
 text = "objectives"
 autowrap_mode = 3
@@ -723,21 +492,11 @@ layout_mode = 2
 [node name="objectives" type="Label" parent="CanvasLayer/objectivebox/HBoxContainer"]
 custom_minimum_size = Vector2(2000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_fonts/font = ExtResource("6_eryih")
 theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 
-[node name="blackout" type="ColorRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(79.6211, 50.1933)
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/blackout"]
-libraries = {
-"": SubResource("AnimationLibrary_410p6")
-}
-autoplay = "fade in"
+[node name="blackout" parent="CanvasLayer" instance=ExtResource("7_n4ffd")]
 
 [node name="red flash" type="ColorRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -750,7 +509,7 @@ libraries = {
 "": SubResource("AnimationLibrary_j3spj")
 }
 
-[node name="npc" parent="." instance=ExtResource("3_gee14")]
+[node name="npc" parent="." instance=ExtResource("7_scv08")]
 position = Vector2(170, -50)
 rotation = 1.5509
 scale = Vector2(5.13192, 5.13192)
@@ -786,49 +545,49 @@ shape = SubResource("CapsuleShape2D_cfq5m")
 [node name="bionic arms" type="Sprite2D" parent="."]
 z_index = 100
 position = Vector2(-463, -19)
-texture = ExtResource("7_cdd2p")
+texture = ExtResource("9_rrnpu")
 
 [node name="lab sign" type="Sprite2D" parent="."]
 z_index = 100
 position = Vector2(-341, -30)
-texture = ExtResource("8_hbokf")
+texture = ExtResource("10_wo4vf")
 
-[node name="jorny" parent="." instance=ExtResource("8_8v1ou")]
+[node name="jorny" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-435, -123)
 scale = Vector2(0.28, 0.28)
 my_text = "that's my wife"
 
-[node name="whiteboard" parent="." instance=ExtResource("8_8v1ou")]
+[node name="whiteboard" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-315, -148)
 scale = Vector2(0.88, 0.88)
 my_text = "very useful"
 
-[node name="computers" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-282, -25)
+[node name="computers" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-263, -25)
 scale = Vector2(0.44, 1)
-script = ExtResource("11_i1euv")
+script = ExtResource("12_yrm3w")
 my_progress = 1
 
-[node name="button" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-467, -117)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("11_i1euv")
+[node name="button" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-467, -123)
+scale = Vector2(0.12, 0.12)
+script = ExtResource("12_yrm3w")
 my_progress = 8
 
-[node name="readings" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-371, -10)
+[node name="readings" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-371, -23)
 scale = Vector2(0.28, 0.28)
-script = ExtResource("11_i1euv")
+script = ExtResource("12_yrm3w")
 my_progress = 3
 
-[node name="tubes" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-452, 1)
+[node name="tubes" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-467, 5.96046e-08)
 scale = Vector2(0.2, 0.2)
-script = ExtResource("11_i1euv")
+script = ExtResource("12_yrm3w")
 my_progress = 4
 
-[node name="the same computers" parent="." instance=ExtResource("8_8v1ou")]
-position = Vector2(-284, -26)
+[node name="the same computers" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-265, -25)
 scale = Vector2(0.4, 1)
-script = ExtResource("11_i1euv")
+script = ExtResource("12_yrm3w")
 my_progress = 6
