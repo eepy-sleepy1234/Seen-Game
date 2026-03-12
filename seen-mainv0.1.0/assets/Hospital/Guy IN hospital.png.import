@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t1unryogynwt"
-path="res://.godot/imported/Lab Tube.png-afa946ab3377fc2eb1f87585a2e1ec8f.ctex"
+uid="uid://cu0oqjlx6wrsd"
+path="res://.godot/imported/Guy IN hospital.png-9617adf5c03ea7edb1790f1c5e46b3d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Labratory/Lab Tube.png"
-dest_files=["res://.godot/imported/Lab Tube.png-afa946ab3377fc2eb1f87585a2e1ec8f.ctex"]
+source_file="res://assets/Hospital/Guy IN hospital.png"
+dest_files=["res://.godot/imported/Guy IN hospital.png-9617adf5c03ea7edb1790f1c5e46b3d6.ctex"]
 
 [params]
 

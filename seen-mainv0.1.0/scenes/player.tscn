@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://imvruh1b8nns"]
+[gd_scene load_steps=34 format=3 uid="uid://imvruh1b8nns"]
 
 [ext_resource type="Texture2D" uid="uid://c1nreybu1noxr" path="res://assets/Player/Scientist Sheet.png" id="1_3vyb7"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
@@ -75,6 +75,10 @@ region = Rect2(224, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ylw"]
+atlas = ExtResource("3_i5exe")
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ew8u"]
 atlas = ExtResource("3_i5exe")
@@ -230,6 +234,14 @@ animations = [{
 "name": &"side_ghost",
 "speed": 6.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ylw")
+}],
+"loop": true,
+"name": &"speed",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"surprised",
@@ -299,9 +311,7 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jej6c")
-animation = &"typing"
-frame = 2
-frame_progress = 0.701245
+animation = &"speed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.55271e-15, 2.5)

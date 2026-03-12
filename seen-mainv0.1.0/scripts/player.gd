@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var speed = 100
 var last_direction = 0
+var secret = 0
 @export var is_ghost = 0
 var prev_ghost_state = 0
 var direction = Vector2(0, 0)
@@ -31,7 +32,10 @@ func _physics_process(_delta):
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)
 		modulate.a = 1
-		
+	
+	if Input.is_action_just_pressed("speed"):
+		secret = 1
+	
 	if direction.x > 0:
 		sprite.flip_h = true
 		last_direction = 2
@@ -84,6 +88,8 @@ func _physics_process(_delta):
 					sprite.play("idle_side")
 				else:
 					sprite.play("idle")
+	if secret == 1:
+		sprite.play("speed")
 	if prev_ghost_state < 0 and is_ghost >= 0:
 		ghost_particles.emitting = true
 	elif prev_ghost_state >= 0 and is_ghost < 0:

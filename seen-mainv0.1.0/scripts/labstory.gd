@@ -8,7 +8,7 @@ extends Node2D
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
 @onready var player: CharacterBody2D = $player
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
-
+@export var next_scene: PackedScene = preload("uid://btq6kag0yd6k")
 var new_text = ""
 
 func wait_for_progress(target: int) -> void:
@@ -16,6 +16,7 @@ func wait_for_progress(target: int) -> void:
 		await Globals.story_progress_changed
 
 func _ready() -> void:
+	blackout.play("fade in")
 	await get_tree().create_timer(5).timeout
 	Globals.story_progress = 1
 	new_text = "\n - work at the computers on the right"
@@ -95,4 +96,5 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	camera.screen_shake(20, 10)
 	blackout.play("fade out")
-	
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_packed(next_scene)

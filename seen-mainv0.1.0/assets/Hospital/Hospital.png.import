@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfqloyuu1qgfb"
-path="res://.godot/imported/Bionic Arms.png-769bddd3b6ab62757b056b32ba66964c.ctex"
+uid="uid://dciau75udx5tj"
+path="res://.godot/imported/Hospital.png-dcf5a8ad248e6e8aaf3eb6bce530cba4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Labratory/Bionic Arms.png"
-dest_files=["res://.godot/imported/Bionic Arms.png-769bddd3b6ab62757b056b32ba66964c.ctex"]
+source_file="res://assets/Hospital/Hospital.png"
+dest_files=["res://.godot/imported/Hospital.png-dcf5a8ad248e6e8aaf3eb6bce530cba4.ctex"]
 
 [params]
 
