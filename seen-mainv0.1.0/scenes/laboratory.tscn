@@ -449,7 +449,7 @@ position = Vector2(-371, 21)
 is_ghost = -4
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(4, 4)
+zoom = Vector2(7, 7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("4_7i2uf")
@@ -499,6 +499,10 @@ color_ramp = SubResource("Gradient_u73n0")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="textbox" parent="CanvasLayer" instance=ExtResource("5_f2ctl")]
+offset_left = -1.0
+offset_top = 33.0
+offset_right = -1.0
+offset_bottom = 437.0
 
 [node name="objectivetitlebox" type="MarginContainer" parent="CanvasLayer"]
 offset_left = 88.0

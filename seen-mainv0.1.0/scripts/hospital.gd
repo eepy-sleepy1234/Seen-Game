@@ -5,7 +5,7 @@ extends Node2D
 @onready var nurse_animation: AnimationPlayer = $nurse/AnimationPlayer
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
 @onready var ghost_particles: CPUParticles2D = $"guy/ghost particles"
-
+var next_scene: PackedScene = preload("uid://dd65bmg1sswdc")
 
 func _ready() -> void:
 	blackout_animation.play("fade in")
@@ -24,3 +24,5 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	guy.play("falling done")
 	blackout_animation.play("fade out")
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_packed(next_scene)

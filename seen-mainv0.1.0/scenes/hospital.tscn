@@ -370,9 +370,9 @@ color = Color(0.0745098, 1, 1, 1)
 color_ramp = SubResource("Gradient_oacap")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-274, -129)
+position = Vector2(-273, -128)
 scale = Vector2(-0.08, -0.08)
-zoom = Vector2(4, 4)
+zoom = Vector2(7, 7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -381,7 +381,9 @@ zoom = Vector2(4, 4)
 [node name="textbox" parent="CanvasLayer" instance=ExtResource("6_5m0s0")]
 anchors_preset = -1
 anchor_right = 0.945
+offset_top = 31.0
 offset_right = 132.36
+offset_bottom = 435.0
 
 [node name="nurse" type="AnimatedSprite2D" parent="."]
 position = Vector2(-304, -144)
