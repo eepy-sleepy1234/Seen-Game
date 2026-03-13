@@ -75,7 +75,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(2.37842, 2.37841),
 "update": 0,
-"values": [Vector2(1, 318), Vector2(1, 500)]
+"values": [Vector2(1, 1250), Vector2(1, 2000)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -115,7 +115,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.297302, 0.297302),
 "update": 0,
-"values": [Vector2(1, 500), Vector2(1, 318)]
+"values": [Vector2(1, 2000), Vector2(1, 1250)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -144,9 +144,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = -330.0
+offset_top = 1352.0
 offset_right = 1.0
-offset_bottom = 74.0
+offset_bottom = 1756.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16

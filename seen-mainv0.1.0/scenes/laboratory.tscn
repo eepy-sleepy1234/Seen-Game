@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://imvruh1b8nns" path="res://scenes/player.tscn" id="3_frc63"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_7i2uf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
-[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="6_eryih"]
+[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Fonts/HyperOxide-1j96j.ttf" id="5_ng83e"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
@@ -498,13 +498,8 @@ color_ramp = SubResource("Gradient_u73n0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="textbox" parent="CanvasLayer" instance=ExtResource("5_f2ctl")]
-offset_left = -1.0
-offset_top = 33.0
-offset_right = -1.0
-offset_bottom = 437.0
-
 [node name="objectivetitlebox" type="MarginContainer" parent="CanvasLayer"]
+z_index = 10
 offset_left = 88.0
 offset_top = 95.0
 offset_right = 688.0
@@ -516,12 +511,13 @@ layout_mode = 2
 [node name="objectivetitle" type="Label" parent="CanvasLayer/objectivetitlebox/HBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_eryih")
+theme_override_fonts/font = ExtResource("5_ng83e")
 theme_override_font_sizes/font_size = 80
 text = "objectives"
 autowrap_mode = 3
 
 [node name="objectivebox" type="MarginContainer" parent="CanvasLayer"]
+z_index = 10
 offset_left = 113.0
 offset_top = 181.0
 offset_right = 2113.0
@@ -533,14 +529,21 @@ layout_mode = 2
 [node name="objectives" type="Label" parent="CanvasLayer/objectivebox/HBoxContainer"]
 custom_minimum_size = Vector2(2000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_eryih")
+theme_override_fonts/font = ExtResource("5_ng83e")
 theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 
 [node name="blackout" parent="CanvasLayer" instance=ExtResource("7_n4ffd")]
+z_index = 20
+
+[node name="textbox" parent="CanvasLayer" instance=ExtResource("5_f2ctl")]
+offset_left = -1.0
+offset_right = -1.0
+size_flags_vertical = 8
 
 [node name="red flash" type="ColorRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
+z_index = 20
 offset_right = 4873.0
 offset_bottom = 2865.0
 color = Color(1, 0, 0, 1)

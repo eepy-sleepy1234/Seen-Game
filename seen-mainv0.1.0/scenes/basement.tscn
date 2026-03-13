@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dd65bmg1sswdc"]
+[gd_scene load_steps=23 format=4 uid="uid://dd65bmg1sswdc"]
 
 [ext_resource type="Texture2D" uid="uid://do8wrddj6lpsm" path="res://assets/Hospital/Basement.png" id="1_852lj"]
 [ext_resource type="Script" path="res://scripts/basement.gd" id="1_o6uhq"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_1gk2v"]
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
 [ext_resource type="Texture2D" uid="uid://c6parek72qxuy" path="res://assets/Npc/Old Ghost Guy.png" id="6_wmoos"]
+[ext_resource type="Texture2D" uid="uid://eteniog6guv8" path="res://assets/Hospital/basementstairs.png" id="7_rohn4"]
+[ext_resource type="Texture2D" uid="uid://bofn1felbv2k4" path="res://assets/Hospital/basementweb.png" id="8_tih0b"]
+[ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="9_bt61f"]
+[ext_resource type="Script" path="res://scripts/deco.gd" id="10_2q2yi"]
+[ext_resource type="Texture2D" uid="uid://68cwj2jemc4q" path="res://assets/Hospital/basementserver.png" id="11_tsb5b"]
+[ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="12_gmeda"]
+[ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -775,6 +782,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
+atlas = ExtResource("13_dgkxm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_te33p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey4qp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="basement" type="Node2D"]
 position = Vector2(-277, -138)
 script = ExtResource("1_o6uhq")
@@ -786,11 +808,11 @@ tile_set = SubResource("TileSet_yhyry")
 
 [node name="normal tiles" type="TileMapLayer" parent="."]
 position = Vector2(-263, -124)
-tile_map_data = PackedByteArray("AAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD7//7/AAAAAAIAAAD7////AAAAAAMAAAD7/wAAAAAAAAQAAAD7/wEAAAAAAAUAAAD7/wIAAAAAAAYAAAD7/wMAAAAAAAcAAAD8//z/AAABAAAAAAD8//3/AAABAAEAAAD8//7/AAABAAIAAAD8////AAABAAMAAAD8/wAAAAABAAQAAAD8/wEAAAABAAUAAAD8/wIAAAABAAYAAAD8/wMAAAABAAcAAAD9//z/AAACAAAAAAD9//3/AAACAAEAAAD9//7/AAACAAIAAAD9////AAACAAMAAAD9/wAAAAACAAQAAAD9/wEAAAACAAUAAAD9/wIAAAACAAYAAAD9/wMAAAACAAcAAAD+//z/AAADAAAAAAD+//3/AAADAAEAAAD+//7/AAADAAIAAAD+////AAADAAMAAAD+/wAAAAADAAQAAAD+/wEAAAADAAUAAAD+/wIAAAADAAYAAAD+/wMAAAADAAcAAAD///z/AAAEAAAAAAD///3/AAAEAAEAAAD///7/AAAEAAIAAAD/////AAAEAAMAAAD//wAAAAAEAAQAAAD//wEAAAAEAAUAAAD//wIAAAAEAAYAAAD//wMAAAAEAAcAAAAAAPz/AAAFAAAAAAAAAP3/AAAFAAEAAAAAAP7/AAAFAAIAAAAAAP//AAAFAAMAAAAAAAAAAAAFAAQAAAAAAAEAAAAFAAUAAAAAAAIAAAAFAAYAAAAAAAMAAAAFAAcAAAABAPz/AAAGAAAAAAABAP3/AAAGAAEAAAABAP7/AAAGAAIAAAABAP//AAAGAAMAAAABAAAAAAAGAAQAAAABAAEAAAAGAAUAAAABAAIAAAAGAAYAAAABAAMAAAAGAAcAAAACAPz/AAAHAAAAAAACAP3/AAAHAAEAAAACAP7/AAAHAAIAAAACAP//AAAHAAMAAAACAAAAAAAHAAQAAAACAAEAAAAHAAUAAAACAAIAAAAHAAYAAAACAAMAAAAHAAcAAAADAPz/AAAIAAAAAAADAP3/AAAIAAEAAAADAP7/AAAIAAIAAAADAP//AAAIAAMAAAADAAAAAAAIAAQAAAADAAEAAAAIAAUAAAADAAIAAAAIAAYAAAADAAMAAAAIAAcAAAAEAPz/AAAJAAAAAAAEAP3/AAAJAAEAAAAEAP7/AAAJAAIAAAAEAP//AAAJAAMAAAAEAAAAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAIAAAAJAAYAAAAEAAMAAAAJAAcAAAA=")
+tile_map_data = PackedByteArray("AAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD7//7/AAAAAAIAAAD7////AAAAAAMAAAD7/wAAAAAAAAQAAAD7/wEAAAAAAAUAAAD7/wIAAAAAAAYAAAD7/wMAAAAAAAcAAAD8//z/AAABAAAAAAD8//3/AAABAAEAAAD8//7/AAABAAIAAAD8////AAABAAMAAAD8/wAAAAABAAQAAAD8/wEAAAABAAUAAAD8/wIAAAABAAYAAAD8/wMAAAABAAcAAAD9//3/AAACAAEAAAD9//7/AAACAAIAAAD9////AAACAAMAAAD9/wEAAAACAAUAAAD9/wIAAAACAAYAAAD9/wMAAAACAAcAAAD+/wEAAAADAAUAAAD+/wIAAAADAAYAAAD+/wMAAAADAAcAAAADAAIAAAAIAAYAAAADAAMAAAAIAAcAAAAEAPz/AAAJAAAAAAAEAP3/AAAJAAEAAAAEAP7/AAAJAAIAAAAEAAIAAAAJAAYAAAAEAAMAAAAJAAcAAAD9//z/AAACAAAAAAD+//z/AAADAAAAAAD///z/AAAEAAAAAAAAAPz/AAAFAAAAAAABAPz/AAAGAAAAAAACAPz/AAAHAAAAAAADAPz/AAAIAAAAAAADAP3/AAAIAAEAAAADAP7/AAAIAAIAAAADAP//AAAIAAMAAAAEAP//AAAJAAMAAAAEAAAAAAAJAAQAAAAEAAEAAAAJAAUAAAADAAEAAAAIAAUAAAADAAAAAAAIAAQAAAACAAAAAAAHAAQAAAABAAAAAAAGAAQAAAABAAEAAAAGAAUAAAABAAIAAAAGAAYAAAACAAEAAAAHAAUAAAACAAIAAAAHAAYAAAACAAMAAAAHAAcAAAABAAMAAAAGAAcAAAAAAAMAAAAFAAcAAAD//wMAAAAEAAcAAAD//wIAAAAEAAYAAAAAAAIAAAAFAAYAAAAAAAEAAAAFAAUAAAD//wEAAAAEAAUAAAAAAAAAAAAFAAQAAAD//wAAAAAEAAQAAAD+/wAAAAADAAQAAAD9/wAAAAACAAQAAAD+////AAADAAMAAAD/////AAAEAAMAAAD+//7/AAADAAIAAAD+//3/AAADAAEAAAD///3/AAAEAAEAAAD///7/AAAEAAIAAAAAAP7/AAAFAAIAAAAAAP3/AAAFAAEAAAAAAP//AAAFAAMAAAABAP//AAAGAAMAAAABAP7/AAAGAAIAAAABAP3/AAAGAAEAAAACAP3/AAAHAAEAAAACAP7/AAAHAAIAAAACAP//AAAHAAMAAAA=")
 tile_set = SubResource("TileSet_qeqt0")
 
 [node name="player" parent="." instance=ExtResource("2_yixit")]
-position = Vector2(-263, -119)
+position = Vector2(-263, -123)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(7, 7)
@@ -803,10 +825,147 @@ offset_top = -138.0
 offset_right = -237.0
 offset_bottom = -98.0
 
-[node name="npc" parent="." instance=ExtResource("5_18rnf")]
+[node name="old ghost guy" parent="." instance=ExtResource("5_18rnf")]
 position = Vector2(-165, -156)
 scale = Vector2(0.87999, 0.87999)
+can_face_player = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old ghost guy"]
 sprite_frames = SubResource("SpriteFrames_keflw")
 animation = &"side"
+
+[node name="stairs" type="Sprite2D" parent="."]
+position = Vector2(-373, -199)
+texture = ExtResource("7_rohn4")
+script = ExtResource("10_2q2yi")
+
+[node name="cobweb" type="Sprite2D" parent="."]
+position = Vector2(-118, -235)
+texture = ExtResource("8_tih0b")
+
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="box2" type="Sprite2D" parent="boxes"]
+position = Vector2(-156, -36)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box4" type="Sprite2D" parent="boxes"]
+position = Vector2(-132, -36)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box5" type="Sprite2D" parent="boxes"]
+position = Vector2(-125, -142)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box6" type="Sprite2D" parent="boxes"]
+position = Vector2(-125, -130)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box7" type="Sprite2D" parent="boxes"]
+position = Vector2(-403, -135)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box8" type="Sprite2D" parent="boxes"]
+position = Vector2(-403, -104)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box9" type="Sprite2D" parent="boxes"]
+position = Vector2(-379, -104)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box3" type="Sprite2D" parent="boxes"]
+position = Vector2(-156, -24)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="box1" type="Sprite2D" parent="boxes"]
+position = Vector2(-132, -24)
+texture = ExtResource("9_bt61f")
+script = ExtResource("10_2q2yi")
+size = 30
+
+[node name="servers" type="Node2D" parent="."]
+
+[node name="server1" type="Sprite2D" parent="servers"]
+position = Vector2(-406, -59)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server2" type="Sprite2D" parent="servers"]
+position = Vector2(-387, -59)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server5" type="Sprite2D" parent="servers"]
+position = Vector2(-330, -59)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server3" type="Sprite2D" parent="servers"]
+position = Vector2(-368, -59)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server4" type="Sprite2D" parent="servers"]
+position = Vector2(-349, -59)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server6" type="Sprite2D" parent="servers"]
+position = Vector2(-406, -36)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server7" type="Sprite2D" parent="servers"]
+position = Vector2(-387, -36)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server8" type="Sprite2D" parent="servers"]
+position = Vector2(-330, -36)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server9" type="Sprite2D" parent="servers"]
+position = Vector2(-368, -36)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="server10" type="Sprite2D" parent="servers"]
+position = Vector2(-349, -36)
+texture = ExtResource("11_tsb5b")
+script = ExtResource("10_2q2yi")
+size = 40
+
+[node name="camera" parent="." instance=ExtResource("12_gmeda")]
+position = Vector2(-285, -145)
+rotation = 2.07789
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="camera"]
+position = Vector2(-64.6879, 46.2328)
+rotation = -2.15131
+sprite_frames = SubResource("SpriteFrames_te33p")

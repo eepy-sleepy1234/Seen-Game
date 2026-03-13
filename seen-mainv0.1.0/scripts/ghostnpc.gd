@@ -8,6 +8,7 @@ extends Node2D
 
 var player_in_range = false
 @export var my_text = ""
+@export var can_face_player = false
 var open = false
 
 func _process(delta: float) -> void:
@@ -15,6 +16,11 @@ func _process(delta: float) -> void:
 		sprite.visible = true
 	else:
 		sprite.visible = false
+	if can_face_player:
+		if player.position.x <= self.position.x:
+			sprite.play("side")
+		else:
+			sprite.play("down")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
