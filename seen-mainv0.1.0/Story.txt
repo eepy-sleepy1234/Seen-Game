@@ -141,3 +141,39 @@ Once interacted:
 		Boss will be hearing about this
 
 Objective: return to hospital
+
+Once you leave the alley and walk down the sidewalk for a littlebit have a doctor stop you and say
+	There you are we were looking for you. 
+
+The doctor will then escort you back to your bed where the nurse is waiting
+
+once you get in the bed the nurse will say:
+	You cant go wandering off like that
+
+She will then exit the room where once again you will fall through the bed
+
+Once you fall through:
+
+Old guy:
+	Welcome back,
+	You need to leave the SEGM is looking for you
+	Go through the passage under the stairs:
+New Objective:
+	walk thorugh the stairs
+
+after trying:
+
+You:
+	Why can I walk through everything besides these stairs and why can people and ghosts talk to me
+	Let me try something
+Objective:
+	turn off camera
+
+after turning off:
+	Objective:
+		Walk through stairs
+
+after:
+
+you:
+	
