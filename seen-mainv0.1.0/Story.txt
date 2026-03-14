@@ -176,4 +176,6 @@ after turning off:
 after:
 
 you:
+	Im only a ghost when nobody is looking at me or something idk make something up to say
+
 	
