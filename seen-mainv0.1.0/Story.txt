@@ -159,7 +159,7 @@ Old guy:
 	You need to leave the SEGM is looking for you
 	Go through the passage under the stairs:
 New Objective:
-	walk thorugh the stairs
+	walk through the stairs
 
 after trying:
 
