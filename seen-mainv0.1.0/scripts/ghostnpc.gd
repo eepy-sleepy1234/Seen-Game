@@ -10,6 +10,7 @@ var player_in_range = false
 @export var my_text = ""
 @export var can_face_player = false
 var open = false
+@export var dialogue: Array[String] = [""]
 
 func _process(delta: float) -> void:
 	if player.is_ghost >= 0:
@@ -29,6 +30,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	player_in_range = false
+	if open:
+		textbox.close_box()
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and Globals.listening:

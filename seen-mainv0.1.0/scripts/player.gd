@@ -1,7 +1,6 @@
 extends CharacterBody2D
 @onready var particles: CPUParticles2D = $"not ghost particles"
 @onready var ghost_particles: CPUParticles2D = $"ghost particles"
-
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var speed = 100
 var last_direction = 0
