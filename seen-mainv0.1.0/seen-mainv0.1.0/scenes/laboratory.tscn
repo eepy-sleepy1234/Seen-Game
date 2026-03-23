@@ -1,18 +1,18 @@
-[gd_scene load_steps=43 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=42 format=4 uid="uid://bhwgqpohs37bx"]
 
-[ext_resource type="Script" uid="uid://curtiju56p4a0" path="res://scripts/labstory.gd" id="1_xmhd7"]
+[ext_resource type="Script" uid="uid://br6u4lm2jkgmd" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_frc63"]
-[ext_resource type="Script" uid="uid://cnupxlot0yrqh" path="res://scripts/camera.gd" id="4_7i2uf"]
+[ext_resource type="Script" uid="uid://ygg2n8a4uopg" path="res://scripts/camera.gd" id="4_7i2uf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
-[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="5_ng83e"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="5_i7dll"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
 [ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="9_rrnpu"]
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
-[ext_resource type="Script" uid="uid://dbgpr7bbotvh7" path="res://scripts/storyelement.gd" id="12_yrm3w"]
+[ext_resource type="Script" uid="uid://debqtpp7ne2k0" path="res://scripts/storyelement.gd" id="12_yrm3w"]
 [ext_resource type="Texture2D" uid="uid://8fmww77nsj66" path="res://assets/Laboratory/Explosion.png" id="14_5x2lg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -61,6 +61,7 @@ texture_region_size = Vector2i(32, 32)
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 10.5148, 0.449646, 10.4318, 0.449646, 16, -16, 16)
 5:3/0 = 0
 6:3/0 = 0
 6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.9375, -16, 16, -16, 16, 16, 8.9375, 16, -12.1875, 16, -12.1875, -16)
@@ -385,10 +386,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cfq5m"]
-radius = 20.0
-height = 54.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugn3e"]
 atlas = ExtResource("14_5x2lg")
 region = Rect2(0, 0, 128, 128)
@@ -463,8 +460,8 @@ layout_mode = 2
 [node name="objectivetitle" type="Label" parent="CanvasLayer/objectivetitlebox/HBoxContainer"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ng83e")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("5_i7dll")
+theme_override_font_sizes/font_size = 87
 text = "objectives"
 autowrap_mode = 3
 
@@ -481,7 +478,7 @@ layout_mode = 2
 [node name="objectives" type="Label" parent="CanvasLayer/objectivebox/HBoxContainer"]
 custom_minimum_size = Vector2(2000, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_ng83e")
+theme_override_fonts/font = ExtResource("5_i7dll")
 theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 
@@ -534,9 +531,9 @@ sprite_frames = SubResource("SpriteFrames_o6kax")
 autoplay = "default"
 frame_progress = 0.157899
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tube bottom"]
-position = Vector2(-47, -40)
-shape = SubResource("CapsuleShape2D_cfq5m")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tube bottom"]
+position = Vector2(-48, -35)
+polygon = PackedVector2Array(-11, -29, 10, -29, 18, -23, 18, 21, -18, 21, -18, -23)
 
 [node name="bionic arms" type="Sprite2D" parent="."]
 z_index = 100

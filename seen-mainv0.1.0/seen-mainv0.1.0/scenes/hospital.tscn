@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://btq6kag0yd6k"]
 
-[ext_resource type="Script" uid="uid://barum1sne2ixs" path="res://scripts/hospital.gd" id="1_wwxec"]
+[ext_resource type="Script" uid="uid://bf251goa1xipk" path="res://scripts/hospital.gd" id="1_wwxec"]
 [ext_resource type="Texture2D" uid="uid://dciau75udx5tj" path="res://assets/Hospital/Hospital.png" id="2_x4k8b"]
 [ext_resource type="Texture2D" uid="uid://cu0oqjlx6wrsd" path="res://assets/Hospital/Guy IN hospital.png" id="3_1y6bm"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_qvepx"]
@@ -304,10 +304,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.26667, 4, 4.1, 4.23333, 4.7, 5.06667, 5.83333, 11.2667, 12.6667, 13.6333, 14.6),
-"transitions": PackedFloat32Array(55.7152, 55.7152, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.26667, 4.2, 5.00339, 5.46667, 5.83333, 11.2667, 12.6667, 13.6333, 14.6),
+"transitions": PackedFloat32Array(55.7152, 55.7152, 0.329877, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-304, -144), Vector2(-304, -144), Vector2(-304, -144), Vector2(-308.69, -150.57), Vector2(-317.26, -145.385), Vector2(-317.26, -145.385), Vector2(-304, -144), Vector2(-304, -144), Vector2(-304, -144), Vector2(-304, -97), Vector2(-274, -97), Vector2(-274, -72)]
+"values": [Vector2(-304, -144), Vector2(-304, -144), Vector2(-312, -152), Vector2(-318, -144), Vector2(-318, -144), Vector2(-304, -144), Vector2(-304, -144), Vector2(-304, -97), Vector2(-274, -97), Vector2(-274, -72)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -328,7 +328,7 @@ tracks/2/path = NodePath(".:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.96667, 4.7, 5.06667, 11.2299, 12.6633, 13.6299),
+"times": PackedFloat32Array(0, 3.96667, 5, 5.83333, 11.2299, 12.6633, 13.6299),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"down", &"surprised", &"walk side", &"side", &"walk down", &"walk side", &"walk down"]
@@ -351,7 +351,6 @@ tile_set = SubResource("TileSet_v1s27")
 position = Vector2(-274, -154)
 sprite_frames = SubResource("SpriteFrames_74xgt")
 animation = &"eepy"
-frame_progress = 0.557683
 
 [node name="ghost particles" type="CPUParticles2D" parent="guy"]
 emitting = false
@@ -394,5 +393,5 @@ autoplay = "down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="nurse"]
 libraries = {
-&"": SubResource("AnimationLibrary_2mqmd")
+"": SubResource("AnimationLibrary_2mqmd")
 }

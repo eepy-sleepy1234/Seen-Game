@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=4 uid="uid://dd65bmg1sswdc"]
 
 [ext_resource type="Texture2D" uid="uid://do8wrddj6lpsm" path="res://assets/Hospital/Basement.png" id="1_852lj"]
-[ext_resource type="Script" uid="uid://dx5jdh3crgupr" path="res://scripts/basement.gd" id="1_o6uhq"]
+[ext_resource type="Script" uid="uid://dp6qlyopemk7t" path="res://scripts/basement.gd" id="1_o6uhq"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_yixit"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_1gk2v"]
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://eteniog6guv8" path="res://assets/Hospital/basementstairs.png" id="7_rohn4"]
 [ext_resource type="Texture2D" uid="uid://bofn1felbv2k4" path="res://assets/Hospital/basementweb.png" id="8_tih0b"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="9_bt61f"]
-[ext_resource type="Script" uid="uid://c12hk1bul3vpj" path="res://scripts/deco.gd" id="10_2q2yi"]
+[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="10_2q2yi"]
 [ext_resource type="Texture2D" uid="uid://68cwj2jemc4q" path="res://assets/Hospital/basementserver.png" id="11_tsb5b"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="12_gmeda"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
