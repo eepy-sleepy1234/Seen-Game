@@ -85,9 +85,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_410p6"]
 _data = {
-"RESET": SubResource("Animation_tdapp"),
-"fade in": SubResource("Animation_fnlxj"),
-"fade out": SubResource("Animation_2qoi1")
+&"RESET": SubResource("Animation_tdapp"),
+&"fade in": SubResource("Animation_fnlxj"),
+&"fade out": SubResource("Animation_2qoi1")
 }
 
 [node name="blackout" type="ColorRect"]

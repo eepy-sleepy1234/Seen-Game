@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b52g0txrpaxgi"]
+[gd_scene load_steps=10 format=3 uid="uid://b52g0txrpaxgi"]
 
-[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_t6lj5"]
+[ext_resource type="Script" uid="uid://c5np6hc8k5wxt" path="res://scripts/textbox.gd" id="1_t6lj5"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="2_ddanm"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="3_g5d5p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
 bg_color = Color(0, 0, 0, 1)
@@ -10,6 +11,10 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xmdk"]
+font = ExtResource("3_g5d5p")
+font_size = 51
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
@@ -28,26 +33,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 318)]
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
+tracks/2/path = NodePath(".:theme_override_constants/margin_top")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [100]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [60]
 }
 
 [sub_resource type="Animation" id="Animation_gee14"]
@@ -68,26 +85,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.37842, 2.37841),
-"update": 0,
-"values": [Vector2(1, 1250), Vector2(1, 2000)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_constants/margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.420448, 0.420448),
+"update": 0,
+"values": [50, 200]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.420448, 0.420448),
+"update": 0,
+"values": [50, -100]
 }
 
 [sub_resource type="Animation" id="Animation_u5sy4"]
@@ -108,33 +137,45 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.297302, 0.297302),
-"update": 0,
-"values": [Vector2(1, 2000), Vector2(1, 1250)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:theme_override_constants/margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.420448, 0.420448),
+"update": 0,
+"values": [200, 50]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:theme_override_constants/margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.420448, 0.420448),
+"update": 0,
+"values": [-100, 50]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
 _data = {
-"RESET": SubResource("Animation_0tnpc"),
-"close": SubResource("Animation_gee14"),
-"open": SubResource("Animation_u5sy4")
+&"RESET": SubResource("Animation_0tnpc"),
+&"close": SubResource("Animation_gee14"),
+&"open": SubResource("Animation_u5sy4")
 }
 
 [node name="textbox" type="MarginContainer"]
@@ -143,13 +184,12 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1352.0
-offset_right = 1.0
-offset_bottom = 1756.0
+offset_top = -409.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 60
 script = ExtResource("1_t6lj5")
@@ -166,19 +206,22 @@ theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 240)
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 20)
+custom_minimum_size = Vector2(1000, 10)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_ddanm")
 theme_override_font_sizes/font_size = 45
-text = "placeholder"
+label_settings = SubResource("LabelSettings_3xmdk")
 autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vtaks")
+&"": SubResource("AnimationLibrary_vtaks")
 }

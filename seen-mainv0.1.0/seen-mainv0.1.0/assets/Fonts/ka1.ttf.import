@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cqx40ma8ednlg"
-path="res://.godot/imported/HyperOxide-1j96j.ttf-91f20397ad27ce662a6cd598049041ad.fontdata"
+uid="uid://dwoandmpl6ugs"
+path="res://.godot/imported/ka1.ttf-507895bbd7cdbc96558aec50dd69a7b0.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/HyperOxide-1j96j.ttf"
-dest_files=["res://.godot/imported/HyperOxide-1j96j.ttf-91f20397ad27ce662a6cd598049041ad.fontdata"]
+source_file="res://assets/Fonts/ka1.ttf"
+dest_files=["res://.godot/imported/ka1.ttf-507895bbd7cdbc96558aec50dd69a7b0.fontdata"]
 
 [params]
 
@@ -23,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=4
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
