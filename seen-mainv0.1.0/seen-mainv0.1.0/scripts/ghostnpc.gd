@@ -37,8 +37,14 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and Globals.listening:
 		if player_in_range and my_text != "":
 			if not open:
+				if len(dialogue) > 0:
+					my_text = dialogue.pop_front()
 				textbox.write_text(my_text)
 				open = true
 			else:
-				textbox.close_box()
-				open = false
+				if len(dialogue) <= 0:
+					textbox.close_box()
+					open = false
+				else:
+					my_text = dialogue.pop_front()
+					textbox.continue_text(my_text)

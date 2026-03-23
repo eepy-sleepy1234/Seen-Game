@@ -16,6 +16,12 @@ func write_text(new_text) -> void:
 	await get_tree().create_timer(0.5).timeout
 	type_words()
 
+func continue_text(new_text) -> void:
+	textlabel.text = ""
+	text = new_text
+	await get_tree().create_timer(0.5).timeout
+	type_words()
+
 func open_box():
 	animation.play("open")
 	open = true

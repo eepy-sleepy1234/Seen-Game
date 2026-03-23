@@ -63,16 +63,19 @@ func _physics_process(_delta):
 			sprite.play("down")
 	else:
 		if is_ghost >= 0:
-			if last_direction == 1:
-				sprite.play("idle_ghost_up")
-			elif last_direction == 3:
-				sprite.play("idle_ghost")
-			elif last_direction == 2:
-				sprite.play("idle_ghost_side")
-			elif last_direction == 4:
-				sprite.play("idle_ghost_side")
+			if Globals.story_progress in [10]:
+				sprite.play("falling_ghost")
 			else:
-				sprite.play("idle_ghost")
+				if last_direction == 1:
+					sprite.play("idle_ghost_up")
+				elif last_direction == 3:
+					sprite.play("idle_ghost")
+				elif last_direction == 2:
+					sprite.play("idle_ghost_side")
+				elif last_direction == 4:
+					sprite.play("idle_ghost_side")
+				else:
+					sprite.play("idle_ghost")
 		else:
 			if Globals.story_progress in [2, 5, 7]:
 				sprite.play("typing")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnfe3fnv7y80s"
-path="res://.godot/imported/Scientist.png-611359a310e9db3052323bfe759d2f8c.ctex"
+uid="uid://ba27onwpkvqgp"
+path="res://.godot/imported/AlleyWay.png-e42e7b7ac9ff11bd937c43912aab6db1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player/Scientist.png"
-dest_files=["res://.godot/imported/Scientist.png-611359a310e9db3052323bfe759d2f8c.ctex"]
+source_file="res://assets/Level Elements/AlleyWay.png"
+dest_files=["res://.godot/imported/AlleyWay.png-e42e7b7ac9ff11bd937c43912aab6db1.ctex"]
 
 [params]
 
