@@ -1,9 +1,9 @@
 [gd_scene load_steps=43 format=4 uid="uid://bhwgqpohs37bx"]
 
-[ext_resource type="Script" path="res://scripts/labstory.gd" id="1_xmhd7"]
+[ext_resource type="Script" uid="uid://curtiju56p4a0" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_frc63"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="4_7i2uf"]
+[ext_resource type="Script" uid="uid://cnupxlot0yrqh" path="res://scripts/camera.gd" id="4_7i2uf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="5_ng83e"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="9_rrnpu"]
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
-[ext_resource type="Script" path="res://scripts/storyelement.gd" id="12_yrm3w"]
+[ext_resource type="Script" uid="uid://dbgpr7bbotvh7" path="res://scripts/storyelement.gd" id="12_yrm3w"]
 [ext_resource type="Texture2D" uid="uid://8fmww77nsj66" path="res://assets/Laboratory/Explosion.png" id="14_5x2lg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -248,8 +248,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j3spj"]
 _data = {
-"RESET": SubResource("Animation_whafb"),
-"red flash": SubResource("Animation_b1jyw")
+&"RESET": SubResource("Animation_whafb"),
+&"red flash": SubResource("Animation_b1jyw")
 }
 
 [sub_resource type="Animation" id="Animation_kxgbt"]
@@ -285,8 +285,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbany"]
 _data = {
-"RESET": SubResource("Animation_kxgbt"),
-"game start": SubResource("Animation_5xjg6")
+&"RESET": SubResource("Animation_kxgbt"),
+&"game start": SubResource("Animation_5xjg6")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5agp4"]
@@ -502,7 +502,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash"]
 libraries = {
-"": SubResource("AnimationLibrary_j3spj")
+&"": SubResource("AnimationLibrary_j3spj")
 }
 
 [node name="npc" parent="." instance=ExtResource("7_scv08")]
@@ -512,7 +512,7 @@ scale = Vector2(5.13192, 5.13192)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="npc"]
 libraries = {
-"": SubResource("AnimationLibrary_mbany")
+&"": SubResource("AnimationLibrary_mbany")
 }
 autoplay = "game start"
 

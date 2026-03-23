@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b52g0txrpaxgi"]
 
-[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_t6lj5"]
+[ext_resource type="Script" uid="uid://c5np6hc8k5wxt" path="res://scripts/textbox.gd" id="1_t6lj5"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="2_ddanm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
@@ -132,9 +132,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
 _data = {
-"RESET": SubResource("Animation_0tnpc"),
-"close": SubResource("Animation_gee14"),
-"open": SubResource("Animation_u5sy4")
+&"RESET": SubResource("Animation_0tnpc"),
+&"close": SubResource("Animation_gee14"),
+&"open": SubResource("Animation_u5sy4")
 }
 
 [node name="textbox" type="MarginContainer"]
