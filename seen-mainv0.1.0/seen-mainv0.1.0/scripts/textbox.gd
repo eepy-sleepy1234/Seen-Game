@@ -19,6 +19,8 @@ func write_text(new_text) -> void:
 func continue_text(new_text) -> void:
 	textlabel.text = ""
 	text = new_text
+	if not open:
+		open_box()
 	await get_tree().create_timer(0.5).timeout
 	type_words()
 
@@ -32,6 +34,8 @@ func close_box():
 func type_words():
 	if text != "":
 		for i in text:
+			if Input.is_action_pressed("interact"):
+				break
 			if not open:
 				break
 			textlabel.text += i

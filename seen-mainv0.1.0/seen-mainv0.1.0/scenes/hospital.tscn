@@ -381,9 +381,9 @@ zoom = Vector2(7, 7)
 [node name="textbox" parent="CanvasLayer" instance=ExtResource("6_5m0s0")]
 anchors_preset = -1
 anchor_right = 0.945
-offset_top = 31.0
+offset_top = -330.0
 offset_right = 132.36
-offset_bottom = 435.0
+offset_bottom = 74.0
 
 [node name="nurse" type="AnimatedSprite2D" parent="."]
 position = Vector2(-304, -144)

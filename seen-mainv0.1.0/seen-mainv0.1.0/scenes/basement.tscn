@@ -879,7 +879,7 @@ position = Vector2(-165, -156)
 scale = Vector2(0.87999, 0.87999)
 my_text = "Hey there. Haven't seen you around, must be a new dead"
 can_face_player = true
-dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "That's a weird name", "WAIT I NEED YOUR HELP", "Give this to a member of the SEGM", "Just find a ghost wearing a suit"])
+dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old ghost guy"]
 sprite_frames = SubResource("SpriteFrames_keflw")
