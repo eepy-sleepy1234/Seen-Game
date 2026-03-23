@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bds7j465iqsyn"]
 
-[ext_resource type="Script" path="res://scripts/textelement.gd" id="1_l0sue"]
+[ext_resource type="Script" uid="uid://dyr14jl6cwbc8" path="res://scripts/textelement.gd" id="1_l0sue"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u51wp"]
 resource_local_to_scene = true
