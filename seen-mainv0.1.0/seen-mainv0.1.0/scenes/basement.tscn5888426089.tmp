@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dd65bmg1sswdc"]
+[gd_scene load_steps=31 format=4 uid="uid://dd65bmg1sswdc"]
 
 [ext_resource type="Texture2D" uid="uid://do8wrddj6lpsm" path="res://assets/Hospital/Basement.png" id="1_852lj"]
 [ext_resource type="Script" uid="uid://dp6qlyopemk7t" path="res://scripts/basement.gd" id="1_o6uhq"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_1gk2v"]
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_buk8l"]
-[ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="6_dvfvt"]
+[ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectivebox.tscn" id="6_dvfvt"]
 [ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="6_nvrgk"]
 [ext_resource type="Texture2D" uid="uid://c6parek72qxuy" path="res://assets/Npc/Old Ghost Guy.png" id="6_wmoos"]
 [ext_resource type="PackedScene" uid="uid://b15xgp6hjvmqc" path="res://scenes/objectivetitlebox.tscn" id="7_dqwih"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://68cwj2jemc4q" path="res://assets/Hospital/basementserver.png" id="11_tsb5b"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="12_gmeda"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
-[ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="15_5j8jl"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
@@ -873,15 +872,12 @@ libraries = {
 offset_top = -330.0
 offset_bottom = 74.0
 
-[node name="objectivetitlebox" parent="CanvasLayer" instance=ExtResource("7_dqwih")]
-offset_right = 1088.0
-offset_bottom = 182.0
-
-[node name="objectivebox" parent="CanvasLayer" instance=ExtResource("6_dvfvt")]
+[node name="objectives" parent="CanvasLayer" instance=ExtResource("6_dvfvt")]
 script = ExtResource("6_nvrgk")
 
+[node name="objectivetitlebox" parent="CanvasLayer" instance=ExtResource("7_dqwih")]
+
 [node name="blackout" parent="CanvasLayer" instance=ExtResource("4_1gk2v")]
-z_index = 4096
 offset_left = -277.0
 offset_top = -138.0
 offset_right = -237.0
@@ -892,8 +888,8 @@ position = Vector2(-165, -156)
 scale = Vector2(0.87999, 0.87999)
 my_text = "Hey there. Haven't seen you around, must be a new dead"
 can_face_player = true
-dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "why is there a p in your nickname", "the p is silent", "...", "anyway I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit"])
-dialogue_progress = Array[int]([0, 0, 0, 11, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14])
+dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "why is there a p", "the p is silent", "anyway I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit"])
+dialogue_progress = Array[int]([0, 0, 0, 11, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old ghost guy"]
 sprite_frames = SubResource("SpriteFrames_keflw")
@@ -907,17 +903,6 @@ script = ExtResource("10_2q2yi")
 [node name="cobweb" type="Sprite2D" parent="."]
 position = Vector2(-118, -235)
 texture = ExtResource("8_tih0b")
-
-[node name="key" parent="." instance=ExtResource("15_t628s")]
-position = Vector2(-132, -24)
-scale = Vector2(0.08, 0.08)
-my_progress = 16
-interactable = true
-story = true
-
-[node name="Sprite2D" type="Sprite2D" parent="key"]
-scale = Vector2(11, 11)
-texture = ExtResource("15_5j8jl")
 
 [node name="boxes" type="Node2D" parent="."]
 
@@ -1047,40 +1032,26 @@ position = Vector2(-26.4146, 24.6428)
 rotation = -1.40355
 sprite_frames = SubResource("SpriteFrames_te33p")
 
-[node name="box1" parent="." instance=ExtResource("15_t628s")]
+[node name="element" parent="." instance=ExtResource("15_t628s")]
 position = Vector2(-144, -31)
 scale = Vector2(0.199995, 0.199995)
 my_progress = 12
 story = true
 
-[node name="box2" parent="." instance=ExtResource("15_t628s")]
+[node name="element2" parent="." instance=ExtResource("15_t628s")]
 position = Vector2(-269, -39)
 scale = Vector2(0.199995, 0.199995)
 my_progress = 12
 story = true
 
-[node name="box3" parent="." instance=ExtResource("15_t628s")]
+[node name="element3" parent="." instance=ExtResource("15_t628s")]
 position = Vector2(-125, -140)
 scale = Vector2(0.199995, 0.199995)
 my_progress = 12
 story = true
 
-[node name="box4" parent="." instance=ExtResource("15_t628s")]
+[node name="element4" parent="." instance=ExtResource("15_t628s")]
 position = Vector2(-391, -104)
 scale = Vector2(0.199995, 0.199995)
 my_progress = 12
-story = true
-
-[node name="locked door" parent="." instance=ExtResource("15_t628s")]
-position = Vector2(-428, -227)
-scale = Vector2(0.24, 0.24)
-my_progress = 15
-interactable = true
-story = true
-
-[node name="unlocked door" parent="." instance=ExtResource("15_t628s")]
-position = Vector2(-428, -227)
-scale = Vector2(0.24, 0.24)
-my_progress = 17
-interactable = true
 story = true

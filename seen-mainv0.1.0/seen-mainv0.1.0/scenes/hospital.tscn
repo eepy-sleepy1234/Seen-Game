@@ -304,8 +304,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.26667, 4.2, 5.00339, 5.46667, 5.83333, 11.2667, 12.6667, 13.6333, 14.6),
-"transitions": PackedFloat32Array(55.7152, 55.7152, 0.329877, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.26667, 4.2, 4.33333, 5.46667, 5.83333, 11.2667, 12.6667, 13.6333, 14.6),
+"transitions": PackedFloat32Array(55.7152, 55.7152, 0.5, 15.8935, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-304, -144), Vector2(-304, -144), Vector2(-312, -152), Vector2(-318, -144), Vector2(-318, -144), Vector2(-304, -144), Vector2(-304, -144), Vector2(-304, -97), Vector2(-274, -97), Vector2(-274, -72)]
 }
@@ -328,7 +328,7 @@ tracks/2/path = NodePath(".:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.96667, 5, 5.83333, 11.2299, 12.6633, 13.6299),
+"times": PackedFloat32Array(0, 3.96667, 5.5, 5.83333, 11.2299, 12.6633, 13.6299),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"down", &"surprised", &"walk side", &"side", &"walk down", &"walk side", &"walk down"]
@@ -393,5 +393,5 @@ autoplay = "down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="nurse"]
 libraries = {
-"": SubResource("AnimationLibrary_2mqmd")
+&"": SubResource("AnimationLibrary_2mqmd")
 }

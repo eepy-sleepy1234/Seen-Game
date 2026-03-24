@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://jj3jgtdbf1aj"]
+
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="1_j83pe"]
+
+[node name="objectivebox" type="MarginContainer"]
+z_index = 10
+offset_left = 113.0
+offset_top = 181.0
+offset_right = 2113.0
+offset_bottom = 221.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="objectives" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(2000, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 20
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("1_j83pe")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
