@@ -1,18 +1,19 @@
-[gd_scene load_steps=42 format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=43 format=4 uid="uid://bhwgqpohs37bx"]
 
-[ext_resource type="Script" path="res://scripts/labstory.gd" id="1_xmhd7"]
+[ext_resource type="Script" uid="uid://br6u4lm2jkgmd" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_frc63"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="4_7i2uf"]
+[ext_resource type="Script" uid="uid://ygg2n8a4uopg" path="res://scripts/camera.gd" id="4_7i2uf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
-[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="5_i7dll"]
+[ext_resource type="PackedScene" uid="uid://b15xgp6hjvmqc" path="res://scenes/objectivetitlebox.tscn" id="5_f8rtk"]
+[ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="6_i7dll"]
+[ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="7_f8rtk"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
 [ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="9_rrnpu"]
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
-[ext_resource type="Script" path="res://scripts/storyelement.gd" id="12_yrm3w"]
 [ext_resource type="Texture2D" uid="uid://8fmww77nsj66" path="res://assets/Laboratory/Explosion.png" id="14_5x2lg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -249,8 +250,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j3spj"]
 _data = {
-"RESET": SubResource("Animation_whafb"),
-"red flash": SubResource("Animation_b1jyw")
+&"RESET": SubResource("Animation_whafb"),
+&"red flash": SubResource("Animation_b1jyw")
 }
 
 [sub_resource type="Animation" id="Animation_kxgbt"]
@@ -286,8 +287,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbany"]
 _data = {
-"RESET": SubResource("Animation_kxgbt"),
-"game start": SubResource("Animation_5xjg6")
+&"RESET": SubResource("Animation_kxgbt"),
+&"game start": SubResource("Animation_5xjg6")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5agp4"]
@@ -447,40 +448,10 @@ script = ExtResource("4_7i2uf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="objectivetitlebox" type="MarginContainer" parent="CanvasLayer"]
-z_index = 10
-offset_left = 88.0
-offset_top = 95.0
-offset_right = 688.0
-offset_bottom = 135.0
+[node name="objectivetitlebox" parent="CanvasLayer" instance=ExtResource("5_f8rtk")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/objectivetitlebox"]
-layout_mode = 2
-
-[node name="objectivetitle" type="Label" parent="CanvasLayer/objectivetitlebox/HBoxContainer"]
-custom_minimum_size = Vector2(1000, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_i7dll")
-theme_override_font_sizes/font_size = 87
-text = "objectives"
-autowrap_mode = 3
-
-[node name="objectivebox" type="MarginContainer" parent="CanvasLayer"]
-z_index = 10
-offset_left = 113.0
-offset_top = 181.0
-offset_right = 2113.0
-offset_bottom = 221.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/objectivebox"]
-layout_mode = 2
-
-[node name="objectives" type="Label" parent="CanvasLayer/objectivebox/HBoxContainer"]
-custom_minimum_size = Vector2(2000, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_i7dll")
-theme_override_font_sizes/font_size = 20
-autowrap_mode = 3
+[node name="objectivebox" parent="CanvasLayer" instance=ExtResource("6_i7dll")]
+script = ExtResource("7_f8rtk")
 
 [node name="blackout" parent="CanvasLayer" instance=ExtResource("7_n4ffd")]
 z_index = 20
@@ -499,7 +470,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash"]
 libraries = {
-"": SubResource("AnimationLibrary_j3spj")
+&"": SubResource("AnimationLibrary_j3spj")
 }
 
 [node name="npc" parent="." instance=ExtResource("7_scv08")]
@@ -509,7 +480,7 @@ scale = Vector2(5.13192, 5.13192)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="npc"]
 libraries = {
-"": SubResource("AnimationLibrary_mbany")
+&"": SubResource("AnimationLibrary_mbany")
 }
 autoplay = "game start"
 
@@ -558,35 +529,31 @@ my_text = "very useful"
 [node name="computers" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-263, -25)
 scale = Vector2(0.44, 1)
-script = ExtResource("12_yrm3w")
 my_progress = 1
 interactable = true
+story = true
 
 [node name="button" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-467, -123)
 scale = Vector2(0.12, 0.12)
-script = ExtResource("12_yrm3w")
 my_progress = 8
 interactable = true
 
 [node name="readings" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-371, -23)
 scale = Vector2(0.28, 0.28)
-script = ExtResource("12_yrm3w")
 my_progress = 3
 interactable = true
 
 [node name="tubes" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-467, 5.96046e-08)
 scale = Vector2(0.2, 0.2)
-script = ExtResource("12_yrm3w")
 my_progress = 4
 interactable = true
 
 [node name="the same computers" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-265, -25)
 scale = Vector2(0.4, 1)
-script = ExtResource("12_yrm3w")
 my_progress = 6
 interactable = true
 

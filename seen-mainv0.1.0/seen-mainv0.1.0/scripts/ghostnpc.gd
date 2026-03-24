@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	else:
 		sprite.visible = false
 	if can_face_player:
-		if player.position.x <= self.position.x:
+		if abs(player.position.y - position.y) <= abs(player.position.x - position.x):
 			sprite.play("side")
 		else:
 			sprite.play("down")

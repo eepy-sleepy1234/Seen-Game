@@ -9,22 +9,28 @@ var tween = create_tween()
 func write_text(new_text) -> void:
 	Globals.listening = false
 	textlabel.text = new_text
-	textlabel.visible_ratio = 0
 	open_box()
+	if tween:
+		tween.kill()
+	textlabel.visible_ratio = 0.0
 	await get_tree().create_timer(0.5).timeout
-	tween.tween_property(textlabel, "visible_ratio", 1, 5)
-	tween.start()
+	tween = create_tween()
+	tween.tween_property(textlabel, "visible_ratio", 1, len(textlabel.text) * 0.05)
+	await tween.finished
 	Globals.listening = true
 
 func continue_text(new_text) -> void:
 	Globals.listening = false
 	textlabel.text = new_text
-	textlabel.visible_ratio = 0
 	if not open:
 		open_box()
+	if tween:
+		tween.kill()
+	textlabel.visible_ratio = 0.0
 	await get_tree().create_timer(0.5).timeout
-	tween.tween_property(textlabel, "visible_ratio", 1, 5)
-	tween.start()
+	tween = create_tween()
+	tween.tween_property(textlabel, "visible_ratio", 1, len(textlabel.text) * 0.01)
+	await tween.finished
 	Globals.listening = true
 
 func open_box():
