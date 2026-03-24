@@ -11,7 +11,7 @@ var player_in_range = false
 @export var can_face_player = false
 var open = false
 @export var dialogue: Array[String] = [""]
-
+@export var dialogue_progress: Array[int] = [0]
 func _process(delta: float) -> void:
 	if player.is_ghost >= 0:
 		sprite.visible = true
@@ -38,7 +38,14 @@ func _input(event: InputEvent) -> void:
 		if player_in_range and my_text != "":
 			if not open:
 				if len(dialogue) > 0:
-					my_text = dialogue.pop_front()
+					if dialogue_progress[0] == 0:
+						dialogue_progress.pop_front()
+						my_text = dialogue.pop_front()
+					else:
+						if Globals.story_progress == dialogue_progress[0]:
+							dialogue_progress.pop_front()
+							my_text = dialogue.pop_front()
+							Globals.story_progress += 1
 				textbox.write_text(my_text)
 				open = true
 			else:
@@ -46,5 +53,16 @@ func _input(event: InputEvent) -> void:
 					textbox.close_box()
 					open = false
 				else:
-					my_text = dialogue.pop_front()
-					textbox.continue_text(my_text)
+					if dialogue_progress[0] == 0:
+						my_text = dialogue.pop_front()
+						dialogue_progress.pop_front()
+						textbox.continue_text(my_text)
+					else:
+						if Globals.story_progress == dialogue_progress[0]:
+							dialogue_progress.pop_front()
+							my_text = dialogue.pop_front()
+							Globals.story_progress += 1
+							textbox.continue_text(my_text)
+						else:
+							textbox.close_box()
+							open = false

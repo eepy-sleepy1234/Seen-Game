@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b52g0txrpaxgi"]
 
-[ext_resource type="Script" uid="uid://c5np6hc8k5wxt" path="res://scripts/textbox.gd" id="1_t6lj5"]
+[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_t6lj5"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="2_ddanm"]
 [ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="3_g5d5p"]
 
@@ -173,9 +173,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
 _data = {
-&"RESET": SubResource("Animation_0tnpc"),
-&"close": SubResource("Animation_gee14"),
-&"open": SubResource("Animation_u5sy4")
+"RESET": SubResource("Animation_0tnpc"),
+"close": SubResource("Animation_gee14"),
+"open": SubResource("Animation_u5sy4")
 }
 
 [node name="textbox" type="MarginContainer"]
@@ -223,5 +223,5 @@ autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_vtaks")
+"": SubResource("AnimationLibrary_vtaks")
 }

@@ -1,7 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://dd65bmg1sswdc"]
+[gd_scene load_steps=29 format=4 uid="uid://dd65bmg1sswdc"]
 
 [ext_resource type="Texture2D" uid="uid://do8wrddj6lpsm" path="res://assets/Hospital/Basement.png" id="1_852lj"]
-[ext_resource type="Script" uid="uid://dp6qlyopemk7t" path="res://scripts/basement.gd" id="1_o6uhq"]
+[ext_resource type="Script" path="res://scripts/basement.gd" id="1_o6uhq"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_yixit"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_1gk2v"]
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://eteniog6guv8" path="res://assets/Hospital/basementstairs.png" id="7_rohn4"]
 [ext_resource type="Texture2D" uid="uid://bofn1felbv2k4" path="res://assets/Hospital/basementweb.png" id="8_tih0b"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="9_bt61f"]
-[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="10_2q2yi"]
+[ext_resource type="Script" path="res://scripts/deco.gd" id="10_2q2yi"]
 [ext_resource type="Texture2D" uid="uid://68cwj2jemc4q" path="res://assets/Hospital/basementserver.png" id="11_tsb5b"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="12_gmeda"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
+[ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
+[ext_resource type="Script" path="res://scripts/storyelement.gd" id="16_fvh53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -790,8 +792,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yysv8"]
 _data = {
-&"RESET": SubResource("Animation_c4m2r"),
-&"falling": SubResource("Animation_wnmkj")
+"RESET": SubResource("Animation_c4m2r"),
+"falling": SubResource("Animation_wnmkj")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trmdb"]
@@ -859,7 +861,7 @@ zoom = Vector2(7, 7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 libraries = {
-&"": SubResource("AnimationLibrary_yysv8")
+"": SubResource("AnimationLibrary_yysv8")
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -880,6 +882,7 @@ scale = Vector2(0.87999, 0.87999)
 my_text = "Hey there. Haven't seen you around, must be a new dead"
 can_face_player = true
 dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit"])
+dialogue_progress = Array[int]([0, 0, 0, 11, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old ghost guy"]
 sprite_frames = SubResource("SpriteFrames_keflw")
@@ -1012,12 +1015,19 @@ texture = ExtResource("11_tsb5b")
 script = ExtResource("10_2q2yi")
 size = 40
 
-[node name="npc" parent="." instance=ExtResource("12_gmeda")]
+[node name="security camera" parent="." instance=ExtResource("12_gmeda")]
 position = Vector2(-235, -201)
 rotation = 1.47735
 yes = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera"]
 position = Vector2(-26.4146, 24.6428)
 rotation = -1.40355
 sprite_frames = SubResource("SpriteFrames_te33p")
+
+[node name="boxes hitbox" parent="." instance=ExtResource("15_t628s")]
+position = Vector2(-144, -29)
+scale = Vector2(0.44, 0.44)
+script = ExtResource("16_fvh53")
+my_progress = 12
+interactable = false

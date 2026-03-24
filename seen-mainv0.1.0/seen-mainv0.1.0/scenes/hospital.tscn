@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://btq6kag0yd6k"]
 
-[ext_resource type="Script" uid="uid://bf251goa1xipk" path="res://scripts/hospital.gd" id="1_wwxec"]
+[ext_resource type="Script" path="res://scripts/hospital.gd" id="1_wwxec"]
 [ext_resource type="Texture2D" uid="uid://dciau75udx5tj" path="res://assets/Hospital/Hospital.png" id="2_x4k8b"]
 [ext_resource type="Texture2D" uid="uid://cu0oqjlx6wrsd" path="res://assets/Hospital/Guy IN hospital.png" id="3_1y6bm"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_qvepx"]
@@ -336,8 +336,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2mqmd"]
 _data = {
-&"RESET": SubResource("Animation_m3msh"),
-&"movement": SubResource("Animation_03tm6")
+"RESET": SubResource("Animation_m3msh"),
+"movement": SubResource("Animation_03tm6")
 }
 
 [node name="hospital" type="Node2D"]

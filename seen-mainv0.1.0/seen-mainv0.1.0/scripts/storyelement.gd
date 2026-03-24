@@ -6,15 +6,22 @@ extends Node2D
 
 @export var player_in_range = false
 @export var my_progress = 0
+@export var interactable = false
 
 func _ready() -> void:
 	$Area2D.body_entered.connect(_on_area_2d_body_entered)
 	await get_tree().create_timer(0.01).timeout
 	player_in_range = false
 
+func _process(delta: float) -> void:
+	if Globals.listening and Globals.story_progress == my_progress and (not interactable) and player_in_range:
+		Globals.story_progress += 1
+		Globals.listening = false
+		player.direction = Vector2(0, 0)
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and Globals.listening and player_in_range:
-		if Globals.story_progress == my_progress:
+		if Globals.story_progress == my_progress and interactable:
 			Globals.story_progress += 1
 			Globals.listening = false
 			player.direction = Vector2(0, 0)
