@@ -1,0 +1,64 @@
+extends Node2D
+
+@onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
+@onready var player: CharacterBody2D = %player
+@onready var player_animation: AnimationPlayer = $player/AnimationPlayer
+@onready var textbox: MarginContainer = $CanvasLayer/textbox
+@onready var objectives: MarginContainer = $CanvasLayer/objectivebox
+@onready var key: Node2D = $key
+@onready var inventory: AnimationPlayer = $CanvasLayer/inventory/AnimationPlayer
+@onready var keyanim: AnimationPlayer = $CanvasLayer/keyanimation/AnimationPlayer
+
+var new_text = ""
+var next_scene: PackedScene = preload("uid://ckyb4hj0cb02f")
+
+func wait_for_progress(target: int) -> void:
+	while Globals.story_progress != target:
+		await Globals.story_progress_changed
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	blackout.play("fade in")
+	if Globals.story_progress == 9:
+		Globals.listening = false
+		Globals.story_progress += 1
+		player_animation.play("falling")
+		await get_tree().create_timer(0.1).timeout
+		player.is_ghost = 0
+		await get_tree().create_timer(5).timeout
+		Globals.listening = true
+		Globals.story_progress += 1
+		await wait_for_progress(12)
+		await get_tree().create_timer(2).timeout
+		new_text = "\n - go walk through those boxes"
+		objectives.write(new_text)
+		await wait_for_progress(13)
+		textbox.write_text("Told you so")
+		await get_tree().create_timer(2).timeout
+		Globals.listening = true
+		textbox.close_box()
+		await wait_for_progress(15)
+		await get_tree().create_timer(2).timeout
+		new_text = "\n - leave the basement from the stairs"
+		objectives.write(new_text)
+		await wait_for_progress(16)
+		textbox.write_text("the door's locked. There's gotta be a key somewhere")
+		await get_tree().create_timer(4).timeout
+		new_text = "\n - find the key"
+		objectives.write(new_text)
+		textbox.close_box()
+		await wait_for_progress(17)
+		key.visible = false
+		await get_tree().create_timer(0.3).timeout
+		inventory.play("unlock")
+		keyanim.play("get key")
+		await get_tree().create_timer(1.6).timeout
+		new_text = "\n - unlock the door"
+		objectives.write(new_text)
+		await get_tree().create_timer(0.1).timeout
+		Globals.listening = true
+		await wait_for_progress(18)
+		keyanim.play("use")
+		blackout.play("fade out")
+		get_tree().change_scene_to_packed(next_scene)
+	
