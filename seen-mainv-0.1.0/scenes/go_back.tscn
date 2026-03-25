@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cqxjkans27u6f"]
+
+[ext_resource type="Script" uid="uid://c3jsuy1xeh5im" path="res://scripts/go_back.gd" id="1_k7vrr"]
+[ext_resource type="PackedScene" uid="uid://dd65bmg1sswdc" path="res://scenes/basement.tscn" id="2_xae2f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lquji"]
+
+[node name="go back" type="Node2D" unique_id=1310830184]
+script = ExtResource("1_k7vrr")
+go_to = ExtResource("2_xae2f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=504084095]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1888113567]
+shape = SubResource("CircleShape2D_lquji")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

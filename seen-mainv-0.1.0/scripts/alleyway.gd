@@ -20,6 +20,7 @@ func _ready() -> void:
 		segm.animation = "sus"
 		await wait_for_progress(21)
 		segm.animation = "mad"
+		objectives.write("\n - go back to the hospital")
 		await wait_for_progress(22)
 		player.speed = 50
 		player.direction = Vector2(0, -1)

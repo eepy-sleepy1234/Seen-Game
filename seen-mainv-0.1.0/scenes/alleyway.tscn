@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="8_tjaqe"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="9_a7mov"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="10_vdb6e"]
+[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="11_nmxoq"]
+[ext_resource type="Texture2D" uid="uid://g44t03eg0v04" path="res://assets/Alleyway/trashbag1.png" id="12_x6t8b"]
+[ext_resource type="Texture2D" uid="uid://b7vy17rbhfky8" path="res://assets/Alleyway/lamppost.png" id="13_s86ym"]
+[ext_resource type="Texture2D" uid="uid://046o2tyon7tq" path="res://assets/Alleyway/brokenlamppost.png" id="14_md4yb"]
+[ext_resource type="Texture2D" uid="uid://jg3jstjj2htq" path="res://assets/Alleyway/trashbag2.png" id="15_lquji"]
+[ext_resource type="Texture2D" uid="uid://bi40gpd78fu1w" path="res://assets/Alleyway/trashcan.png" id="16_wkb1x"]
+[ext_resource type="PackedScene" uid="uid://cqxjkans27u6f" path="res://scenes/go_back.tscn" id="17_x6t8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls4g5"]
 texture = ExtResource("2_wtvnm")
@@ -246,10 +253,13 @@ animations = [{
 script = ExtResource("1_4iwai")
 
 [node name="player" parent="." unique_id=779915501 instance=ExtResource("1_bmsfa")]
+unique_name_in_owner = true
 position = Vector2(-286, -135)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=331416783]
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="ghost tiles" type="TileMapLayer" parent="." unique_id=1738076347]
 position = Vector2(-260, -137)
@@ -286,3 +296,55 @@ position = Vector2(-324, 20)
 scale = Vector2(2.3599901, 2.3599901)
 my_progress = 21
 story = true
+
+[node name="trashbag2" type="Sprite2D" parent="." unique_id=68514260]
+position = Vector2(-272, -294)
+scale = Vector2(0.99999267, 1)
+texture = ExtResource("12_x6t8b")
+script = ExtResource("11_nmxoq")
+size = 15
+
+[node name="lamppost" type="Sprite2D" parent="." unique_id=1545849222]
+position = Vector2(-364, -212)
+texture = ExtResource("13_s86ym")
+script = ExtResource("11_nmxoq")
+size = 40
+
+[node name="brokenlamppost" type="Sprite2D" parent="." unique_id=252640376]
+position = Vector2(-285, -269)
+texture = ExtResource("14_md4yb")
+region_rect = Rect2(0.46501923, 0.11243439, 28.99739, 78.86015)
+script = ExtResource("11_nmxoq")
+size = 50
+
+[node name="trashbag1" type="Sprite2D" parent="." unique_id=1353789602]
+position = Vector2(-375, -176)
+rotation = 3.1415927
+scale = Vector2(0.99999505, -1)
+texture = ExtResource("12_x6t8b")
+script = ExtResource("11_nmxoq")
+size = 15
+
+[node name="trashbag3" type="Sprite2D" parent="." unique_id=565801020]
+position = Vector2(-273, -171)
+scale = Vector2(0.99999267, 1)
+texture = ExtResource("12_x6t8b")
+script = ExtResource("11_nmxoq")
+size = 15
+
+[node name="trashbag4" type="Sprite2D" parent="." unique_id=1086698629]
+position = Vector2(-285, -159)
+scale = Vector2(0.99999267, 1)
+texture = ExtResource("15_lquji")
+script = ExtResource("11_nmxoq")
+size = 15
+
+[node name="trashcan" type="Sprite2D" parent="." unique_id=191453921]
+position = Vector2(-275, -160)
+scale = Vector2(0.99999267, 1)
+texture = ExtResource("16_wkb1x")
+script = ExtResource("11_nmxoq")
+size = 15
+
+[node name="go back" parent="." unique_id=1310830184 instance=ExtResource("17_x6t8b")]
+position = Vector2(-257, -137)

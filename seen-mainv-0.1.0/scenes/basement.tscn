@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="15_5j8jl"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
+[ext_resource type="PackedScene" uid="uid://cqxjkans27u6f" path="res://scenes/go_back.tscn" id="21_flc8l"]
+[ext_resource type="PackedScene" uid="uid://ckyb4hj0cb02f" path="res://scenes/alleyway.tscn" id="22_jlfbm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -878,26 +880,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2673, 201)]
+"values": [Vector2(11.159997, 11.159997)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(11.159997, 11.159997)]
+"values": [Vector2(867, 596)]
 }
 
 [sub_resource type="Animation" id="Animation_jlfbm"]
@@ -918,26 +920,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(0.23325826, 1),
+"transitions": PackedFloat32Array(0.23325822, 1),
 "update": 0,
-"values": [Vector2(2101, 1520), Vector2(2673, 201)]
+"values": [Vector2(1, 1), Vector2(11.5, 11.5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(0.23325822, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(11.5, 11.5)]
+"values": [Vector2(852, 921), Vector2(1770, 130)]
 }
 
 [sub_resource type="Animation" id="Animation_8voiy"]
@@ -1024,6 +1026,8 @@ position = Vector2(-263, -123)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=378742125]
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player" unique_id=2111177387]
 libraries/ = SubResource("AnimationLibrary_yysv8")
@@ -1044,9 +1048,9 @@ script = ExtResource("6_nvrgk")
 
 [node name="inventory" type="Sprite2D" parent="CanvasLayer" unique_id=196980635]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(2673, 201.00002)
+position = Vector2(1770, 130)
 rotation = -3.1415925
-scale = Vector2(7.9239206, 7.9239206)
+scale = Vector2(7, 7.034)
 texture = ExtResource("9_c5vcu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/inventory" unique_id=1993774078]
@@ -1061,7 +1065,7 @@ offset_bottom = -98.0
 
 [node name="keyanimation" type="Sprite2D" parent="CanvasLayer" unique_id=293635419]
 visible = false
-position = Vector2(2673, 201)
+position = Vector2(867, 596)
 scale = Vector2(11.159997, 11.159997)
 texture = ExtResource("15_5j8jl")
 
@@ -1219,8 +1223,8 @@ script = ExtResource("10_2q2yi")
 size = 40
 
 [node name="security camera" parent="." unique_id=1507280261 instance=ExtResource("12_gmeda")]
-position = Vector2(-235, -201)
-rotation = 1.47735
+position = Vector2(-235, -197)
+rotation = 1.4758625
 yes = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera" unique_id=1681884138]
@@ -1265,3 +1269,7 @@ scale = Vector2(0.24, 0.24)
 my_progress = 17
 interactable = true
 story = true
+
+[node name="go back" parent="." unique_id=1310830184 instance=ExtResource("21_flc8l")]
+go_to = ExtResource("22_jlfbm")
+progress = 19

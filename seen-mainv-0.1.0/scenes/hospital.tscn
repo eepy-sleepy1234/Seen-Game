@@ -383,7 +383,7 @@ anchors_preset = -1
 anchor_right = 0.945
 offset_left = -2.0
 offset_top = -468.0
-offset_right = 130.35999
+offset_right = 60.359985
 offset_bottom = -4.0
 
 [node name="nurse" type="AnimatedSprite2D" parent="." unique_id=1212651920]
