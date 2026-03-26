@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://d4alpdcbxcama"]
+[gd_scene format=3 uid="uid://d4alpdcbxcama"]
 
 [ext_resource type="Texture2D" uid="uid://cnfe3fnv7y80s" path="res://assets/Player/Scientist Sheet.png" id="1_3vyb7"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cl21jbqgnxddm" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_3vyb7")
@@ -326,23 +326,22 @@ colors = PackedColorArray(0.270588, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_olxqf"]
 colors = PackedColorArray(0.270588, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=1289593128]
 z_index = 20
 scale = Vector2(0.8, 0.8)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1878414024]
 sprite_frames = SubResource("SpriteFrames_jej6c")
-animation = &"falling_ghost"
-frame_progress = 0.404228
+animation = &"speed"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21586744]
 position = Vector2(-3.55271e-15, 2.5)
 shape = SubResource("CircleShape2D_g2els")
 
-[node name="not ghost particles" type="CPUParticles2D" parent="."]
+[node name="not ghost particles" type="CPUParticles2D" parent="." unique_id=398026847]
 scale = Vector2(1.25, 1.25)
 emitting = false
 amount = 20
@@ -364,7 +363,7 @@ scale_amount_max = 3.0
 color = Color(0.270588, 1, 1, 1)
 color_ramp = SubResource("Gradient_aamt0")
 
-[node name="ghost particles" type="CPUParticles2D" parent="."]
+[node name="ghost particles" type="CPUParticles2D" parent="." unique_id=641362094]
 emitting = false
 amount = 20
 lifetime = 0.5

@@ -1,16 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://crb004vk1kwvt"]
+[gd_scene format=3 uid="uid://crb004vk1kwvt"]
 
 [ext_resource type="Script" uid="uid://bu5pharl5qk6s" path="res://scripts/npc.gd" id="1_nh2m4"]
 
-[node name="npc" type="Node2D"]
+[node name="npc" type="Node2D" unique_id=1479997646]
 script = ExtResource("1_nh2m4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1320659870]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, 0, -111, 82, 111, 82)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1154707215]
+polygon = PackedVector2Array(0, 0, -111, 82, -64, 100, 0, 110, 67, 102, 111, 82)
+
+[node name="RayCast2D" type="RayCast2D" parent="Area2D/CollisionPolygon2D" unique_id=1063089644]
+target_position = Vector2(0, 110)
+collision_mask = 7
+
+[node name="RayCast2D2" type="RayCast2D" parent="Area2D/CollisionPolygon2D" unique_id=583367539]
+target_position = Vector2(-111, 82)
+collision_mask = 7
+
+[node name="RayCast2D3" type="RayCast2D" parent="Area2D/CollisionPolygon2D" unique_id=1743226208]
+target_position = Vector2(110, 82)
+collision_mask = 7
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

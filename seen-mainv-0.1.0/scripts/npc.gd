@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player: CharacterBody2D = $"../player"
+@onready var player: CharacterBody2D = %player
 @onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
 @onready var area: Area2D = $Area2D
 @export var yes = false
