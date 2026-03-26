@@ -25,6 +25,8 @@ func _ready() -> void:
 		player.direction = Vector2(0, -1)
 		player.sprite.play("down_ghost")
 		blackout.play("fade out")
+		await get_tree().create_timer(2).timeout
+		player.speed = 100
 
 func _process(delta: float) -> void:
 	if player.position.y >= -120 and Globals.story_progress < 21:
