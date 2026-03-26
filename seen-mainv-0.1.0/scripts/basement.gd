@@ -9,7 +9,6 @@ extends Node2D
 @onready var inventory: AnimationPlayer = $CanvasLayer/inventory/AnimationPlayer
 @onready var keyanim: AnimationPlayer = $CanvasLayer/keyanimation/AnimationPlayer
 
-
 var new_text = ""
 var next_scene: PackedScene = preload("uid://ckyb4hj0cb02f")
 
@@ -61,10 +60,5 @@ func _ready() -> void:
 		await wait_for_progress(18)
 		keyanim.play("use")
 		blackout.play("fade out")
-		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_packed(next_scene)
-	elif Globals.story_progress < 23:
-		Globals.listening = true
-		player.position = Vector2(-410.0, -225.0)
-		await get_tree().create_timer(0.1).timeout
-		player.is_ghost = -1
+	
