@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://g44t03eg0v04" path="res://assets/Alleyway/trashbag1.png" id="9_7vla3"]
 [ext_resource type="Texture2D" uid="uid://bi40gpd78fu1w" path="res://assets/Alleyway/trashcan.png" id="10_0wd0x"]
 [ext_resource type="Texture2D" uid="uid://jg3jstjj2htq" path="res://assets/Alleyway/trashbag2.png" id="11_fmkxj"]
+[ext_resource type="Texture2D" uid="uid://bdswpy0bgtba2" path="res://assets/Npc/Doctor Long Legs.png" id="12_fmkxj"]
+[ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="13_wd6c3"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="14_7gyev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t23v0"]
 texture = ExtResource("2_3ffmx")
@@ -1367,6 +1370,47 @@ sources/0 = SubResource("TileSetAtlasSource_t23v0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd6c3"]
 size = Vector2(41, 38)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x85o"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0otry"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhj6"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6epoj"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_582hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x85o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0otry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6epoj")
+}],
+"loop": true,
+"name": &"side",
+"speed": 6.0
+}]
+
 [node name="street" type="Node2D" unique_id=1757445699]
 script = ExtResource("1_7vr8w")
 
@@ -1394,7 +1438,7 @@ region_enabled = true
 region_rect = Rect2(5.6790886, 2.7558603, 5.7055683, 10.488177)
 
 [node name="npc" parent="camera" unique_id=1479997646 instance=ExtResource("4_t23v0")]
-position = Vector2(-342, -41)
+position = Vector2(-4, 3)
 scale = Vector2(8.680002, 4.81268)
 
 [node name="tree3" type="Sprite2D" parent="." unique_id=873817522]
@@ -1487,3 +1531,21 @@ position = Vector2(-712, -239)
 texture = ExtResource("11_fmkxj")
 script = ExtResource("7_dxpu0")
 size = 10
+
+[node name="docker log lesg" type="AnimatedSprite2D" parent="." unique_id=1120504606]
+position = Vector2(-1040, -130)
+sprite_frames = SubResource("SpriteFrames_582hs")
+animation = &"side"
+flip_h = true
+
+[node name="npc" parent="docker log lesg" unique_id=1097622939 instance=ExtResource("4_t23v0")]
+rotation = -1.5758721
+
+[node name="element" parent="." unique_id=117466181 instance=ExtResource("13_wd6c3")]
+position = Vector2(-752, -129)
+my_progress = 23
+story = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1516738272]
+
+[node name="blackout" parent="CanvasLayer" unique_id=1740795836 instance=ExtResource("14_7gyev")]
