@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="seen-mainv0.1.0"
@@ -74,4 +78,4 @@ speed={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.00093636644, 0.00093636644, 0.00093636644, 1)
+environment/defaults/default_clear_color=Color(0.000936366, 0.000936366, 0.000936366, 1)

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bhwgqpohs37bx"]
+[gd_scene load_steps=37 format=4 uid="uid://bhwgqpohs37bx"]
 
 [ext_resource type="Script" uid="uid://br6u4lm2jkgmd" path="res://scripts/labstory.gd" id="1_xmhd7"]
 [ext_resource type="Texture2D" uid="uid://da52av2xfuwew" path="res://assets/Laboratory/Laboratory.png" id="2_m2clf"]
@@ -193,104 +193,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_u5sy4")
 
-[sub_resource type="Animation" id="Animation_whafb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_b1jyw"]
-resource_name = "red flash"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
-"transitions": PackedFloat32Array(4, 4),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.47451)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3spj"]
-_data = {
-&"RESET": SubResource("Animation_whafb"),
-&"red flash": SubResource("Animation_b1jyw")
-}
-
-[sub_resource type="Animation" id="Animation_kxgbt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(170, -50)]
-}
-
-[sub_resource type="Animation" id="Animation_5xjg6"]
-resource_name = "game start"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(382, -49.3333), Vector2(-100, -50)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbany"]
-_data = {
-&"RESET": SubResource("Animation_kxgbt"),
-&"game start": SubResource("Animation_5xjg6")
-}
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5agp4"]
 atlas = ExtResource("8_740sf")
 region = Rect2(0, 0, 64, 48)
@@ -423,141 +325,139 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="game" type="Node2D" unique_id=956804785]
+[node name="game" type="Node2D"]
 script = ExtResource("1_xmhd7")
 
-[node name="normal tiles" type="TileMapLayer" parent="." unique_id=494940227]
+[node name="normal tiles" type="TileMapLayer" parent="."]
 position = Vector2(-323, 2)
 tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD7//z/AAAAAAEAAAD7//3/AAAAAAIAAAD7//7/AAAAAAMAAAD7////AAAAAAQAAAD7/wAAAAAAAAUAAAD8//v/AAABAAAAAAD8//z/AAABAAEAAAD8//3/AAABAAIAAAD8//7/AAABAAMAAAD8////AAABAAQAAAD8/wAAAAABAAUAAAD9//v/AAACAAAAAAD9//z/AAACAAEAAAD9//3/AAACAAIAAAD9//7/AAACAAMAAAD9////AAACAAQAAAD9/wAAAAACAAUAAAD+//v/AAADAAAAAAD+//z/AAADAAEAAAD+//3/AAADAAIAAAD+//7/AAADAAMAAAD+////AAADAAQAAAD+/wAAAAADAAUAAAD///v/AAAEAAAAAAD///z/AAAEAAEAAAD///3/AAAEAAIAAAD///7/AAAEAAMAAAD/////AAAEAAQAAAD//wAAAAAEAAUAAAAAAPv/AAAFAAAAAAAAAPz/AAAFAAEAAAAAAP3/AAAFAAIAAAAAAP7/AAAFAAMAAAAAAP//AAAFAAQAAAAAAAAAAAAFAAUAAAD7/wEAAAAAAAYAAAD8/wEAAAABAAYAAAD9/wEAAAACAAYAAAD+/wEAAAADAAYAAAD//wEAAAAEAAYAAAAAAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAPv/AAAGAAAAAAABAPz/AAAGAAEAAAABAP3/AAAGAAIAAAABAP7/AAAGAAMAAAABAP//AAAGAAQAAAABAAAAAAAGAAUAAAA=")
 tile_set = SubResource("TileSet_u5sy4")
 
-[node name="ghost tiles" type="TileMapLayer" parent="." unique_id=1171195046]
+[node name="ghost tiles" type="TileMapLayer" parent="."]
 position = Vector2(-323, 2)
 tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD7//z/AAAAAAEAAAD7//3/AAAAAAIAAAD7//7/AAAAAAMAAAD7////AAAAAAQAAAD7/wAAAAAAAAUAAAD8//v/AAABAAAAAAD8//z/AAABAAEAAAD8//3/AAABAAIAAAD8//7/AAABAAMAAAD8////AAABAAQAAAD8/wAAAAABAAUAAAD9//v/AAACAAAAAAD9//z/AAACAAEAAAD9//3/AAACAAIAAAD9//7/AAACAAMAAAD9////AAACAAQAAAD9/wAAAAACAAUAAAD+//v/AAADAAAAAAD+//z/AAADAAEAAAD+//3/AAADAAIAAAD+//7/AAADAAMAAAD+////AAADAAQAAAD+/wAAAAADAAUAAAD///v/AAAEAAAAAAD///z/AAAEAAEAAAD///3/AAAEAAIAAAD///7/AAAEAAMAAAD/////AAAEAAQAAAD//wAAAAAEAAUAAAAAAPv/AAAFAAAAAAAAAPz/AAAFAAEAAAAAAP3/AAAFAAIAAAAAAP7/AAAFAAMAAAAAAP//AAAFAAQAAAAAAAAAAAAFAAUAAAD7/wEAAAAAAAYAAAD8/wEAAAABAAYAAAD9/wEAAAACAAYAAAD+/wEAAAADAAYAAAD//wEAAAAEAAYAAAAAAAEAAAAFAAYAAAABAPv/AAAGAAAAAAABAPz/AAAGAAEAAAABAP3/AAAGAAIAAAABAP7/AAAGAAMAAAABAP//AAAGAAQAAAABAAAAAAAGAAUAAAABAAEAAAAGAAYAAAA=")
 tile_set = SubResource("TileSet_gee14")
 
-[node name="player" parent="." unique_id=2139251634 instance=ExtResource("3_frc63")]
+[node name="player" parent="." instance=ExtResource("3_frc63")]
 position = Vector2(-371, 21)
 is_ghost = -4
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1998181692]
+[node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(7, 7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("4_7i2uf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2072967062]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="objectivetitlebox" parent="CanvasLayer" unique_id=272212418 instance=ExtResource("5_f8rtk")]
+[node name="objectivetitlebox" parent="CanvasLayer" instance=ExtResource("5_f8rtk")]
 
-[node name="objectivebox" parent="CanvasLayer" unique_id=1125713339 instance=ExtResource("6_i7dll")]
+[node name="objectivebox" parent="CanvasLayer" instance=ExtResource("6_i7dll")]
 script = ExtResource("7_f8rtk")
 
-[node name="blackout" parent="CanvasLayer" unique_id=1795680237 instance=ExtResource("7_n4ffd")]
+[node name="blackout" parent="CanvasLayer" instance=ExtResource("7_n4ffd")]
 z_index = 20
 
-[node name="textbox" parent="CanvasLayer" unique_id=1803231083 instance=ExtResource("5_f2ctl")]
+[node name="textbox" parent="CanvasLayer" instance=ExtResource("5_f2ctl")]
 offset_left = -1.0
 offset_right = -1.0
 size_flags_vertical = 8
 
-[node name="red flash" type="ColorRect" parent="CanvasLayer" unique_id=1908622579]
+[node name="red flash" type="ColorRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 z_index = 20
 offset_right = 4873.0
 offset_bottom = 2865.0
 color = Color(1, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash" unique_id=1579613083]
-libraries/ = SubResource("AnimationLibrary_j3spj")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash"]
 
-[node name="npc" parent="." unique_id=237979540 instance=ExtResource("7_scv08")]
+[node name="npc" parent="." instance=ExtResource("7_scv08")]
 position = Vector2(170, -50)
 rotation = 1.5509
 scale = Vector2(5.13192, 5.13192)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="npc" unique_id=1175783389]
-libraries/ = SubResource("AnimationLibrary_mbany")
-autoplay = &"game start"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="npc"]
+autoplay = "game start"
 
-[node name="tube top" type="Node2D" parent="." unique_id=1374322123]
+[node name="tube top" type="Node2D" parent="."]
 z_index = 100
 position = Vector2(-323, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tube top" unique_id=671064931]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tube top"]
 position = Vector2(-47, -83)
 sprite_frames = SubResource("SpriteFrames_1atw5")
 autoplay = "default"
 
-[node name="tube bottom" type="StaticBody2D" parent="." unique_id=6894289]
+[node name="tube bottom" type="StaticBody2D" parent="."]
 position = Vector2(-323, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tube bottom" unique_id=800319935]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tube bottom"]
 position = Vector2(-47, -36)
 sprite_frames = SubResource("SpriteFrames_o6kax")
 autoplay = "default"
 frame_progress = 0.157899
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tube bottom" unique_id=1972670710]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tube bottom"]
 position = Vector2(-48, -35)
 polygon = PackedVector2Array(-11, -29, 10, -29, 18, -23, 18, 21, -18, 21, -18, -23)
 
-[node name="bionic arms" type="Sprite2D" parent="." unique_id=1903751690]
+[node name="bionic arms" type="Sprite2D" parent="."]
 z_index = 100
 position = Vector2(-463, -19)
 texture = ExtResource("9_rrnpu")
 
-[node name="lab sign" type="Sprite2D" parent="." unique_id=1343958940]
+[node name="lab sign" type="Sprite2D" parent="."]
 z_index = 100
 position = Vector2(-341, -30)
 texture = ExtResource("10_wo4vf")
 
-[node name="jorny" parent="." unique_id=502461258 instance=ExtResource("11_o1bdm")]
+[node name="jorny" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-435, -123)
 scale = Vector2(0.28, 0.28)
 my_text = "that's my wife"
 
-[node name="whiteboard" parent="." unique_id=1784622369 instance=ExtResource("11_o1bdm")]
+[node name="whiteboard" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-315, -148)
 scale = Vector2(0.88, 0.88)
 my_text = "very useful"
 
-[node name="computers" parent="." unique_id=1055361506 instance=ExtResource("11_o1bdm")]
+[node name="computers" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-263, -25)
 scale = Vector2(0.44, 1)
 my_progress = 1
 interactable = true
 story = true
 
-[node name="button" parent="." unique_id=629880403 instance=ExtResource("11_o1bdm")]
+[node name="button" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-467, -123)
 scale = Vector2(0.12, 0.12)
 my_progress = 8
 interactable = true
 story = true
 
-[node name="readings" parent="." unique_id=1014072706 instance=ExtResource("11_o1bdm")]
-position = Vector2(-371, -16.999998)
+[node name="readings" parent="." instance=ExtResource("11_o1bdm")]
+position = Vector2(-371, -17)
 scale = Vector2(0.28, 0.28)
 my_progress = 3
 interactable = true
 story = true
 
-[node name="tubes" parent="." unique_id=1461031757 instance=ExtResource("11_o1bdm")]
+[node name="tubes" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-467, 5.96046e-08)
 scale = Vector2(0.2, 0.2)
 my_progress = 4
 interactable = true
 story = true
 
-[node name="the same computers" parent="." unique_id=1818709214 instance=ExtResource("11_o1bdm")]
+[node name="the same computers" parent="." instance=ExtResource("11_o1bdm")]
 position = Vector2(-265, -25)
 scale = Vector2(0.4, 1)
 my_progress = 6
 interactable = true
 story = true
 
-[node name="yes rico, kaboom" type="AnimatedSprite2D" parent="." unique_id=689327412]
+[node name="yes rico, kaboom" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 100
 position = Vector2(-370, -37)
