@@ -1,0 +1,22 @@
+C:/Program Files/Krita (x64)/bin/ffmpeg.exe -hide_banner -y -reinit_filter 0 -framerate 30 -i C:/Users/kjone795\KritaRecorder\20260326132527\%07d.jpg -framerate 30 -start_number 709-1 -i C:/Users/kjone795\KritaRecorder\20260326132527\%07d.jpg -filter_complex 
+ [1]scale='min(300, iw*(300/ih))':'min(300, ih*(300/iw))'[hold1];
+ [hold1]pad=300:300:(ow-iw)/2:(oh-ih)/2[hold2];
+ [hold2]setsar=1:1[hold3];
+ [hold3]split=3[preview1][transition1][end1];
+ [preview1]tpad=stop_mode=clone:stop_duration=2[preview2];
+ [preview2]setpts=PTS-STARTPTS[preview3];
+ [transition1]tpad=stop_mode=clone:stop_duration=0.7[transition2];
+ [transition2]setpts=PTS-STARTPTS[transition3];
+ [transition3]framerate=30[transition4];
+ [0]fps=30[main1];
+ [main1]scale='min(300, iw*(300/ih))':'min(300, ih*(300/iw))':eval=frame[main2];
+ [main2]pad=300:300:(ow-iw)/2:(oh-ih)/2:eval=frame[main3];
+ [main3]setsar=1:1[main4];
+ [transition4][main4]xfade=transition=smoothright:duration=0.7:offset=0[main5];
+ [end1]tpad=stop_mode=clone:stop_duration=5[end2];
+ [end2]setpts=PTS-STARTPTS[end3];
+ [preview3][main5][end3]concat=n=3:v=1:a=0[final1];
+ [final1]setpts=PTS-STARTPTS
+ -stats -loglevel error -c:v libopenh264 -r 30 -pix_fmt yuv420p C:/Users/kjone795/Documents/GitHub/Seen-Game/seen-mainv-0.1.0/Krita Saves/Epic Timelapsess\Dr Long Legs.mp4
+=====================================================
+frame=  498 fps=0.0 q=-0.0 size=    1280KiB time=00:00:16.60 bitrate= 631.7kbits/s speed=32.6x    frame=  921 fps=0.0 q=-0.0 Lsize=    2356KiB time=00:00:30.70 bitrate= 628.7kbits/s speed=35.6x    
