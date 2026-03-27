@@ -23,10 +23,6 @@ func _process(delta: float) -> void:
 		else:
 			sprite.play("down")
 
-func _ready() -> void:
-	area.area_entered.connect(_on_area_2d_body_entered)
-	area.area_exited.connect(_on_area_2d_body_exited)
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if player.is_ghost >= 0:
 		player_in_range = true

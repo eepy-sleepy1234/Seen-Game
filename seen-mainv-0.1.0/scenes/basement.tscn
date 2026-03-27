@@ -1099,6 +1099,8 @@ story = true
 [node name="Sprite2D" type="Sprite2D" parent="key" unique_id=328213760]
 scale = Vector2(11, 11)
 texture = ExtResource("15_5j8jl")
+region_enabled = true
+region_rect = Rect2(1.9442444, 5.850607, 11.14827, 5.6484566)
 
 [node name="boxes" type="Node2D" parent="." unique_id=1403212390]
 
