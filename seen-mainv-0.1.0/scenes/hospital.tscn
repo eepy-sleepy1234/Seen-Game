@@ -241,7 +241,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk down",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -252,7 +252,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk side",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_m3msh"]
@@ -385,6 +385,7 @@ offset_left = -2.0
 offset_top = -468.0
 offset_right = 130.35999
 offset_bottom = -4.0
+scale = Vector2(0.9481276, 1)
 
 [node name="nurse" type="AnimatedSprite2D" parent="." unique_id=1212651920]
 position = Vector2(-304, -144)

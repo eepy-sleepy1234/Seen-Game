@@ -24,12 +24,20 @@ func _physics_process(_delta):
 		set_collision_mask_value(1, false)
 		set_collision_layer_value(2, true)
 		set_collision_layer_value(1, false)
+		set_collision_mask_value(3, false)
+		set_collision_layer_value(3, false)
+		set_collision_mask_value(4, true)
+		set_collision_layer_value(4, true)
 		modulate.a = 0.82
 	else:
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, false)
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)
+		set_collision_mask_value(3, true)
+		set_collision_layer_value(3, true)
+		set_collision_mask_value(4, false)
+		set_collision_layer_value(4, false)
 		modulate.a = 1
 	
 	if Input.is_action_just_pressed("speed"):

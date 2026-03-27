@@ -5,7 +5,7 @@ extends Node2D
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var player: CharacterBody2D = $player
 @onready var segm: AnimatedSprite2D = $"SEGM dude/AnimatedSprite2D"
-
+var next_scene: PackedScene = preload("uid://jxqn0elibhqv")
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
 		await Globals.story_progress_changed
@@ -26,7 +26,7 @@ func _ready() -> void:
 		player.sprite.play("down_ghost")
 		blackout.play("fade out")
 		await get_tree().create_timer(2).timeout
-		player.speed = 100
+		get_tree().change_scene_to_packed(next_scene)
 
 func _process(delta: float) -> void:
 	if player.position.y >= -120 and Globals.story_progress < 21:

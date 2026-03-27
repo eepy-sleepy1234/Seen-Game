@@ -17,7 +17,7 @@ func write_text(new_text) -> void:
 	tween = create_tween()
 	tween.tween_property(textlabel, "visible_ratio", 1, len(textlabel.text) * 0.05)
 	await tween.finished
-	if new_text != "I should give this to the ghost up there first":
+	if new_text not in ["I should give this to the ghost up there first", "phew, that was a close one"]:
 		Globals.listening = true
 
 func continue_text(new_text) -> void:

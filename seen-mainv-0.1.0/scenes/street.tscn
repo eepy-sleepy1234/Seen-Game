@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bdswpy0bgtba2" path="res://assets/Npc/Doctor Long Legs.png" id="12_fmkxj"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="13_wd6c3"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="14_7gyev"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="15_wd6c3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t23v0"]
 texture = ExtResource("2_3ffmx")
@@ -1363,8 +1364,8 @@ texture = ExtResource("2_3ffmx")
 39:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6.9641485, 7.13196, 6.9641495, 7.0480537, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_yrasx"]
-physics_layer_0/collision_layer = 7
-physics_layer_0/collision_mask = 7
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_t23v0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd6c3"]
@@ -1373,6 +1374,10 @@ size = Vector2(41, 38)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1x85o"]
 atlas = ExtResource("12_fmkxj")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmkxj"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0otry"]
 atlas = ExtResource("12_fmkxj")
@@ -1386,6 +1391,22 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("12_fmkxj")
 region = Rect2(64, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd6c3"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gyev"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_582hs"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5turb"]
+atlas = ExtResource("12_fmkxj")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_582hs"]
 animations = [{
 "frames": [{
@@ -1398,6 +1419,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fmkxj")
+}],
+"loop": true,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0otry")
 }, {
 "duration": 1.0,
@@ -1405,11 +1434,177 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6epoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fhj6")
 }],
 "loop": true,
-"name": &"side",
-"speed": 6.0
+"name": &"side move",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd6c3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gyev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_582hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5turb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_582hs")
+}],
+"loop": true,
+"name": &"up move",
+"speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_wd6c3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1040, -130)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"side move"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7gyev"]
+resource_name = "walk"
+length = 4.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9666667, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1175, -130), Vector2(-755, -130), Vector2(-755, -148)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.9666667, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"side move", &"up move", &"up"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1x85o"]
+resource_name = "walk 2 the electric boogaloo"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.2666667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-755, -148), Vector2(-415, -150), Vector2(-415, -210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.2666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"side move", &"up move"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.2666667, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1x85o"]
+_data = {
+&"RESET": SubResource("Animation_wd6c3"),
+&"walk": SubResource("Animation_7gyev"),
+&"walk 2 the electric boogaloo": SubResource("Animation_1x85o")
+}
 
 [node name="street" type="Node2D" unique_id=1757445699]
 script = ExtResource("1_7vr8w")
@@ -1438,7 +1633,7 @@ region_enabled = true
 region_rect = Rect2(5.6790886, 2.7558603, 5.7055683, 10.488177)
 
 [node name="npc" parent="camera" unique_id=1479997646 instance=ExtResource("4_t23v0")]
-position = Vector2(-4, 3)
+position = Vector2(-3, 3)
 scale = Vector2(8.680002, 4.81268)
 
 [node name="tree3" type="Sprite2D" parent="." unique_id=873817522]
@@ -1448,7 +1643,7 @@ texture = ExtResource("6_5m0si")
 region_enabled = true
 region_rect = Rect2(-0.701416, 0.60211563, 72.90279, 76.05722)
 script = ExtResource("7_dxpu0")
-size = 200
+size = 30
 
 [node name="tree" type="Sprite2D" parent="." unique_id=1181942779]
 z_index = 1
@@ -1458,6 +1653,7 @@ region_enabled = true
 region_rect = Rect2(75.20681, 5.633444, 42.696564, 38.13418)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tree" unique_id=509893754]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tree/StaticBody2D" unique_id=1959951340]
 position = Vector2(0.5, 0)
@@ -1480,6 +1676,7 @@ region_enabled = true
 region_rect = Rect2(75.20681, 5.633444, 42.696564, 38.13418)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tree2" unique_id=36773378]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tree2/StaticBody2D" unique_id=1172944002]
 position = Vector2(0.5, 0)
@@ -1502,6 +1699,7 @@ region_enabled = true
 region_rect = Rect2(75.20681, 5.633444, 42.696564, 38.13418)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tree4" unique_id=1541537953]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tree4/StaticBody2D" unique_id=2073199765]
 position = Vector2(0.5, 0)
@@ -1533,19 +1731,31 @@ script = ExtResource("7_dxpu0")
 size = 10
 
 [node name="docker log lesg" type="AnimatedSprite2D" parent="." unique_id=1120504606]
+z_index = 22
 position = Vector2(-1040, -130)
 sprite_frames = SubResource("SpriteFrames_582hs")
-animation = &"side"
+animation = &"side move"
 flip_h = true
 
 [node name="npc" parent="docker log lesg" unique_id=1097622939 instance=ExtResource("4_t23v0")]
 rotation = -1.5758721
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="docker log lesg" unique_id=1963809838]
+libraries/ = SubResource("AnimationLibrary_1x85o")
+
 [node name="element" parent="." unique_id=117466181 instance=ExtResource("13_wd6c3")]
-position = Vector2(-752, -129)
+position = Vector2(-731, -107)
 my_progress = 23
 story = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1516738272]
 
 [node name="blackout" parent="CanvasLayer" unique_id=1740795836 instance=ExtResource("14_7gyev")]
+
+[node name="textbox" parent="CanvasLayer" unique_id=427282521 instance=ExtResource("15_wd6c3")]
+
+[node name="element2" parent="." unique_id=955371824 instance=ExtResource("13_wd6c3")]
+position = Vector2(-426, -194.00002)
+scale = Vector2(0.28000486, 0.28000486)
+my_progress = 25
+story = true

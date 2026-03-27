@@ -4,7 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $"../player"
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
-
+@onready var area: Area2D = $Area2D
 
 var player_in_range = false
 @export var my_text = ""
@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 		else:
 			sprite.play("down")
 
+func _ready() -> void:
+	area.area_entered.connect(_on_area_2d_body_entered)
+	area.area_exited.connect(_on_area_2d_body_exited)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if player.is_ghost >= 0:

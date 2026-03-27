@@ -437,6 +437,7 @@ tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD7//z/AAAAAAEAAAD7//3/AAAAAAI
 tile_set = SubResource("TileSet_gee14")
 
 [node name="player" parent="." unique_id=2139251634 instance=ExtResource("3_frc63")]
+unique_name_in_owner = true
 position = Vector2(-371, 21)
 is_ghost = -4
 
