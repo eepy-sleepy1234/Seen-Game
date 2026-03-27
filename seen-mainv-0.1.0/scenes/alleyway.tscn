@@ -10,6 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="8_tjaqe"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="9_a7mov"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="10_vdb6e"]
+[ext_resource type="Texture2D" uid="uid://046o2tyon7tq" path="res://assets/Alleyway/brokenlamppost.png" id="11_nmxoq"]
+[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="12_x6t8b"]
+[ext_resource type="Texture2D" uid="uid://b7vy17rbhfky8" path="res://assets/Alleyway/lamppost.png" id="13_s86ym"]
+[ext_resource type="Texture2D" uid="uid://g44t03eg0v04" path="res://assets/Alleyway/trashbag1.png" id="14_md4yb"]
+[ext_resource type="Texture2D" uid="uid://jg3jstjj2htq" path="res://assets/Alleyway/trashbag2.png" id="15_lquji"]
+[ext_resource type="Texture2D" uid="uid://bi40gpd78fu1w" path="res://assets/Alleyway/trashcan.png" id="16_wkb1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls4g5"]
 texture = ExtResource("2_wtvnm")
@@ -286,3 +292,46 @@ position = Vector2(-324, 20)
 scale = Vector2(2.3599901, 2.3599901)
 my_progress = 21
 story = true
+
+[node name="brokenlamp" type="Sprite2D" parent="." unique_id=2145348529]
+position = Vector2(-285, -231)
+texture = ExtResource("11_nmxoq")
+script = ExtResource("12_x6t8b")
+size = 40
+
+[node name="lamp" type="Sprite2D" parent="." unique_id=2068953580]
+position = Vector2(-365, -205)
+texture = ExtResource("13_s86ym")
+script = ExtResource("12_x6t8b")
+size = 40
+
+[node name="trash1" type="Sprite2D" parent="." unique_id=1969205485]
+position = Vector2(-375, -170)
+texture = ExtResource("14_md4yb")
+flip_h = true
+script = ExtResource("12_x6t8b")
+size = 10
+
+[node name="trash2" type="Sprite2D" parent="." unique_id=1846035445]
+position = Vector2(-273, -296)
+texture = ExtResource("14_md4yb")
+script = ExtResource("12_x6t8b")
+size = 10
+
+[node name="trash3" type="Sprite2D" parent="." unique_id=1536071812]
+position = Vector2(-273, -174)
+texture = ExtResource("14_md4yb")
+script = ExtResource("12_x6t8b")
+size = 10
+
+[node name="trash4" type="Sprite2D" parent="." unique_id=1979879533]
+position = Vector2(-286, -162)
+texture = ExtResource("15_lquji")
+script = ExtResource("12_x6t8b")
+size = 10
+
+[node name="trashcan" type="Sprite2D" parent="." unique_id=1170880497]
+position = Vector2(-276, -163)
+texture = ExtResource("16_wkb1x")
+script = ExtResource("12_x6t8b")
+size = 20
