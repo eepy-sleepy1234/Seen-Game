@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27behxy814m6"
-path="res://.godot/imported/Slot.png-d194551a0bb78955712a4bbd472a443b.ctex"
+uid="uid://bdswpy0bgtba2"
+path="res://.godot/imported/Doctor Long Legs.png-90d1e9af8f0329e96dbb2dcf24d9edd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Slot.png"
-dest_files=["res://.godot/imported/Slot.png-d194551a0bb78955712a4bbd472a443b.ctex"]
+source_file="res://assets/Npc/Doctor Long Legs.png"
+dest_files=["res://.godot/imported/Doctor Long Legs.png-90d1e9af8f0329e96dbb2dcf24d9edd6.ctex"]
 
 [params]
 

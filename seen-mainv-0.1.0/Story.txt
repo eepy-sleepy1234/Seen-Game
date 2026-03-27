@@ -156,8 +156,7 @@ Once you fall through:
 
 Old guy:
 	Welcome back,
-	You need to leave the SEGM is looking for you
-	Go through the passage under the stairs:
+	I know someone who can help you, but you need to go through a epic secret puzzel dungeon that is only for specifically partial ghost people. But be carefull members of the SEGM reside there.
 New Objective:
 	walk through the stairs
 
@@ -177,5 +176,6 @@ after:
 
 you:
 	I'm only a ghost when nobody is looking at me or something idk make something up to say
+
 
 	

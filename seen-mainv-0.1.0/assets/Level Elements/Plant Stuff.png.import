@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27behxy814m6"
-path="res://.godot/imported/Slot.png-d194551a0bb78955712a4bbd472a443b.ctex"
+uid="uid://cmynf3270fumu"
+path="res://.godot/imported/Plant Stuff.png-3658bf6cd393c56a515143667af65a5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Slot.png"
-dest_files=["res://.godot/imported/Slot.png-d194551a0bb78955712a4bbd472a443b.ctex"]
+source_file="res://assets/Level Elements/Plant Stuff.png"
+dest_files=["res://.godot/imported/Plant Stuff.png-3658bf6cd393c56a515143667af65a5c.ctex"]
 
 [params]
 
