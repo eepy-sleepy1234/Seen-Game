@@ -71,7 +71,7 @@ func _physics_process(_delta):
 			sprite.play("down")
 	else:
 		if is_ghost >= 0:
-			if Globals.story_progress in [10]:
+			if Globals.story_progress in [10, 29]:
 				sprite.play("falling_ghost")
 			else:
 				if last_direction == 1:

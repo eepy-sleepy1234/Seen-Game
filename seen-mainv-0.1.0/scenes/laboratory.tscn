@@ -102,7 +102,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_u5sy4"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 12
 sources/0 = SubResource("TileSetAtlasSource_p57ef")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
@@ -189,7 +189,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_gee14"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 12
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_u5sy4")
 
@@ -492,6 +492,7 @@ autoplay = "default"
 
 [node name="tube bottom" type="StaticBody2D" parent="." unique_id=6894289]
 position = Vector2(-323, 2)
+collision_layer = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tube bottom" unique_id=800319935]
 position = Vector2(-47, -36)
@@ -516,11 +517,13 @@ texture = ExtResource("10_wo4vf")
 [node name="jorny" parent="." unique_id=502461258 instance=ExtResource("11_o1bdm")]
 position = Vector2(-435, -123)
 scale = Vector2(0.28, 0.28)
+interactable = true
 my_text = "that's my wife"
 
 [node name="whiteboard" parent="." unique_id=1784622369 instance=ExtResource("11_o1bdm")]
 position = Vector2(-315, -148)
 scale = Vector2(0.88, 0.88)
+interactable = true
 my_text = "very useful"
 
 [node name="computers" parent="." unique_id=1055361506 instance=ExtResource("11_o1bdm")]

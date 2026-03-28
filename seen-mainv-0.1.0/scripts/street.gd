@@ -10,7 +10,6 @@ func wait_for_progress(target: int) -> void:
 		await Globals.story_progress_changed
 
 func _ready() -> void:
-	Globals.story_progress = 22
 	if Globals.story_progress == 22:
 		Globals.story_progress += 1
 		blackout.play("fade in")
@@ -22,7 +21,7 @@ func _ready() -> void:
 		Globals.listening = false
 		docker.play("walk")
 		await get_tree().create_timer(4.5).timeout
-		textbox.write_text("Hey, I recognize you! Come back to the hospital with me.")
+		textbox.write_text("Hey, I recognize you! Why don't you come back to the hospital with me.")
 		await get_tree().create_timer(4).timeout
 		textbox.close_box()
 		docker.play("walk 2 the electric boogaloo")

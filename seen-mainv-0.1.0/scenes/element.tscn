@@ -1,20 +1,158 @@
-[gd_scene load_steps=3 format=3 uid="uid://bds7j465iqsyn"]
+[gd_scene format=3 uid="uid://bds7j465iqsyn"]
 
 [ext_resource type="Script" uid="uid://dyr14jl6cwbc8" path="res://scripts/element.gd" id="1_l0sue"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="2_0xve5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u51wp"]
 resource_local_to_scene = true
 radius = 59.0762
 
-[node name="element" type="Node2D"]
+[sub_resource type="Animation" id="Animation_wiq65"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-38.903442, -14.937269)]
+}
+
+[sub_resource type="Animation" id="Animation_ut6yo"]
+resource_name = "inside"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-38.903442, -14.937269), Vector2(-38.903, -25)]
+}
+
+[sub_resource type="Animation" id="Animation_v5xul"]
+resource_name = "outside"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-38.903, -25), Vector2(-38.903, -14.937)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apvhq"]
+_data = {
+&"RESET": SubResource("Animation_wiq65"),
+&"inside": SubResource("Animation_ut6yo"),
+&"outside": SubResource("Animation_v5xul")
+}
+
+[node name="element" type="Node2D" unique_id=1588797679]
 script = ExtResource("1_l0sue")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 7
-collision_mask = 7
+[node name="Area2D" type="Area2D" parent="." unique_id=1268416911]
+collision_layer = 16
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=391203709]
 shape = SubResource("CircleShape2D_u51wp")
+
+[node name="Label" type="Label" parent="." unique_id=1626354394]
+modulate = Color(1, 1, 1, 0)
+offset_left = -38.903442
+offset_top = -14.937269
+offset_right = 39.096558
+offset_bottom = 8.062731
+theme_override_fonts/font = ExtResource("2_0xve5")
+theme_override_font_sizes/font_size = 5
+text = "Press \"E\" to interact"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=70192168]
+libraries/ = SubResource("AnimationLibrary_apvhq")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

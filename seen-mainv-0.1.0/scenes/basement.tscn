@@ -1064,6 +1064,8 @@ visible = false
 position = Vector2(2673, 201)
 scale = Vector2(11.159997, 11.159997)
 texture = ExtResource("15_5j8jl")
+region_enabled = true
+region_rect = Rect2(1.9201746, 5.8799224, 11.146507, 5.215076)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/keyanimation" unique_id=1906381891]
 libraries/ = SubResource("AnimationLibrary_8voiy")
@@ -1073,8 +1075,8 @@ position = Vector2(-165, -156)
 scale = Vector2(0.87999, 0.87999)
 my_text = "Hey there. Haven't seen you around, must be a new dead"
 can_face_player = true
-dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "why is there a p in your nickname", "the p is silent", "...", "anyway I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit"])
-dialogue_progress = Array[int]([0, 0, 0, 11, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14])
+dialogue = Array[String](["Hey there.", "Haven't seen you around, you must be a new dead", "I can't be dead I just talked to a nurse", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "why is there a p in your nickname", "the p is silent", "...", "anyway I'm scientist guy", "That's a weird name", "...", "Well I'm leaving, I need to figure out what's going on", "WAIT I NEED YOUR HELP", "sigh.", "what do you need", "Give this to a member of the SEGM", "What's the SEGM", "Just find a ghost wearing a suit", "Welcome back.", "I know someone who can help you,", "but you need to go through an epic secret puzzle dungeon that is designed specifically for partial ghost people.", "Just be careful, that place is crawling with SEGM members"])
+dialogue_progress = Array[int]([0, 0, 0, 11, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 30, 0, 0, 31])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="old ghost guy" unique_id=1424393008]
 sprite_frames = SubResource("SpriteFrames_keflw")

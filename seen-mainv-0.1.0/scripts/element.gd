@@ -3,6 +3,7 @@ extends Node2D
 @onready var collision: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var player: CharacterBody2D = $"../player"
 @onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
+@onready var label: Label = $Label
 
 @export var my_progress = 0
 @export var interactable = false
@@ -10,6 +11,7 @@ extends Node2D
 @export var my_text = ""
 @export var open = false
 @export var story = false
+@onready var labelanimation: AnimationPlayer = $Label/AnimationPlayer
 
 func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
