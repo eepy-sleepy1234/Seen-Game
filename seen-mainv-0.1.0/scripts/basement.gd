@@ -9,6 +9,7 @@ extends Node2D
 @onready var inventory: AnimationPlayer = $CanvasLayer/inventory/AnimationPlayer
 @onready var keyanim: AnimationPlayer = $CanvasLayer/keyanimation/AnimationPlayer
 @onready var old_ghost_guy: Node2D = $"old ghost guy"
+@onready var camera: Node2D = $"security camera"
 
 var new_text = ""
 var next_scene: PackedScene = preload("uid://ckyb4hj0cb02f")
@@ -20,7 +21,6 @@ func wait_for_progress(target: int) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	blackout.play("fade in")
-	Globals.story_progress = 28
 	if Globals.story_progress == 9:
 		Globals.listening = false
 		Globals.story_progress += 1
@@ -84,3 +84,16 @@ func _ready() -> void:
 		textbox.write_text("Why can I walk through everything besides these stairs?")
 		await get_tree().create_timer(3).timeout
 		textbox.continue_text("and why can I talk to people and ghosts?")
+		await get_tree().create_timer(3).timeout
+		textbox.continue_text("let me try something")
+		new_text = "\n - deactivate the security camera"
+		objectives.write(new_text)
+		Globals.story_progress += 1
+		await wait_for_progress(35)
+		camera.queue_free()
+		new_text = "\n - walk through the stairs now"
+		objectives.write(new_text)
+		await wait_for_progress(36)
+		blackout.play("fade out")
+		await get_tree().create_timer(3).timeout
+		

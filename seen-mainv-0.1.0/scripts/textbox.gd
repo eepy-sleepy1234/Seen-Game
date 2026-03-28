@@ -32,7 +32,7 @@ func continue_text(new_text) -> void:
 	tween = create_tween()
 	tween.tween_property(textlabel, "visible_ratio", 1, len(textlabel.text) * 0.01)
 	await tween.finished
-	if new_text not in ["you should get back in bed"]:
+	if new_text not in ["you should get back in bed", "and why can I talk to people and ghosts?"]:
 		Globals.listening = true
 
 func open_box():
