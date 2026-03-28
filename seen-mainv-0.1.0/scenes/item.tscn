@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dak20trdxfplt"]
+
+[ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="1_s8enn"]
+[ext_resource type="Script" uid="uid://lc6q56b63xua" path="res://key.gd" id="2_6muww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2y5yt"]
+radius = 6.3462253
+
+[node name="item" type="Sprite2D" unique_id=979002470]
+texture = ExtResource("1_s8enn")
+region_enabled = true
+region_rect = Rect2(17.898745, 19.967665, 12.14846, 8.998859)
+script = ExtResource("2_6muww")
+item_type = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=959551691]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=254073634]
+shape = SubResource("CircleShape2D_2y5yt")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

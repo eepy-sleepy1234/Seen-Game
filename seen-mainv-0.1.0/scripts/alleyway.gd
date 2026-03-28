@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
-@onready var objectives: MarginContainer = $CanvasLayer/objectivebox
+@onready var objectives: Sprite2D = $CanvasLayer/objectives
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var player: CharacterBody2D = $player
 @onready var segm: AnimatedSprite2D = $"SEGM dude/AnimatedSprite2D"

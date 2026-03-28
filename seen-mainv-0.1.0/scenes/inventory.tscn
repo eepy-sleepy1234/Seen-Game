@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b7vjow7f8vdu8"]
+
+[ext_resource type="Texture2D" uid="uid://27behxy814m6" path="res://assets/UI/Slot.png" id="1_ty45s"]
+[ext_resource type="Script" uid="uid://daqlj37oamaer" path="res://scripts/inventory.gd" id="2_53g1v"]
+[ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="3_yyk2a"]
+
+[node name="inventory" type="Sprite2D" unique_id=1317137626]
+scale = Vector2(3.8248534, 3.8248534)
+texture = ExtResource("1_ty45s")
+script = ExtResource("2_53g1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987971554]
+scale = Vector2(1.7881659, 1.7881659)
+texture = ExtResource("3_yyk2a")
+region_enabled = true
