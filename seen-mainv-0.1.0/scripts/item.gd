@@ -2,7 +2,7 @@ extends Sprite2D
 enum Items { key, box, ghost_box, gun, broken_camera }
 var player_in_range = false
 @export var item_type: Items
-
+signal get_box(ghost: bool)
 func _ready() -> void:
 	match str(item_type):
 		"0":
@@ -24,8 +24,8 @@ func _process(delta: float) -> void:
 		if Globals.inventory == "":
 			Globals.inventory = str(item_type)
 			self.queue_free()
-			if Globals.inventory == "":
-				pass
+			if Globals.inventory == "1":
+				get_box.emit(false)
 		else:
 			pass
 			#do a thing where it says no inventory space

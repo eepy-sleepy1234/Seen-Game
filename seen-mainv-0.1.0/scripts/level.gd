@@ -20,8 +20,13 @@ func _process(delta: float) -> void:
 		var item_instance = itemScene.instantiate()
 		item_instance.item_type = Globals.inventory
 		item_instance.position = player.position
+		if Globals.inventory == "1":
+			player.is_ghost -= 1000
+			player.box = false
 		Globals.inventory = ""
 		add_child(item_instance)
+		if item_instance.item_type == 1:
+			item_instance.get_box.connect(_on_item_get_box)
 	if door_unlocked:
 		unlock.visible = true
 	else:
@@ -31,3 +36,10 @@ func _process(delta: float) -> void:
 		blackout.play("end level")
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_packed(next_level)
+
+
+func _on_item_get_box(ghost: bool) -> void:
+	if Globals.inventory == "1":
+		player.is_ghost += 1000
+		player.box = true
+		print(player.is_ghost)

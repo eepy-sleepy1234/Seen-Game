@@ -5,6 +5,7 @@ extends CharacterBody2D
 var speed = 100
 var last_direction = 0
 var secret = 0
+var box = false
 @export var is_ghost = 0
 var prev_ghost_state = 0
 var direction = Vector2(0, 0)
@@ -47,43 +48,61 @@ func _physics_process(_delta):
 		sprite.flip_h = true
 		last_direction = 2
 		if is_ghost >= 0:
-			sprite.play("side_ghost")
-		else:
-			sprite.play("side")
+			if box:
+				sprite.play("side_box")
+			else:
+				sprite.play("side_ghost")
 	elif direction.x < 0:
 		sprite.flip_h = false
 		last_direction = 4
 		if is_ghost >= 0:
-			sprite.play("side_ghost")
-		else:
-			sprite.play("side")
+			if box:
+				sprite.play("side_box")
+			else:
+				sprite.play("side_ghost")
 	elif direction.y < 0:
 		last_direction = 1
 		if is_ghost >= 0:
-			sprite.play("up_ghost")
-		else:
-			sprite.play("up")
+			if box:
+				sprite.play("up_box")
+			else:
+				sprite.play("up_ghost")
 	elif direction.y > 0:
 		last_direction = 3
 		if is_ghost >= 0:
-			sprite.play("down_ghost")
+			if box:
+				sprite.play("down_box")
+			else:
+				sprite.play("down_ghost")
 		else:
 			sprite.play("down")
 	else:
 		if is_ghost >= 0:
-			if Globals.story_progress in [10, 29]:
-				sprite.play("falling_ghost")
-			else:
+			if box:
 				if last_direction == 1:
-					sprite.play("idle_ghost_up")
+					sprite.play("idle_box_up")
 				elif last_direction == 3:
-					sprite.play("idle_ghost")
+					sprite.play("idle_box")
 				elif last_direction == 2:
-					sprite.play("idle_ghost_side")
+					sprite.play("idle_box_side")
 				elif last_direction == 4:
-					sprite.play("idle_ghost_side")
+					sprite.play("idle_box_side")
 				else:
 					sprite.play("idle_ghost")
+			else:
+				if Globals.story_progress in [10, 29]:
+					sprite.play("falling_ghost")
+				else:
+					if last_direction == 1:
+						sprite.play("idle_ghost_up")
+					elif last_direction == 3:
+						sprite.play("idle_ghost")
+					elif last_direction == 2:
+						sprite.play("idle_ghost_side")
+					elif last_direction == 4:
+						sprite.play("idle_ghost_side")
+					else:
+						sprite.play("idle_ghost")
 		else:
 			if Globals.story_progress in [2, 5, 7]:
 				sprite.play("typing")
