@@ -1229,7 +1229,7 @@ yes = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera" unique_id=1681884138]
 position = Vector2(-26.4146, 24.6428)
-rotation = -1.40355
+rotation = -1.4820018
 sprite_frames = SubResource("SpriteFrames_te33p")
 
 [node name="box1" parent="." unique_id=1600036081 instance=ExtResource("15_t628s")]
@@ -1268,4 +1268,25 @@ position = Vector2(-428, -227)
 scale = Vector2(0.24, 0.24)
 my_progress = 17
 interactable = true
+story = true
+
+[node name="camera off" parent="." unique_id=1588797679 instance=ExtResource("15_t628s")]
+position = Vector2(-262.85687, -249.99469)
+my_progress = 34
+interactable = true
+
+[node name="backup" type="Sprite2D" parent="." unique_id=31929066]
+position = Vector2(-263.44586, -224.8526)
+texture = ExtResource("13_dgkxm")
+region_enabled = true
+region_rect = Rect2(16.91695, 0, 11.146509, 16)
+
+[node name="secret door" parent="." unique_id=862540579 instance=ExtResource("15_t628s")]
+position = Vector2(-396.47125, -247.22705)
+my_progress = 35
+story = true
+
+[node name="stairdetect" parent="." unique_id=1941508930 instance=ExtResource("15_t628s")]
+position = Vector2(-378.09912, -202.89258)
+my_progress = 32
 story = true

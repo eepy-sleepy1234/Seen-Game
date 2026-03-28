@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b15xgp6hjvmqc" path="res://scenes/objectivetitlebox.tscn" id="7_230g4"]
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="8_tjaqe"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="9_a7mov"]
+[ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="9_x6t8b"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="10_vdb6e"]
 [ext_resource type="Texture2D" uid="uid://046o2tyon7tq" path="res://assets/Alleyway/brokenlamppost.png" id="11_nmxoq"]
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="12_x6t8b"]
@@ -285,6 +286,7 @@ offset_right = 1088.0
 offset_bottom = 182.0
 
 [node name="objectivebox" parent="CanvasLayer" unique_id=996749306 instance=ExtResource("8_tjaqe")]
+script = ExtResource("9_x6t8b")
 
 [node name="blackout" parent="CanvasLayer" unique_id=614790416 instance=ExtResource("9_a7mov")]
 

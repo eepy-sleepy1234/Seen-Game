@@ -9,7 +9,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $player
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var yes_rico__kaboom: AnimatedSprite2D = $"yes rico, kaboom"
-@export var next_scene: PackedScene = preload("uid://btq6kag0yd6k")
+@export var next_scene: PackedScene = load("uid://btq6kag0yd6k")
 var new_text = ""
 
 func wait_for_progress(target: int) -> void:

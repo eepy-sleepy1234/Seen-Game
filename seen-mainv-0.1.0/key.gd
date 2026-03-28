@@ -7,7 +7,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
-		
+		if Globals.inventory == "":
+			Globals.inventory = "key"
+			self.queue_free()
+		else:
+			pass
+			#do a thing where it says no inventory space
 
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

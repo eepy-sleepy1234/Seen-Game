@@ -5,7 +5,7 @@ extends Node2D
 @onready var nurse_animation: AnimationPlayer = $nurse/AnimationPlayer
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
 @onready var ghost_particles: CPUParticles2D = $"guy/ghost particles"
-var next_scene: PackedScene = preload("uid://dd65bmg1sswdc")
+var next_scene: PackedScene = load("uid://dd65bmg1sswdc")
 
 func _ready() -> void:
 	blackout_animation.play("fade in")

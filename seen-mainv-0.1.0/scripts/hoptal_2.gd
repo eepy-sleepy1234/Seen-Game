@@ -7,7 +7,7 @@ extends Node2D
 @onready var ghost_particles: CPUParticles2D = $"bed/ghost particles"
 @onready var bedanim: AnimationPlayer = $bedanim
 @onready var nurse: AnimationPlayer = $nurse/AnimationPlayer
-var next_scene: PackedScene = preload("uid://butgehethbwih")
+var next_scene: PackedScene = load("uid://dd65bmg1sswdc")
 
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:

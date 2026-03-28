@@ -5,7 +5,7 @@ extends Node2D
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var player: CharacterBody2D = $player
 @onready var segm: AnimatedSprite2D = $"SEGM dude/AnimatedSprite2D"
-var next_scene: PackedScene = preload("uid://jxqn0elibhqv")
+var next_scene: PackedScene = load("uid://jxqn0elibhqv")
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
 		await Globals.story_progress_changed

@@ -12,13 +12,12 @@ extends Node2D
 @onready var camera: Node2D = $"security camera"
 
 var new_text = ""
-var next_scene: PackedScene = preload("uid://ckyb4hj0cb02f")
+var next_scene: PackedScene = load("uid://ckyb4hj0cb02f")
 
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
 		await Globals.story_progress_changed
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	blackout.play("fade in")
 	if Globals.story_progress == 9:
@@ -96,4 +95,3 @@ func _ready() -> void:
 		await wait_for_progress(36)
 		blackout.play("fade out")
 		await get_tree().create_timer(3).timeout
-		
