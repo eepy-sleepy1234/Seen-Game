@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b16lnefc7qupx"]
+
+[ext_resource type="Script" uid="uid://dheyvwdtswdfr" path="res://scripts/door_unlock.gd" id="1_lmm34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15mv3"]
+size = Vector2(32.047546, 16.841309)
+
+[node name="door unlock" type="Area2D" unique_id=1136511214]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_lmm34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572166744]
+position = Vector2(-367.1212, -328.63156)
+shape = SubResource("RectangleShape2D_15mv3")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

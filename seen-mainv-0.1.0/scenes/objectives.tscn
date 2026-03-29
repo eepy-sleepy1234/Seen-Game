@@ -1,23 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://jj3jgtdbf1aj"]
+[gd_scene format=3 uid="uid://jj3jgtdbf1aj"]
 
-[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="1_j83pe"]
+[ext_resource type="Texture2D" uid="uid://glmudq2oi3o3" path="res://assets/UI/ClipBoard.png" id="1_e5roj"]
+[ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="2_vxegm"]
+[ext_resource type="FontFile" uid="uid://choguqbo3oij8" path="res://assets/Fonts/Notepen.ttf" id="3_24jh7"]
 
-[node name="objectivebox" type="MarginContainer"]
-z_index = 10
-offset_left = 113.0
-offset_top = 181.0
-offset_right = 2113.0
-offset_bottom = 221.0
+[sub_resource type="Animation" id="Animation_vwwhs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-87.887115, 243.2973)]
+}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
+[sub_resource type="Animation" id="Animation_f0ryq"]
+resource_name = "hover"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.32987696, 1),
+"update": 0,
+"values": [Vector2(-87.887115, 243.2973), Vector2(170.19, 243.297)]
+}
 
-[node name="objectives" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(2000, 0)
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 20
-theme_override_constants/shadow_outline_size = 50
-theme_override_fonts/font = ExtResource("1_j83pe")
-theme_override_font_sizes/font_size = 20
+[sub_resource type="Animation" id="Animation_7208n"]
+resource_name = "unhover"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.3298769, 0.32987696),
+"update": 0,
+"values": [Vector2(170.19, 243.297), Vector2(-87.887115, 243.2973)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vamq6"]
+_data = {
+&"RESET": SubResource("Animation_vwwhs"),
+&"hover": SubResource("Animation_f0ryq"),
+&"unhover": SubResource("Animation_7208n")
+}
+
+[node name="objectives" type="Sprite2D" unique_id=1118920830]
+position = Vector2(-87.887115, 243.2973)
+scale = Vector2(7.8326902, 7.8326902)
+texture = ExtResource("1_e5roj")
+script = ExtResource("2_vxegm")
+
+[node name="title" type="Label" parent="." unique_id=1953204753]
+offset_left = -15.023512
+offset_top = -19.438007
+offset_right = 17.976488
+offset_bottom = -3.4380074
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_24jh7")
+theme_override_font_sizes/font_size = 10
+text = "objective"
+
+[node name="objectives" type="Label" parent="." unique_id=327535568]
+offset_left = -15.1934185
+offset_top = -13.418771
+offset_right = 14.830328
+offset_bottom = 16.806168
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_24jh7")
+theme_override_font_sizes/font_size = 3
 autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="." unique_id=1290294345]
+modulate = Color(0, 18.892157, 18.892157, 0)
+offset_left = -26.077545
+offset_top = -23.693304
+offset_right = 13.922455
+offset_bottom = 16.306696
+scale = Vector2(1.1631894, 1.3014528)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1764794790]
+libraries/ = SubResource("AnimationLibrary_vamq6")
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

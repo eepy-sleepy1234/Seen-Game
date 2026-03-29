@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_frc63"]
 [ext_resource type="Script" uid="uid://ygg2n8a4uopg" path="res://scripts/camera.gd" id="4_7i2uf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_f2ctl"]
-[ext_resource type="PackedScene" uid="uid://b15xgp6hjvmqc" path="res://scenes/objectivetitlebox.tscn" id="5_f8rtk"]
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="6_i7dll"]
-[ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="7_f8rtk"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
@@ -449,11 +447,6 @@ script = ExtResource("4_7i2uf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2072967062]
 
-[node name="objectivetitlebox" parent="CanvasLayer" unique_id=272212418 instance=ExtResource("5_f8rtk")]
-
-[node name="objectivebox" parent="CanvasLayer" unique_id=1125713339 instance=ExtResource("6_i7dll")]
-script = ExtResource("7_f8rtk")
-
 [node name="blackout" parent="CanvasLayer" unique_id=1795680237 instance=ExtResource("7_n4ffd")]
 z_index = 20
 
@@ -471,6 +464,8 @@ color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/red flash" unique_id=1579613083]
 libraries/ = SubResource("AnimationLibrary_j3spj")
+
+[node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("6_i7dll")]
 
 [node name="npc" parent="." unique_id=237979540 instance=ExtResource("7_scv08")]
 position = Vector2(170, -50)

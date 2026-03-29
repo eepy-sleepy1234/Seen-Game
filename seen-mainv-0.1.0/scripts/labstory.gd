@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var objectives: MarginContainer = $CanvasLayer/objectivebox
+@onready var objectives: Sprite2D = $CanvasLayer/objectives
 @onready var top: AnimatedSprite2D = $"tube top/AnimatedSprite2D"
 @onready var bottom: AnimatedSprite2D = $"tube bottom/AnimatedSprite2D"
 @onready var camera: Camera2D = $player/Camera2D
