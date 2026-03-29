@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b52g0txrpaxgi"]
 
 [ext_resource type="Script" uid="uid://c5np6hc8k5wxt" path="res://scripts/textbox.gd" id="1_t6lj5"]
-[ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="2_ddanm"]
 [ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="3_g5d5p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
@@ -223,7 +222,7 @@ layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_ddanm")
+theme_override_fonts/font = ExtResource("3_g5d5p")
 theme_override_font_sizes/font_size = 45
 label_settings = SubResource("LabelSettings_3xmdk")
 autowrap_mode = 3

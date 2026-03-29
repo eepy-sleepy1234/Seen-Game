@@ -1274,7 +1274,7 @@ interactable = true
 story = true
 
 [node name="camera off" parent="." unique_id=1588797679 instance=ExtResource("15_t628s")]
-position = Vector2(-262.85687, -249.99469)
+position = Vector2(-262.85693, -231.98825)
 my_progress = 33
 interactable = true
 
@@ -1286,10 +1286,10 @@ region_rect = Rect2(16.91695, 0, 11.146509, 16)
 
 [node name="secret door" parent="." unique_id=862540579 instance=ExtResource("15_t628s")]
 position = Vector2(-396.47125, -247.22705)
-my_progress = 34
+my_progress = 35
 story = true
 
 [node name="stairdetect" parent="." unique_id=1941508930 instance=ExtResource("15_t628s")]
-position = Vector2(-378.09912, -202.89258)
+position = Vector2(-378.60394, -211.81165)
 my_progress = 32
 story = true

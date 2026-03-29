@@ -21,6 +21,7 @@ func wait_for_progress(target: int) -> void:
 
 func _ready() -> void:
 	blackout.play("fade in")
+	Globals.story_progress = 28
 	if Globals.story_progress == 9:
 		Globals.listening = false
 		Globals.story_progress += 1
@@ -90,7 +91,6 @@ func _ready() -> void:
 		objectives.write(new_text)
 		await get_tree().create_timer(3).timeout
 		textbox.close_box()
-		Globals.story_progress += 1
 		await wait_for_progress(34)
 		camera.queue_free()
 		new_text = "\n - walk through the stairs now"
