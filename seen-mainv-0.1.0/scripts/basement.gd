@@ -21,7 +21,6 @@ func wait_for_progress(target: int) -> void:
 
 func _ready() -> void:
 	blackout.play("fade in")
-	Globals.story_progress = 28
 	if Globals.story_progress == 9:
 		Globals.listening = false
 		Globals.story_progress += 1
