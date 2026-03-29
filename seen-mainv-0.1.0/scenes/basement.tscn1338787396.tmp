@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dfvdgk0tm7a60" path="res://scenes/ghostnpc.tscn" id="5_18rnf"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="5_buk8l"]
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="6_dvfvt"]
+[ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="6_nvrgk"]
 [ext_resource type="Texture2D" uid="uid://c6parek72qxuy" path="res://assets/Npc/Old Ghost Guy.png" id="6_wmoos"]
+[ext_resource type="PackedScene" uid="uid://b15xgp6hjvmqc" path="res://scenes/objectivetitlebox.tscn" id="7_dqwih"]
 [ext_resource type="Texture2D" uid="uid://eteniog6guv8" path="res://assets/Hospital/basementstairs.png" id="7_rohn4"]
 [ext_resource type="Texture2D" uid="uid://bofn1felbv2k4" path="res://assets/Hospital/basementweb.png" id="8_tih0b"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="9_bt61f"]
@@ -19,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="15_5j8jl"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
-[ext_resource type="AudioStream" uid="uid://bw60aj6bxmdgc" path="res://assets/Sounds/Old Guy Wait.mp3" id="19_flc8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -387,7 +388,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_yhyry"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 8
+physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_0mks5")
 
@@ -760,7 +761,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_qeqt0"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7yab1")
 
 [sub_resource type="Animation" id="Animation_c4m2r"]
@@ -1030,12 +1031,17 @@ libraries/ = SubResource("AnimationLibrary_yysv8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1340385435]
 
-[node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("6_dvfvt")]
-
 [node name="textbox" parent="CanvasLayer" unique_id=334083381 instance=ExtResource("5_buk8l")]
 offset_left = 6.0
 offset_top = -469.0
 offset_right = 6.0
+
+[node name="objectivetitlebox" parent="CanvasLayer" unique_id=49303036 instance=ExtResource("7_dqwih")]
+offset_right = 1088.0
+offset_bottom = 182.0
+
+[node name="objectivebox" parent="CanvasLayer" unique_id=2043011856 instance=ExtResource("6_dvfvt")]
+script = ExtResource("6_nvrgk")
 
 [node name="inventory" type="Sprite2D" parent="CanvasLayer" unique_id=196980635]
 modulate = Color(1, 1, 1, 0)
@@ -1081,7 +1087,6 @@ animation = &"side"
 position = Vector2(-374, -199)
 texture = ExtResource("7_rohn4")
 script = ExtResource("10_2q2yi")
-size = 60
 
 [node name="cobweb" type="Sprite2D" parent="." unique_id=16143286]
 position = Vector2(-118, -235)
@@ -1218,10 +1223,6 @@ texture = ExtResource("11_tsb5b")
 script = ExtResource("10_2q2yi")
 size = 40
 
-[node name="OldGuyWait" type="AudioStreamPlayer" parent="." unique_id=897082984]
-stream = ExtResource("19_flc8l")
-volume_db = -11.86
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1139484504]
 stream = ExtResource("2_6lwow")
 
@@ -1275,7 +1276,7 @@ story = true
 
 [node name="camera off" parent="." unique_id=1588797679 instance=ExtResource("15_t628s")]
 position = Vector2(-262.85687, -249.99469)
-my_progress = 33
+my_progress = 34
 interactable = true
 
 [node name="backup" type="Sprite2D" parent="." unique_id=31929066]
@@ -1286,7 +1287,7 @@ region_rect = Rect2(16.91695, 0, 11.146509, 16)
 
 [node name="secret door" parent="." unique_id=862540579 instance=ExtResource("15_t628s")]
 position = Vector2(-396.47125, -247.22705)
-my_progress = 34
+my_progress = 35
 story = true
 
 [node name="stairdetect" parent="." unique_id=1941508930 instance=ExtResource("15_t628s")]
