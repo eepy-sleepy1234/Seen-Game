@@ -1,0 +1,11 @@
+Puzzel 1, no idea how to make door work.   and player gone for some reason
+
+Puzzle 2, Middle wall becomes invisible when you walk near it revealing a door
+
+Puzzle 3, same as puzzle 2 but with the floor
+
+Puzzle 4, The lights go out every now and then turning you into a ghost, some tiles dont have anything beneath them(Ghost Tiles) and if you aren't on one of the non ghost tiles you restart the scene
+
+Puzzle 5a, simple room one door to the right(leads to 5b) one to the left(leads to 5c)
+
+5c contains the box which is used to cross over singular wall tiles. This is needed to get the key in 5b.  Room 5c is a tedius room but can easily be passed thorugh on the way back due to the box (make sure the box gives a tool tip that says you can pass over singular wall tiles with it.)
