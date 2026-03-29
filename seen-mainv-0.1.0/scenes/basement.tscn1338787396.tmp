@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="13_dgkxm"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="15_5j8jl"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
-[ext_resource type="AudioStream" uid="uid://bw60aj6bxmdgc" path="res://assets/Sounds/Old Guy Wait.mp3" id="19_flc8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -1223,10 +1222,6 @@ position = Vector2(-349, -36)
 texture = ExtResource("11_tsb5b")
 script = ExtResource("10_2q2yi")
 size = 40
-
-[node name="OldGuyWait" type="AudioStreamPlayer" parent="." unique_id=897082984]
-stream = ExtResource("19_flc8l")
-volume_db = -11.86
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1139484504]
 stream = ExtResource("2_6lwow")

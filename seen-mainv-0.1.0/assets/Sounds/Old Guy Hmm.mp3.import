@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bceo6e7g27rm6"
+path="res://.godot/imported/Old Guy Hmm.mp3-2b30c71c2918e9a8ead5b0d3d87f0bb7.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Old Guy Hmm.mp3"
+dest_files=["res://.godot/imported/Old Guy Hmm.mp3-2b30c71c2918e9a8ead5b0d3d87f0bb7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

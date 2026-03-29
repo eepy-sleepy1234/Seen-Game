@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsitkrb237qg8"
+path="res://.godot/imported/Nurse Talking.wav-79ce3d9437e1af59f2a9bf52756b643f.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Nurse Talking.wav"
+dest_files=["res://.godot/imported/Nurse Talking.wav-79ce3d9437e1af59f2a9bf52756b643f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

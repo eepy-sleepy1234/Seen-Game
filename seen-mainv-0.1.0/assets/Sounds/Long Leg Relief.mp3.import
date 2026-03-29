@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jm4l6yr460rq"
+path="res://.godot/imported/Long Leg Relief.mp3-1f30ccd14c3240534b0f5fb141a7dec0.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Long Leg Relief.mp3"
+dest_files=["res://.godot/imported/Long Leg Relief.mp3-1f30ccd14c3240534b0f5fb141a7dec0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

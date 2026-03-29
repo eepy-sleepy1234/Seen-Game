@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ufa2wj8v333d"
+path="res://.godot/imported/YOULL NEVER BEAT ME.mp3-9ce687f90341490e97e18b0c2ec20fd0.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/YOULL NEVER BEAT ME.mp3"
+dest_files=["res://.godot/imported/YOULL NEVER BEAT ME.mp3-9ce687f90341490e97e18b0c2ec20fd0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
