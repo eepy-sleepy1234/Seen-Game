@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b52g0txrpaxgi"]
+[gd_scene format=3 uid="uid://b52g0txrpaxgi"]
 
-[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_t6lj5"]
+[ext_resource type="Script" uid="uid://c5np6hc8k5wxt" path="res://scripts/textbox.gd" id="1_t6lj5"]
 [ext_resource type="FontFile" uid="uid://cqx40ma8ednlg" path="res://assets/Text/HyperOxide-1j96j.ttf" id="2_ddanm"]
 [ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="3_g5d5p"]
 
@@ -15,6 +15,13 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_3xmdk"]
 font = ExtResource("3_g5d5p")
 font_size = 51
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5d5p"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 
 [sub_resource type="Animation" id="Animation_0tnpc"]
 length = 0.001
@@ -173,19 +180,19 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
 _data = {
-"RESET": SubResource("Animation_0tnpc"),
-"close": SubResource("Animation_gee14"),
-"open": SubResource("Animation_u5sy4")
+&"RESET": SubResource("Animation_0tnpc"),
+&"close": SubResource("Animation_gee14"),
+&"open": SubResource("Animation_u5sy4")
 }
 
-[node name="textbox" type="MarginContainer"]
+[node name="textbox" type="MarginContainer" unique_id=1114253155]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -409.0
-offset_bottom = -5.0
+offset_top = -496.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16
@@ -194,23 +201,23 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 60
 script = ExtResource("1_t6lj5")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=848564316]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p57ef")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=481318718]
 layout_mode = 2
 theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 700
 theme_override_constants/margin_bottom = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=395936325]
 custom_minimum_size = Vector2(0, 240)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1562682650]
 custom_minimum_size = Vector2(1000, 10)
 layout_direction = 2
 layout_mode = 2
@@ -221,7 +228,28 @@ theme_override_font_sizes/font_size = 45
 label_settings = SubResource("LabelSettings_3xmdk")
 autowrap_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_vtaks")
-}
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=455133436]
+layout_mode = 2
+theme_override_constants/margin_left = 2200
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 300
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2" unique_id=535838378]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer" unique_id=278348729]
+custom_minimum_size = Vector2(522, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g5d5p")
+theme_override_font_sizes/font_size = 54
+text = "Scientist guy"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer2" unique_id=1589988130]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5d5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1212634523]
+libraries/ = SubResource("AnimationLibrary_vtaks")

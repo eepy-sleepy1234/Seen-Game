@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var item: Sprite2D = $Sprite2D
+@onready var anim: AnimationPlayer = $Label/AnimationPlayer
 
 func _ready() -> void:
 	pass
@@ -19,3 +20,9 @@ func _process(delta: float) -> void:
 				item.region_rect = Rect2(17.899, 19.968, 12.148, 8.999)
 			_:
 				item.region_rect = Rect2(0, 0, 0, 0)
+
+
+func _on_item_first_inventory() -> void:
+	anim.play("pickup")
+	await get_tree().create_timer(2).timeout
+	anim.play_backwards("pickup")

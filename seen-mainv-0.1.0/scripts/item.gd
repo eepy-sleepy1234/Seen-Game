@@ -3,6 +3,7 @@ enum Items { key, box, ghost_box, gun, broken_camera }
 var player_in_range = false
 @export var item_type: Items
 signal get_box(ghost: bool)
+signal first_inventory()
 func _ready() -> void:
 	match str(item_type):
 		"0":
@@ -26,6 +27,11 @@ func _process(delta: float) -> void:
 			self.queue_free()
 			if Globals.inventory == "1":
 				get_box.emit(false)
+			elif Globals.inventory == "2":
+				get_box.emit(true)
+			if Globals.first_inventory:
+				first_inventory.emit()
+				Globals.first_inventory = false
 		else:
 			pass
 			#do a thing where it says no inventory space
@@ -37,3 +43,7 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 
 func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	player_in_range = false
+
+
+func _on_first_inventory() -> void:
+	pass # Replace with function body.

@@ -25,7 +25,10 @@ Globals="*uid://gdb8il4cukts"
 
 [display]
 
+window/size/viewport_width=2880
+window/size/viewport_height=1800
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [input]

@@ -14,7 +14,7 @@ script = ExtResource("1_4nkto")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1072575862]
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("2_pa8r4")]
-position = Vector2(1069.6416, 80.86087)
+position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=1253170191 instance=ExtResource("2_fcfvj")]
 
@@ -31,6 +31,7 @@ tile_set = ExtResource("3_pa8r4")
 
 [node name="item" parent="." unique_id=979002470 instance=ExtResource("5_15mv3")]
 position = Vector2(-239.58638, -219.6968)
+item_type = 0
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("6_fcfvj")]
 unique_name_in_owner = true
@@ -43,7 +44,5 @@ zoom = Vector2(7, 7)
 
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_pa8r4")]
 
-[node name="item2" parent="." unique_id=405823171 instance=ExtResource("5_15mv3")]
-position = Vector2(-342.97522, -244.92859)
-
+[connection signal="first_inventory" from="item" to="CanvasLayer/inventory" method="_on_item_first_inventory"]
 [connection signal="get_box" from="item" to="." method="_on_item_get_box"]

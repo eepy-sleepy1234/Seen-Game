@@ -60,8 +60,8 @@ func _input(event: InputEvent) -> void:
 						if Globals.story_progress == dialogue_progress[0]:
 							dialogue_progress.pop_front()
 							my_text = dialogue.pop_front()
-							Globals.story_progress += 1
 							textbox.continue_text(my_text)
+							Globals.story_progress += 1
 						else:
 							textbox.close_box()
 							open = false

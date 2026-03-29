@@ -3,9 +3,70 @@
 [ext_resource type="Texture2D" uid="uid://27behxy814m6" path="res://assets/UI/Slot.png" id="1_ty45s"]
 [ext_resource type="Script" uid="uid://daqlj37oamaer" path="res://scripts/inventory.gd" id="2_53g1v"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="3_yyk2a"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="4_53g1v"]
+
+[sub_resource type="Animation" id="Animation_yyk2a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uae8j"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s887n"]
+_data = {
+&"RESET": SubResource("Animation_yyk2a"),
+&"pickup": SubResource("Animation_uae8j")
+}
 
 [node name="inventory" type="Sprite2D" unique_id=1317137626]
-scale = Vector2(3.8248534, 3.8248534)
+scale = Vector2(8.127, 8.127)
 texture = ExtResource("1_ty45s")
 script = ExtResource("2_53g1v")
 
@@ -13,3 +74,17 @@ script = ExtResource("2_53g1v")
 scale = Vector2(1.7881659, 1.7881659)
 texture = ExtResource("3_yyk2a")
 region_enabled = true
+
+[node name="Label" type="Label" parent="." unique_id=2098914928]
+modulate = Color(1, 1, 1, 0)
+offset_left = -159.8919
+offset_top = -6.7749786
+offset_right = 980.1081
+offset_bottom = 95.22502
+scale = Vector2(0.123, 0.123)
+theme_override_fonts/font = ExtResource("4_53g1v")
+theme_override_font_sizes/font_size = 90
+text = "Press \"G\" to drop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=1259785912]
+libraries/ = SubResource("AnimationLibrary_s887n")

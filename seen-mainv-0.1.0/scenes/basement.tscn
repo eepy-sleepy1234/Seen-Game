@@ -385,7 +385,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_yhyry"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_0mks5")
 
@@ -758,7 +758,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_qeqt0"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_7yab1")
 
 [sub_resource type="Animation" id="Animation_c4m2r"]
@@ -1079,6 +1079,7 @@ animation = &"side"
 position = Vector2(-374, -199)
 texture = ExtResource("7_rohn4")
 script = ExtResource("10_2q2yi")
+size = 60
 
 [node name="cobweb" type="Sprite2D" parent="." unique_id=16143286]
 position = Vector2(-118, -235)
@@ -1265,7 +1266,7 @@ story = true
 
 [node name="camera off" parent="." unique_id=1588797679 instance=ExtResource("15_t628s")]
 position = Vector2(-262.85687, -249.99469)
-my_progress = 34
+my_progress = 33
 interactable = true
 
 [node name="backup" type="Sprite2D" parent="." unique_id=31929066]
@@ -1276,7 +1277,7 @@ region_rect = Rect2(16.91695, 0, 11.146509, 16)
 
 [node name="secret door" parent="." unique_id=862540579 instance=ExtResource("15_t628s")]
 position = Vector2(-396.47125, -247.22705)
-my_progress = 35
+my_progress = 34
 story = true
 
 [node name="stairdetect" parent="." unique_id=1941508930 instance=ExtResource("15_t628s")]

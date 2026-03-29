@@ -21,24 +21,17 @@ func _physics_process(_delta):
 	if Globals.listening:
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if is_ghost >= 0:
-		set_collision_mask_value(2, true)
-		set_collision_mask_value(1, false)
 		set_collision_layer_value(2, true)
-		set_collision_layer_value(1, false)
-		set_collision_mask_value(3, false)
-		set_collision_layer_value(3, false)
+		if not box:
+			set_collision_layer_value(1, false)
+			set_collision_mask_value(3, false)
 		set_collision_mask_value(4, true)
-		set_collision_layer_value(4, true)
 		modulate.a = 0.82
 	else:
-		set_collision_mask_value(1, true)
-		set_collision_mask_value(2, false)
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)
 		set_collision_mask_value(3, true)
-		set_collision_layer_value(3, true)
 		set_collision_mask_value(4, false)
-		set_collision_layer_value(4, false)
 		modulate.a = 1
 	
 	if Input.is_action_just_pressed("speed"):
@@ -52,6 +45,8 @@ func _physics_process(_delta):
 				sprite.play("side_box")
 			else:
 				sprite.play("side_ghost")
+		else:
+			sprite.play("side")
 	elif direction.x < 0:
 		sprite.flip_h = false
 		last_direction = 4
@@ -60,6 +55,8 @@ func _physics_process(_delta):
 				sprite.play("side_box")
 			else:
 				sprite.play("side_ghost")
+		else:
+			sprite.play("side")
 	elif direction.y < 0:
 		last_direction = 1
 		if is_ghost >= 0:
@@ -67,6 +64,8 @@ func _physics_process(_delta):
 				sprite.play("up_box")
 			else:
 				sprite.play("up_ghost")
+		else:
+			sprite.play("up")
 	elif direction.y > 0:
 		last_direction = 3
 		if is_ghost >= 0:

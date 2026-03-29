@@ -89,8 +89,8 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	camera.screen_shake(20, 10)
 	blackout.play("fade out")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	yes_rico__kaboom.visible = true
 	yes_rico__kaboom.play("default")
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_packed(next_scene)

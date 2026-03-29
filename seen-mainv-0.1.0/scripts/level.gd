@@ -41,5 +41,6 @@ func _process(delta: float) -> void:
 func _on_item_get_box(ghost: bool) -> void:
 	if Globals.inventory == "1":
 		player.is_ghost += 1000
-		player.box = true
+		if not ghost:
+			player.box = true
 		print(player.is_ghost)

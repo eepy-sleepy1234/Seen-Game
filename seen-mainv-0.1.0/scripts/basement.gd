@@ -13,6 +13,7 @@ extends Node2D
 
 var new_text = ""
 var next_scene: PackedScene = load("uid://ckyb4hj0cb02f")
+var level_scene: PackedScene = load("uid://dnij0b3j0fci3")
 
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
@@ -81,17 +82,20 @@ func _ready() -> void:
 		objectives.write(new_text)
 		await wait_for_progress(33)
 		textbox.write_text("Why can I walk through everything besides these stairs?")
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(4).timeout
 		textbox.continue_text("and why can I talk to people and ghosts?")
 		await get_tree().create_timer(3).timeout
 		textbox.continue_text("let me try something")
 		new_text = "\n - deactivate the security camera"
 		objectives.write(new_text)
+		await get_tree().create_timer(3).timeout
+		textbox.close_box()
 		Globals.story_progress += 1
-		await wait_for_progress(35)
+		await wait_for_progress(34)
 		camera.queue_free()
 		new_text = "\n - walk through the stairs now"
 		objectives.write(new_text)
-		await wait_for_progress(36)
+		await wait_for_progress(35)
 		blackout.play("fade out")
 		await get_tree().create_timer(3).timeout
+		get_tree().change_scene_to_packed(level_scene)
