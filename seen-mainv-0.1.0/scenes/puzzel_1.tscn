@@ -80,3 +80,5 @@ size = 30
 
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_0v32m")]
 position = Vector2(0, -128.98227)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1207249906]

@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://g44t03eg0v04" path="res://assets/Alleyway/trashbag1.png" id="14_md4yb"]
 [ext_resource type="Texture2D" uid="uid://xemu25x6y3ui" path="res://assets/Alleyway/trashbag2.png" id="15_lquji"]
 [ext_resource type="Texture2D" uid="uid://bi40gpd78fu1w" path="res://assets/Alleyway/trashcan.png" id="16_wkb1x"]
+[ext_resource type="AudioStream" uid="uid://djq8kcqhl5y5q" path="res://assets/Sounds/Angry Mafia scout.mp3" id="16_x6t8b"]
+[ext_resource type="AudioStream" uid="uid://bhg2ixnm31yvm" path="res://assets/Sounds/universfield-suspense-dark-ambient-153278.mp3" id="17_s86ym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls4g5"]
 texture = ExtResource("2_wtvnm")
@@ -331,3 +333,12 @@ position = Vector2(-276, -163)
 texture = ExtResource("16_wkb1x")
 script = ExtResource("12_x6t8b")
 size = 20
+
+[node name="AngryScout" type="AudioStreamPlayer" parent="." unique_id=1616633975]
+stream = ExtResource("16_x6t8b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1441589871]
+stream = ExtResource("17_s86ym")
+volume_db = -33.032
+autoplay = true
+parameters/looping = true

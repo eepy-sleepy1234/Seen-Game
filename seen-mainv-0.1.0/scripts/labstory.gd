@@ -10,6 +10,8 @@ extends Node2D
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var yes_rico__kaboom: AnimatedSprite2D = $"yes rico, kaboom"
 @export var next_scene: PackedScene = load("uid://btq6kag0yd6k")
+@onready var emergencySound = $"Emergency Sound"
+@onready var explosion = $"Explosion"
 var new_text = ""
 
 func wait_for_progress(target: int) -> void:
@@ -48,8 +50,10 @@ func _ready() -> void:
 	top.play("oh no")
 	bottom.play("oh no")
 	camera.screen_shake(20, 1)
+	
 	Globals.listening = false
 	red_flash.play("red flash")
+	emergencySound.play()
 	textbox.write_text("I need to shut this down")
 	await get_tree().create_timer(3).timeout
 	Globals.listening = true
@@ -61,6 +65,7 @@ func _ready() -> void:
 	top.play("default")
 	bottom.play("default")
 	await get_tree().create_timer(2).timeout
+	emergencySound.stop()
 	textbox.write_text("phew, that was a close one")
 	Globals.listening = false
 	await get_tree().create_timer(3).timeout
@@ -90,6 +95,7 @@ func _ready() -> void:
 	camera.screen_shake(20, 10)
 	blackout.play("fade out")
 	await get_tree().create_timer(2).timeout
+	explosion.play()
 	yes_rico__kaboom.visible = true
 	yes_rico__kaboom.play("default")
 	await get_tree().create_timer(1).timeout

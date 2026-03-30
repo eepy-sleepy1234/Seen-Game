@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://glmudq2oi3o3" path="res://assets/UI/ClipBoard.png" id="1_e5roj"]
 [ext_resource type="Script" uid="uid://b61gh8l5o6vjv" path="res://scripts/objectivebox.gd" id="2_vxegm"]
 [ext_resource type="FontFile" uid="uid://choguqbo3oij8" path="res://assets/Fonts/Notepen.ttf" id="3_24jh7"]
+[ext_resource type="AudioStream" uid="uid://bcvdk8qdpds6x" path="res://assets/Sounds/Write.wav" id="4_vxegm"]
 
 [sub_resource type="Animation" id="Animation_vwwhs"]
 length = 0.001
@@ -95,6 +96,9 @@ scale = Vector2(1.1631894, 1.3014528)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1764794790]
 libraries/ = SubResource("AnimationLibrary_vamq6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=371825512]
+stream = ExtResource("4_vxegm")
 
 [connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

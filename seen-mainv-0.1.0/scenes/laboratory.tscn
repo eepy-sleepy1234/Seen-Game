@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="11_o1bdm"]
 [ext_resource type="Texture2D" uid="uid://8fmww77nsj66" path="res://assets/Laboratory/Explosion.png" id="14_5x2lg"]
+[ext_resource type="AudioStream" uid="uid://cbfs8puhkhmfo" path="res://assets/Sounds/freesound_community-automotive-factory-general-atmosphere-2-23970.mp3" id="14_i7dll"]
+[ext_resource type="AudioStream" uid="uid://ch7eeytu1udij" path="res://assets/Sounds/freesound_community-severe-warning-alarm-98704.mp3" id="15_f8rtk"]
+[ext_resource type="AudioStream" uid="uid://cdho5huhl60um" path="res://assets/Sounds/dragon-studio-loud-explosion-425457.mp3" id="16_wtnrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_m2clf")
@@ -563,3 +566,16 @@ position = Vector2(-370, -37)
 sprite_frames = SubResource("SpriteFrames_8k4xu")
 frame = 3
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=815527757]
+stream = ExtResource("14_i7dll")
+volume_db = -18.521
+autoplay = true
+parameters/looping = true
+
+[node name="Emergency Sound" type="AudioStreamPlayer" parent="." unique_id=1641078752]
+stream = ExtResource("15_f8rtk")
+parameters/looping = true
+
+[node name="Explosion" type="AudioStreamPlayer" parent="." unique_id=1998824262]
+stream = ExtResource("16_wtnrd")

@@ -3,7 +3,11 @@ extends MarginContainer
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var textlabel: Label = $"../textbox/MarginContainer/HBoxContainer/Label"
 @onready var namelabel: Label = $MarginContainer2/HBoxContainer/Label
-
+@onready var oldGuyOh = $"../../AudioStreamPlayer"
+@onready var oldGuyWAIT = $"../../OldGuyWait"
+@onready var angryscout = $"../../AngryScout"
+@onready var long_legs = $"../../LongLegRelief"
+@onready var angryNurse = $"../../AngryNurse"
 var open = false
 var tween = create_tween()
 
@@ -13,6 +17,17 @@ var nurse_text = ["Oh, you're finally awake. Let me get a doctor for you.", "you
 var segm_text = ["depends, who's asking?", "oh right, yeah i am. who's wondering?", "oh right, why?", "who's asking?", "oh right", "it stands for super evil ghost mafia", "what was that?", "boss will definitely be hearing about this"]
 var doctor_text = ["Hey, I recognize you! Why don't you come back to the hospital with me."]
 func write_text(new_text) -> void:
+	if new_text == "you really can't be wandering off like that":
+		angryNurse.play()
+	if new_text == "Hey there.":
+		oldGuyOh.play()
+	if new_text == "WAIT I NEED YOUR HELP":
+		oldGuyWAIT.play()
+	if new_text == "boss will definitely be hearing about this":
+		angryscout.play()
+	if new_text == "Hey, I recognize you! Why don't you come back to the hospital with me.":
+		long_legs.play()	
+	
 	if new_text in scientist_text:
 		namelabel.text = "Scientist Guy"
 	elif new_text in sepcogg_text:
@@ -38,6 +53,7 @@ func write_text(new_text) -> void:
 
 func continue_text(new_text) -> void:
 	Globals.listening = false
+	
 	if new_text in scientist_text:
 		namelabel.text = "Scientist Guy"
 	elif new_text in sepcogg_text:
