@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbo1l6lg8gaqg" path="res://assets/New Hover.png" id="2_1i3ks"]
 [ext_resource type="Texture2D" uid="uid://hqtifxee53yp" path="res://assets/SEEN Logo.png" id="2_15uo5"]
 [ext_resource type="Texture2D" uid="uid://v125w7lh44ly" path="res://assets/Credits.png" id="5_mslyy"]
+[ext_resource type="AudioStream" uid="uid://cr11dbad16j4g" path="res://assets/Sounds/puzzle (1).ogg" id="7_mslyy"]
 
 [node name="Control" type="Control" unique_id=141362738]
 layout_mode = 3
@@ -53,7 +54,14 @@ texture_normal = ExtResource("5_mslyy")
 texture_pressed = ExtResource("1_qgd8p")
 texture_hover = ExtResource("2_1i3ks")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=706733295]
+stream = ExtResource("7_mslyy")
+volume_db = -8.667
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="New" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

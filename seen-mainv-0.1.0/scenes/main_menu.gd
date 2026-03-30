@@ -9,3 +9,8 @@ func _on_new_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_audio_stream_player_finished() -> void:
+	pass # Replace with function body.
+	

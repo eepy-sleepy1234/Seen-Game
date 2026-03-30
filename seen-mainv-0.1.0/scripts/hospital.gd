@@ -5,6 +5,8 @@ extends Node2D
 @onready var nurse_animation: AnimationPlayer = $nurse/AnimationPlayer
 @onready var textbox: MarginContainer = $CanvasLayer/textbox
 @onready var ghost_particles: CPUParticles2D = $"guy/ghost particles"
+@onready var NurseSuprise = $NurseSuprise
+@onready var NursePhew = $NursePhew
 var next_scene: PackedScene = load("uid://dd65bmg1sswdc")
 
 func _ready() -> void:
@@ -13,7 +15,10 @@ func _ready() -> void:
 	nurse_animation.play("movement")
 	await get_tree().create_timer(4).timeout
 	guy.play("wake up")
+	NurseSuprise.play()
+	
 	await get_tree().create_timer(2.5).timeout
+	NursePhew.play()
 	textbox.write_text("Oh, you're finally awake. Let me get a doctor for you.")
 	await get_tree().create_timer(5.5).timeout
 	textbox.close_box()

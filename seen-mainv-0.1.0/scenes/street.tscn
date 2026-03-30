@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="13_wd6c3"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="14_7gyev"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="15_wd6c3"]
+[ext_resource type="AudioStream" uid="uid://jm4l6yr460rq" path="res://assets/Sounds/Long Leg Relief.mp3" id="16_7gyev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t23v0"]
 texture = ExtResource("2_3ffmx")
@@ -1760,3 +1761,6 @@ position = Vector2(-426, -194.00002)
 scale = Vector2(0.28000486, 0.28000486)
 my_progress = 25
 story = true
+
+[node name="LongLegRelief" type="AudioStreamPlayer" parent="." unique_id=329701074]
+stream = ExtResource("16_7gyev")

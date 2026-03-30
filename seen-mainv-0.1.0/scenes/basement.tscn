@@ -1225,10 +1225,11 @@ size = 40
 
 [node name="OldGuyWait" type="AudioStreamPlayer" parent="." unique_id=897082984]
 stream = ExtResource("19_flc8l")
-volume_db = -11.86
+volume_db = -20.045
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1139484504]
 stream = ExtResource("2_6lwow")
+volume_db = -4.333
 
 [node name="security camera" parent="." unique_id=1507280261 instance=ExtResource("12_gmeda")]
 position = Vector2(-235, -201)
@@ -1305,3 +1306,8 @@ position = Vector2(-362.54266, -201.2234)
 rotation = 1.335942
 scale = Vector2(2.7409935, 3.2179759)
 texture = ExtResource("21_6lwow")
+
+[node name="Old Guy WAIT" type="AudioStreamPlayer" parent="." unique_id=7228510]
+
+[node name="Old Guy Oh" type="AudioStreamPlayer" parent="." unique_id=2002413276]
+stream = ExtResource("2_6lwow")

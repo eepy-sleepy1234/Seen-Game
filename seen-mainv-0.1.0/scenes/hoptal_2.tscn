@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dnqyoivcncn" path="res://assets/Npc/Nurse.png" id="7_oreqn"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="8_2xug5"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="9_oreqn"]
+[ext_resource type="AudioStream" uid="uid://5xqn8euoer38" path="res://assets/Sounds/Nurse angry.mp3" id="10_qcc6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xug5"]
 texture = ExtResource("4_ut1bd")
@@ -553,3 +554,6 @@ libraries/ = SubResource("AnimationLibrary_otumf")
 
 [node name="haha" parent="." unique_id=1588797679 instance=ExtResource("9_oreqn")]
 position = Vector2(-343.7646, -25.401321)
+
+[node name="AngryNurse" type="AudioStreamPlayer" parent="." unique_id=395777800]
+stream = ExtResource("10_qcc6p")

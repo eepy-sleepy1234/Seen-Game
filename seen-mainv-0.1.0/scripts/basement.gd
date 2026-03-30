@@ -11,6 +11,7 @@ extends Node2D
 @onready var old_ghost_guy: Node2D = $"old ghost guy"
 @onready var camera: Node2D = $"security camera"
 @onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var oldGuyOh = $"Old Guy Oh"
 
 var new_text = ""
 var next_scene: PackedScene = load("uid://ckyb4hj0cb02f")
@@ -23,6 +24,7 @@ func wait_for_progress(target: int) -> void:
 func _ready() -> void:
 	blackout.play("fade in")
 	if Globals.story_progress == 9:
+		
 		Globals.listening = false
 		Globals.story_progress += 1
 		player_animation.play("falling")

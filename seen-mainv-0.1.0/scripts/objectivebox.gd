@@ -1,9 +1,11 @@
 extends Sprite2D
 @onready var text: Label = $objectives
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var writesound = $AudioStreamPlayer
 var new_page = false
 
 func write(new_text):
+	writesound.play()
 	if new_page:
 		for i in 20:
 			text.visible_ratio -= 0.05

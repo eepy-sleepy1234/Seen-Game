@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="4_qvepx"]
 [ext_resource type="Texture2D" uid="uid://c2dnqyoivcncn" path="res://assets/Npc/Nurse.png" id="5_jmuis"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="6_5m0s0"]
+[ext_resource type="AudioStream" uid="uid://cbgp4f4gyh0v1" path="res://assets/Sounds/Nurse Suprise.mp3" id="7_l86x5"]
+[ext_resource type="AudioStream" uid="uid://bdof7pj8lob7i" path="res://assets/Sounds/Nurse Phew.mp3" id="8_7bm6o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkpt2"]
 texture = ExtResource("2_x4k8b")
@@ -395,3 +397,11 @@ autoplay = "down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="nurse" unique_id=557395481]
 libraries/ = SubResource("AnimationLibrary_2mqmd")
+
+[node name="NurseSuprise" type="AudioStreamPlayer" parent="." unique_id=207174887]
+stream = ExtResource("7_l86x5")
+
+[node name="NursePhew" type="AudioStreamPlayer" parent="." unique_id=786262987]
+stream = ExtResource("8_7bm6o")
+volume_db = -3.852
+pitch_scale = 1.92
