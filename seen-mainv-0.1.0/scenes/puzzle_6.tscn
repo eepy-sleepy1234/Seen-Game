@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://d1ifwxxrerlko"]
+
+[ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_wnwd3"]
+[ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_ye4sj"]
+[ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_aeoxp"]
+[ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="4_8qncq"]
+[ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="5_x2f7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
+atlas = ExtResource("5_x2f7c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4twlm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey4qp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Puzzle6" type="Node2D" unique_id=81144770]
+position = Vector2(-120, -144)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=231622445]
+tile_map_data = PackedByteArray("AAD//wAAAAACAAgAAAAAAAAAAAADAAgAAAD/////AAAEAAAAAAAAAP//AAAFAAAAAAABAP//AAAEAAIAAAABAAAAAAAEAAMAAAACAP//AAAFAAIAAAACAAAAAAAFAAMAAAADAP//AAAEAAIAAAADAAAAAAAEAAMAAAAEAP//AAAFAAIAAAAEAAAAAAAFAAMAAAD9////AAAEAAIAAAD9/wAAAAAEAAMAAAD+////AAAFAAIAAAD+/wAAAAAFAAMAAAD7////AAAEAAIAAAD7/wAAAAAEAAMAAAD8////AAAFAAIAAAD8/wAAAAAFAAMAAAADAP3/AAAEAAAAAAADAP7/AAAEAAEAAAAEAP3/AAAFAAAAAAAEAP7/AAAFAAEAAAABAP3/AAAEAAAAAAABAP7/AAAEAAEAAAACAP3/AAAFAAAAAAACAP7/AAAFAAEAAAD///3/AAAEAAAAAAD///7/AAAEAAEAAAAAAP3/AAAFAAAAAAAAAP7/AAAFAAEAAAD9//3/AAAEAAAAAAD9//7/AAAEAAEAAAD+//3/AAAFAAAAAAD+//7/AAAFAAEAAAD7//3/AAAEAAAAAAD7//7/AAAEAAEAAAD8//3/AAAFAAAAAAD8//7/AAAFAAEAAAD7//v/AAAEAAAAAAD7//z/AAAEAAEAAAD8//v/AAAFAAAAAAD8//z/AAAFAAEAAAD9//v/AAAEAAAAAAD9//z/AAAEAAEAAAD+//v/AAAFAAAAAAD+//z/AAAFAAEAAAD///v/AAAEAAAAAAD///z/AAAEAAEAAAAAAPv/AAAFAAAAAAAAAPz/AAAFAAEAAAABAPv/AAAEAAAAAAABAPz/AAAEAAEAAAACAPv/AAAFAAAAAAACAPz/AAAFAAEAAAADAPv/AAAEAAAAAAADAPz/AAAEAAEAAAAEAPv/AAAFAAAAAAAEAPz/AAAFAAEAAAADAPn/AAAEAAAAAAADAPr/AAAEAAEAAAAEAPn/AAAFAAAAAAAEAPr/AAAFAAEAAAABAPn/AAAEAAAAAAABAPr/AAAEAAEAAAACAPn/AAAFAAAAAAACAPr/AAAFAAEAAAD///n/AAAEAAAAAAD///r/AAAEAAEAAAAAAPn/AAAFAAAAAAAAAPr/AAAFAAEAAAD9//n/AAAEAAAAAAD9//r/AAAEAAEAAAD+//n/AAAFAAAAAAD+//r/AAAFAAEAAAD7//n/AAAEAAAAAAD7//r/AAAEAAEAAAD8//n/AAAFAAAAAAD8//r/AAAFAAEAAAADAPf/AAAGAAAAAAADAPj/AAAGAAEAAAAEAPf/AAAHAAAAAAAEAPj/AAAHAAEAAAABAPf/AAAGAAAAAAABAPj/AAAGAAEAAAACAPf/AAAHAAAAAAACAPj/AAAHAAEAAAD///f/AAAGAAAAAAD///j/AAAGAAEAAAAAAPf/AAAHAAAAAAAAAPj/AAAHAAEAAAD9//f/AAAGAAAAAAD9//j/AAAGAAEAAAD+//f/AAAHAAAAAAD+//j/AAAHAAEAAAD7//f/AAAGAAAAAAD7//j/AAAGAAEAAAD8//f/AAAHAAAAAAD8//j/AAAHAAEAAAADAPX/AAAIAAAAAAADAPb/AAAIAAEAAAAEAPX/AAAJAAAAAAAEAPb/AAAJAAEAAAABAPX/AAAIAAAAAAABAPb/AAAIAAEAAAACAPX/AAAJAAAAAAACAPb/AAAJAAEAAAD///X/AAAIAAAAAAD///b/AAAIAAEAAAAAAPX/AAAJAAAAAAAAAPb/AAAJAAEAAAD9//X/AAAIAAAAAAD9//b/AAAIAAEAAAD+//X/AAAJAAAAAAD+//b/AAAJAAEAAAD7//X/AAAIAAAAAAD7//b/AAAIAAEAAAD8//X/AAAJAAAAAAD8//b/AAAJAAEAAAD7//T/AAACAAMAAAD8//T/AAADAAMAAAD9//T/AAACAAMAAAD+//T/AAADAAMAAAD///T/AAACAAMAAAAAAPT/AAADAAMAAAABAPT/AAACAAMAAAACAPT/AAADAAMAAAADAPT/AAACAAMAAAAEAPT/AAADAAMAAAD6//T/AAAAAAUAADD6//X/AAAAAAQAABD6//b/AAAAAAQAABD6//f/AAAAAAQAABD6//j/AAAAAAQAABD6//n/AAAAAAQAABD6//r/AAAAAAQAABD6//v/AAAAAAQAABD6//z/AAAAAAQAABD6//3/AAAAAAQAABD6//7/AAAAAAQAABD6////AAAAAAQAABD6/wAAAAAAAAUAABAFAAAAAAAAAAUAAAAFAP//AAAAAAQAAAAFAP7/AAAAAAQAAAAFAP3/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAPr/AAAAAAQAAAAFAPn/AAAAAAQAAAAFAPj/AAAAAAQAAAAFAPf/AAAAAAQAAAAFAPb/AAAAAAQAAAAFAPX/AAAAAAQAAAAFAPT/AAAAAAUAACA=")
+tile_set = ExtResource("1_wnwd3")
+
+[node name="Ghost Wall" type="TileMapLayer" parent="." unique_id=293503534]
+z_index = -1
+tile_map_data = PackedByteArray("AAD///X/AAACAAYAAAD///b/AAACAAcAAAAAAPX/AAADAAYAAAAAAPb/AAADAAcAAAD///T/AAAGAAcAAAAAAPT/AAAHAAcAAAA=")
+tile_set = ExtResource("1_wnwd3")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1661528270]
+z_index = 1
+tile_map_data = PackedByteArray("AAD9//7/AAAIAAcAAAD+//7/AAAJAAcAAAA=")
+tile_set = ExtResource("1_wnwd3")
+
+[node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_ye4sj")]
+unique_name_in_owner = true
+position = Vector2(7.999999, -1.0728836e-06)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=2071901809]
+position = Vector2(0.43411255, 2.7852173)
+scale = Vector2(1.2499999, 1.2499999)
+zoom = Vector2(7, 7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=524632344]
+
+[node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_aeoxp")]
+position = Vector2(2610.427, 225.20456)
+
+[node name="security camera" parent="." unique_id=471567717 instance=ExtResource("4_8qncq")]
+position = Vector2(-1360, 64.00001)
+rotation = 4.509456
+scale = Vector2(19.478994, 11.760962)
+yes = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera" unique_id=1904201528]
+position = Vector2(-1.2583828, 111.380356)
+rotation = -1.4820018
+scale = Vector2(0.066964276, -0.047087617)
+sprite_frames = SubResource("SpriteFrames_4twlm")
