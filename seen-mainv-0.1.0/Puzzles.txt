@@ -1,0 +1,52 @@
+Puzzel 1, no idea how to make door work.   and player gone for some reason
+
+Puzzle 2, Middle wall becomes invisible when you walk near it revealing a door
+
+Puzzle 3, same as puzzle 2 but with the floor
+
+Puzzle 4, The lights go out every now and then turning you into a ghost, some tiles dont have anything beneath them(Ghost Tiles) and if you aren't on one of the non ghost tiles you restart the scene
+
+Puzzle 5a, simple room one door to the right(leads to 5b) one to the left(leads to 5c)
+
+5c contains the box which is used to cross over singular wall tiles. This is needed to get the key in 5b.  Room 5c is a tedius room but can easily be passed thorugh on the way back due to the box (make sure the box gives a tool tip that says you can pass over singular wall tiles with it.)
+
+Puzzle 6, simple room press e to interact with the camera while holding the box to place the box on the camera then walk thought the ghost wall that is located at the end of the room (code on ground used in the next room)
+
+Puzzle 7, there are 5 doors, using the combination that was founded in the previous room you must walk through the doors in that order( the room repeats upon walking through any of the doors) but if you walk in the doors in the correct order(5324) Scientist guy says "I Should go back this is taking forever" and after he says that if you leave through the door you entered from(where mat is) it leads to puzzle 8. If you leave the room before scientist guy says that the progress resets and you return to puzzle 6
+
+Puzzle 8. Random voice:"quick grab that camera on the desk and shine it up" You must the n grab the camera and once you do the flying ghosts will go after you in a straight line from the top. The ones that are hit by the camera are then killed. You can then walk to the top. Halfway through walking  to the top ghosts  come after you from the right(entire wall of them spanning top to bottem) And you must  do the same you did with the other ghosts.  This room also has low visiobility so the ghosts are only visible from a short distance. 
+
+Puzzle 9 its a maze, but every now and then a ghost (the round ones) start following you and if you dont shine them after a certain amount of time they catch you. Make it so that theres very limited visibility on this one.( can see yourself and a little bit around you)
+
+
+Puzzle 10. Place the broken camera you have on the wall making it so that you can cross through the center (ghost tiles)  then you find a gun and you character says  " i need to be a ghost thats the only way out of here. Then you shoot the box, turning it into a ghost box. The gun is then gotten rid of. Once you equip the ghost box you can always be a ghost. There is a hidden door behind the wall in the middle that you can acces as a ghost. 
+
+
+
+---BOSS---
+The player has 3 lives and each time he is hit before death the screen turns more red indicating he is hurt. 
+
+Phase one. 
+
+The boss sends out the flying ghosts from the right every other tile thenj the left every other tile(up one of cours)
+Then he does it from the top then the bottem
+
+he does both of these things twice
+
+Then he sends out the round ghosts and they chase you you neeed to avoid them. After a little they disappear.    During both of these events the boss is in the state where he is raising his arms and make him hover. 
+
+Then he drops to the ground and goes into his panting animation. When This happens scientist guy says he needs to throw the box at him. When the player tries the boss knocks it back and the scientist picks it back up.    If the scientist fails to throw it at him within 10 second the boss re enters phase one
+
+
+Phase Two
+
+The boss does the same thing as in phase one but now red circles appear on the ground and creates start falling randomly from the sky ( The same one used in the basement scene)
+Then at the end the boss send out a wave of ghosts that cover the entire room and a popup appears that says press spoace to dodge. you have to dodge in a specific time frame. You then have to go throw the box at the boss again and he knocks it back again If the scientist fails to throw it at him within 10 second the boss re enters phase Two
+
+Phase three.
+
+The boss does the same thing as in phase 3 but the ghosts he sends out get faster and the crates fall faster. Once the phase is over the scientist guy throws the box again and then the boss disappears as if he was trapped in the box. Then it wiggles like in pokemon. After 3 wiggles it clicks and the boss says his defeat line then his death noise.
+
+The scientist guy then says "I finaly did it" then  "*Drinks potion*" then he turns into a human and is seen back in the lab. "Finally human again"
+
+Big screen "THANK YOU FOR PLAYING OUT GAME" 

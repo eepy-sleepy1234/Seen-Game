@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://f6kedbawoukw"]
+[gd_scene format=3 uid="uid://f6kedbawoukw"]
 
 [ext_resource type="Script" uid="uid://bu5pharl5qk6s" path="res://scripts/npc.gd" id="1_vq6su"]
 
-[node name="camera" type="Node2D"]
+[node name="camera" type="Node2D" unique_id=471567717]
 script = ExtResource("1_vq6su")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1478557525]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1044732130]
 polygon = PackedVector2Array(-58, 182, 57, 182, 0, -1)

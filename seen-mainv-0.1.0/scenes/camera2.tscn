@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwqlk60pa3oqb"]
+
+[ext_resource type="Script" uid="uid://dl34lnaebdeva" path="res://camera.gd" id="1_8ddei"]
+
+[node name="camera" type="Node2D" unique_id=842804302]
+script = ExtResource("1_8ddei")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=920959133]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=545682357]
+polygon = PackedVector2Array(0, 0, -64, 0, -104, 192, 136, 200, 72, 0)
