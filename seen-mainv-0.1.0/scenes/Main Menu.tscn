@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dbgam1nuscwkq"]
+
+[ext_resource type="Script" uid="uid://c4csktd3gensu" path="res://scenes/main_menu.gd" id="1_15uo5"]
+[ext_resource type="Texture2D" uid="uid://4tikmfnerfdi" path="res://assets/Main Menu.png" id="1_estw7"]
+[ext_resource type="Texture2D" uid="uid://ccsty05f0xua1" path="res://assets/New.png" id="1_qgd8p"]
+[ext_resource type="Texture2D" uid="uid://dbo1l6lg8gaqg" path="res://assets/New Hover.png" id="2_1i3ks"]
+[ext_resource type="Texture2D" uid="uid://hqtifxee53yp" path="res://assets/SEEN Logo.png" id="2_15uo5"]
+[ext_resource type="Texture2D" uid="uid://v125w7lh44ly" path="res://assets/Credits.png" id="5_mslyy"]
+
+[node name="Control" type="Control" unique_id=141362738]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15uo5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1223036485]
+layout_mode = 0
+offset_right = 2881.0
+offset_bottom = 1801.0
+texture = ExtResource("1_estw7")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1567043561]
+layout_mode = 0
+offset_left = 177.00003
+offset_top = 181.00003
+offset_right = 320.00003
+offset_bottom = 252.00003
+scale = Vector2(7.666089, 7.666089)
+texture = ExtResource("2_15uo5")
+
+[node name="New" type="TextureButton" parent="." unique_id=540721736]
+layout_mode = 0
+offset_left = 326.00003
+offset_top = 775.0
+offset_right = 456.00003
+offset_bottom = 798.0
+scale = Vector2(5.9025993, 5.9025993)
+texture_normal = ExtResource("1_qgd8p")
+texture_pressed = ExtResource("1_qgd8p")
+texture_hover = ExtResource("2_1i3ks")
+
+[node name="Credits" type="TextureButton" parent="." unique_id=1443124851]
+layout_mode = 0
+offset_left = 326.00003
+offset_top = 1003.0
+offset_right = 456.00003
+offset_bottom = 1026.0
+scale = Vector2(5.9025993, 5.9025993)
+texture_normal = ExtResource("5_mslyy")
+texture_pressed = ExtResource("1_qgd8p")
+texture_hover = ExtResource("2_1i3ks")
+
+[connection signal="pressed" from="New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="New" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
