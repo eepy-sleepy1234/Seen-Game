@@ -1,18 +1,26 @@
 [gd_scene format=4 uid="uid://gh7j6i1qbomb"]
 
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_5rgt2"]
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_vxqgh"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_qk667"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_dtm20"]
+[ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="5_feknv"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_hkr5w"]
+[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="6_hkr5w"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_ga107"]
 
 [node name="Node2D" type="Node2D" unique_id=686492788]
 position = Vector2(-142, -151)
+script = ExtResource("1_vxqgh")
+next_level = "uid://drqq540dpkgev"
+keylevel = true
+door_unlocked = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1366815866]
 tile_map_data = PackedByteArray("AAD/////AAACAAgAAAAAAP//AAADAAgAAAABAP7/AAAAAAIAAAABAP//AAAAAAMAAAACAP7/AAABAAIAAAACAP//AAABAAMAAAD9//7/AAAAAAIAAAD9////AAAAAAMAAAD+//7/AAABAAIAAAD+////AAABAAMAAAD///7/AAAAAAAAAAAAAP7/AAABAAAAAAD7//7/AAAAAAIAAAD7////AAAAAAMAAAD8//7/AAABAAIAAAD8////AAABAAMAAAADAP7/AAAAAAIAAAADAP//AAAAAAMAAAAEAP7/AAABAAIAAAAEAP//AAABAAMAAAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD8//z/AAABAAAAAAD8//3/AAABAAEAAAD9//z/AAAAAAAAAAD9//3/AAAAAAEAAAD+//z/AAABAAAAAAD+//3/AAABAAEAAAD///z/AAAAAAAAAAD///3/AAAAAAEAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAABAPz/AAAAAAAAAAABAP3/AAAAAAEAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAADAPz/AAAAAAAAAAADAP3/AAAAAAEAAAAEAPz/AAABAAAAAAAEAP3/AAABAAEAAAADAPr/AAAAAAAAAAADAPv/AAAAAAEAAAAEAPr/AAABAAAAAAAEAPv/AAABAAEAAAABAPr/AAAAAAAAAAABAPv/AAAAAAEAAAACAPr/AAABAAAAAAACAPv/AAABAAEAAAD///r/AAAEAAAAAAD///v/AAAEAAEAAAAAAPr/AAAFAAAAAAAAAPv/AAAFAAEAAAD9//r/AAAAAAAAAAD9//v/AAAAAAEAAAD+//r/AAABAAAAAAD+//v/AAABAAEAAAD7//r/AAAAAAAAAAD7//v/AAAAAAEAAAD8//r/AAABAAAAAAD8//v/AAABAAEAAAD7//j/AAAAAAAAAAD7//n/AAAAAAEAAAD8//j/AAABAAAAAAD8//n/AAABAAEAAAD9//j/AAAAAAAAAAD9//n/AAAAAAEAAAD+//j/AAABAAAAAAD+//n/AAABAAEAAAD///j/AAAAAAAAAAD///n/AAAAAAEAAAAAAPj/AAABAAAAAAAAAPn/AAABAAEAAAABAPj/AAAAAAAAAAABAPn/AAAAAAEAAAACAPj/AAABAAAAAAACAPn/AAABAAEAAAADAPj/AAAAAAAAAAADAPn/AAAAAAEAAAAEAPj/AAABAAAAAAAEAPn/AAABAAEAAAADAPb/AAAGAAAAAAADAPf/AAAGAAEAAAAEAPb/AAAHAAAAAAAEAPf/AAAHAAEAAAABAPb/AAAGAAAAAAABAPf/AAAGAAEAAAACAPb/AAAHAAAAAAACAPf/AAAHAAEAAAD///b/AAAGAAAAAAD///f/AAAGAAEAAAAAAPb/AAAHAAAAAAAAAPf/AAAHAAEAAAD9//b/AAAGAAAAAAD9//f/AAAGAAEAAAD+//b/AAAHAAAAAAD+//f/AAAHAAEAAAD7//b/AAAGAAAAAAD7//f/AAAGAAEAAAD8//b/AAAHAAAAAAD8//f/AAAHAAEAAAADAPT/AAAIAAAAAAADAPX/AAAIAAEAAAAEAPT/AAAJAAAAAAAEAPX/AAAJAAEAAAABAPT/AAAIAAAAAAABAPX/AAAIAAEAAAACAPT/AAAJAAAAAAACAPX/AAAJAAEAAAD///T/AAAIAAAAAAD///X/AAAIAAEAAAAAAPT/AAAJAAAAAAAAAPX/AAAJAAEAAAD9//T/AAAIAAAAAAD9//X/AAAIAAEAAAD+//T/AAAJAAAAAAD+//X/AAAJAAEAAAD7//T/AAAIAAAAAAD7//X/AAAIAAEAAAD8//T/AAAJAAAAAAD8//X/AAAJAAEAAAADAPP/AAACAAMAAAAEAPP/AAADAAMAAAABAPP/AAACAAMAAAACAPP/AAADAAMAAAD///P/AAACAAMAAAAAAPP/AAADAAMAAAD9//P/AAACAAMAAAD+//P/AAADAAMAAAD7//P/AAACAAMAAAD8//P/AAADAAMAAAD6//7/AAAAAAQAABD6////AAAAAAUAABAFAP7/AAAAAAQAAAAFAP//AAAAAAUAAAD6//P/AAAAAAUAADD6//T/AAAAAAQAADAFAPP/AAAAAAUAACAFAPT/AAAAAAQAACAFAPX/AAAAAAQAAAAFAPb/AAAAAAQAAAAFAPf/AAAAAAQAAAAFAPj/AAAAAAQAAAAFAPn/AAAAAAQAAAAFAPr/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAP3/AAAAAAQAAAD6//3/AAAAAAQAABD6//z/AAAAAAQAABD6//v/AAAAAAQAABD6//r/AAAAAAQAABD6//n/AAAAAAQAABD6//j/AAAAAAQAABD6//f/AAAAAAQAABD6//b/AAAAAAQAABD6//X/AAAAAAQAABA=")
 tile_set = ExtResource("1_5rgt2")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=234024144]
-z_index = -1
+[node name="unlock" type="TileMapLayer" parent="." unique_id=234024144]
 tile_map_data = PackedByteArray("AAD///v/AAAAAAgAACAAAPv/AAABAAgAACD///r/AAAAAAkAACAAAPr/AAABAAkAACA=")
 tile_set = ExtResource("1_5rgt2")
 
@@ -29,3 +37,65 @@ zoom = Vector2(7, 7)
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_dtm20")]
 position = Vector2(2610.427, 225.20456)
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_hkr5w")]
+
+[node name="box8" type="Sprite2D" parent="." unique_id=1400648930]
+position = Vector2(-24.055511, -90.72116)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box9" type="Sprite2D" parent="." unique_id=723825173]
+position = Vector2(0.7542114, -90.721146)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box10" type="Sprite2D" parent="." unique_id=869541473]
+z_index = 19
+position = Vector2(25.695198, -90.71115)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box4" type="Sprite2D" parent="." unique_id=154987980]
+position = Vector2(-24.055527, -78.45805)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box6" type="Sprite2D" parent="." unique_id=1014336411]
+position = Vector2(0.75419617, -78.45804)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box7" type="Sprite2D" parent="." unique_id=1233338769]
+z_index = 19
+position = Vector2(25.695183, -78.448044)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box2" type="Sprite2D" parent="." unique_id=136853754]
+position = Vector2(-23.981201, -66.19495)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box5" type="Sprite2D" parent="." unique_id=1585668003]
+position = Vector2(0.8285217, -66.19493)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="box3" type="Sprite2D" parent="." unique_id=1890418985]
+z_index = 19
+position = Vector2(25.769508, -66.18494)
+texture = ExtResource("5_feknv")
+script = ExtResource("6_hkr5w")
+size = 30
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_ga107")]
+position = Vector2(0.27835083, -87.05426)

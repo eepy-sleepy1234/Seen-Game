@@ -1,11 +1,16 @@
 [gd_scene format=4 uid="uid://c41maao2i7t4l"]
 
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_h8o8h"]
+[ext_resource type="TileSet" uid="uid://cwbj2ugjiobyp" path="res://assets/Dungeon/ghost_tileset_because.tres" id="1_mvkjg"]
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_xkdp7"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_iarma"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_rjlvp"]
+[ext_resource type="Script" uid="uid://xyqgqbu5rljc" path="res://scripts/inventory2.gd" id="4_7tytf"]
 [ext_resource type="PackedScene" uid="uid://dak20trdxfplt" path="res://scenes/item.tscn" id="4_hgvbh"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_7tytf"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="5_rjlvp"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="6_hgvbh"]
+[ext_resource type="PackedScene" uid="uid://ch13cl6k7gt7t" path="res://scenes/new_room.tscn" id="10_h8o8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
 atlas = ExtResource("6_hgvbh")
@@ -22,13 +27,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_rjlvp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1363, 61.99997)]
+}
+
+[sub_resource type="Animation" id="Animation_hgvbh"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2352.2485, 41.113724), Vector2(-1363, 61.99997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tytf"]
+_data = {
+&"RESET": SubResource("Animation_rjlvp"),
+&"start": SubResource("Animation_hgvbh")
+}
+
 [node name="5b" type="Node2D" unique_id=507123397]
 position = Vector2(-80, -136)
+script = ExtResource("1_h8o8h")
 
-[node name="Ghost Walls" type="TileMapLayer" parent="." unique_id=43292991]
+[node name="Ghost Walls2" type="TileMapLayer" parent="." unique_id=1936091737]
 z_index = 1
 tile_map_data = PackedByteArray("AAAFAP3/AAAAAAQAAAAFAP7/AAAAAAQAAAAFAAIAAAAAAAQAAAAFAAEAAAAAAAQAAAAFAAAAAAAAAAQAAAAFAP//AAAAAAQAAAAFAPz/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAPr/AAAAAAQAAAA=")
-tile_set = ExtResource("1_xkdp7")
+tile_set = ExtResource("1_mvkjg")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1721690477]
 tile_map_data = PackedByteArray("AAABAP3/AAAGAAAAAAABAP7/AAAGAAEAAAACAP3/AAAHAAAAAAACAP7/AAAHAAEAAAADAP3/AAAGAAAAAAADAP7/AAAGAAEAAAAEAP3/AAAHAAAAAAAEAP7/AAAHAAEAAAAFAP3/AAAGAAAAAAAFAP7/AAAGAAEAAAAGAP3/AAAHAAAAAAAGAP7/AAAHAAEAAAAHAP3/AAAGAAAAAAAHAP7/AAAGAAEAAAAIAP3/AAAHAAAAAAAIAP7/AAAHAAEAAAABAAEAAAAEAAIAAAABAAIAAAAEAAMAAAACAAEAAAAFAAIAAAACAAIAAAAFAAMAAAADAAEAAAAEAAIAAAADAAIAAAAEAAMAAAAEAAEAAAAFAAIAAAAEAAIAAAAFAAMAAAAFAAEAAAAEAAIAAAAFAAIAAAAEAAMAAAAGAAEAAAAFAAIAAAAGAAIAAAAFAAMAAAAHAAEAAAAEAAIAAAAHAAIAAAAEAAMAAAAIAAEAAAAFAAIAAAAIAAIAAAAFAAMAAAABAP//AAACAAgAAFABAAAAAAADAAgAAFACAP//AAABAAAAAAACAAAAAAABAAEAAAADAP//AAAAAAAAAAADAAAAAAAAAAEAAAAEAP//AAABAAAAAAAEAAAAAAABAAEAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAEAAAAGAP//AAABAAAAAAAGAAAAAAABAAEAAAAHAP//AAAAAAAAAAAHAAAAAAAAAAEAAAAIAP//AAABAAAAAAAIAAAAAAABAAEAAAABAPv/AAAIAAAAAAABAPz/AAAIAAEAAAACAPv/AAAJAAAAAAACAPz/AAAJAAEAAAADAPv/AAAIAAAAAAADAPz/AAAIAAEAAAAEAPv/AAAJAAAAAAAEAPz/AAAJAAEAAAAFAPv/AAAIAAAAAAAFAPz/AAAIAAEAAAAGAPv/AAAJAAAAAAAGAPz/AAAJAAEAAAAHAPv/AAAIAAAAAAAHAPz/AAAIAAEAAAAIAPv/AAAJAAAAAAAIAPz/AAAJAAEAAAABAPr/AAACAAMAAAACAPr/AAADAAMAAAADAPr/AAACAAMAAAAEAPr/AAADAAMAAAAFAPr/AAACAAMAAAAGAPr/AAADAAMAAAAHAPr/AAACAAMAAAAIAPr/AAADAAMAAAAAAPv/AAAFAAUAAEAAAPr/AAAEAAUAAEAJAPr/AAAEAAUAAFAJAPv/AAAFAAUAAFAJAAIAAAAEAAUAAHAJAAEAAAAFAAUAAHAAAAEAAAAFAAUAAGAAAAIAAAAEAAUAAGAJAAAAAAAAAAQAAAAJAP//AAAAAAQAAAAJAP7/AAAAAAQAAAAJAP3/AAAAAAQAAAAJAPz/AAAAAAQAAAAAAP7/AAAAAAQAABAAAP3/AAAAAAQAABAAAPz/AAAAAAQAABA=")
@@ -36,7 +78,7 @@ tile_set = ExtResource("1_xkdp7")
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_iarma")]
 unique_name_in_owner = true
-position = Vector2(23.999998, -9.536743e-07)
+position = Vector2(35.28947, -0.8467111)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1046383049]
 position = Vector2(0.43411255, 2.7852173)
@@ -48,6 +90,12 @@ zoom = Vector2(7, 7)
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_rjlvp")]
 position = Vector2(2610.427, 225.20456)
 
+[node name="inventory2" parent="CanvasLayer" unique_id=1516792212 instance=ExtResource("3_rjlvp")]
+position = Vector2(2232.3232, 232.4353)
+script = ExtResource("4_7tytf")
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_7tytf")]
+
 [node name="item" parent="." unique_id=979002470 instance=ExtResource("4_hgvbh")]
 z_index = 3
 position = Vector2(120, -8)
@@ -58,14 +106,25 @@ item_type = 0
 [node name="inventory" parent="CanvasLayer2" unique_id=353951423 instance=ExtResource("3_rjlvp")]
 position = Vector2(2610.427, 225.20456)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933841529]
+position = Vector2(22.688583, -81.31969)
+rotation = 3.085058
+scale = Vector2(0.91452235, -1.0753958)
+skew = -0.09269631
+sprite_frames = SubResource("SpriteFrames_7tytf")
+
 [node name="security camera" parent="." unique_id=471567717 instance=ExtResource("5_rjlvp")]
 position = Vector2(-1363, 61.99997)
 rotation = 4.509456
 scale = Vector2(19.478994, 11.760962)
 yes = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera" unique_id=1933841529]
-position = Vector2(-7.265185, 117.91715)
-rotation = -1.4820018
-scale = Vector2(0.077231616, -0.055346426)
-sprite_frames = SubResource("SpriteFrames_7tytf")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="security camera" unique_id=920074249]
+libraries/ = SubResource("AnimationLibrary_7tytf")
+autoplay = &"start"
+
+[node name="unlock" type="TileMapLayer" parent="." unique_id=1155709460]
+
+[node name="new_room" parent="." unique_id=1000570113 instance=ExtResource("10_h8o8h")]
+position = Vector2(126.97836, 63.95488)
+next_area = "uid://bto6gg25th6y4"

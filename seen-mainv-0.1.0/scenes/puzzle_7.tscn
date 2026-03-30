@@ -1,26 +1,102 @@
 [gd_scene format=4 uid="uid://bc0uqslbstu3t"]
 
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_6ljeq"]
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_e8jt0"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_e8jt0"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_1eoq1"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="4_rxp5v"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_1eoq1"]
+[ext_resource type="Script" uid="uid://dnk83jgngy6jy" path="res://scripts/7door.gd" id="6_nh2vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxp5v"]
+size = Vector2(20, 10.3949585)
 
 [node name="Puzzle7" type="Node2D" unique_id=874464264]
 position = Vector2(-296, -360)
+script = ExtResource("1_e8jt0")
+next_level = "uid://bvc5sjommv26h"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1728832937]
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_1eoq1")]
+
+[node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_1eoq1")]
+position = Vector2(2610.427, 225.20456)
+
+[node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("4_rxp5v")]
+
+[node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_e8jt0")]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=44232609]
+position = Vector2(0.43411255, 2.7852173)
+scale = Vector2(1.2499999, 1.2499999)
+zoom = Vector2(7, 7)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1489544542]
 tile_map_data = PackedByteArray("AAD//wIAAAACAAgAAAAAAAIAAAADAAgAAAD//wEAAAAAAAAAAAAAAAEAAAABAAAAAAABAAIAAAAEAAMAAAACAAIAAAAFAAMAAAD9/wIAAAAEAAMAAAD+/wIAAAAFAAMAAAD/////AAAAAAAAAAD//wAAAAAAAAEAAAAAAP//AAABAAAAAAAAAAAAAAABAAEAAAD9////AAAEAAAAAAD9/wAAAAAEAAEAAAD+////AAAFAAAAAAD+/wAAAAAFAAEAAAD7////AAAEAAAAAAD7/wAAAAAEAAEAAAD8////AAAFAAAAAAD8/wAAAAAFAAEAAAABAP//AAAEAAAAAAABAAAAAAAEAAEAAAACAP//AAAFAAAAAAACAAAAAAAFAAEAAAADAP//AAAEAAAAAAADAAAAAAAEAAEAAAAEAP//AAAFAAAAAAAEAAAAAAAFAAEAAAADAP3/AAACAAAAAAADAP7/AAACAAEAAAAEAP3/AAADAAAAAAAEAP7/AAADAAEAAAABAP3/AAACAAAAAAABAP7/AAACAAEAAAACAP3/AAADAAAAAAACAP7/AAADAAEAAAD///3/AAACAAAAAAD///7/AAACAAEAAAAAAP3/AAADAAAAAAAAAP7/AAADAAEAAAD9//3/AAACAAAAAAD9//7/AAACAAEAAAD+//3/AAADAAAAAAD+//7/AAADAAEAAAD7//3/AAACAAAAAAD7//7/AAACAAEAAAD8//3/AAADAAAAAAD8//7/AAADAAEAAAD///v/AAACAAYAAAD///z/AAACAAcAAAAAAPv/AAADAAYAAAAAAPz/AAADAAcAAAD9//v/AAACAAYAAAD9//z/AAACAAcAAAD+//v/AAADAAYAAAD+//z/AAADAAcAAAD7//v/AAACAAYAAAD7//z/AAACAAcAAAD8//v/AAADAAYAAAD8//z/AAADAAcAAAABAPv/AAACAAYAAAABAPz/AAACAAcAAAACAPv/AAADAAYAAAACAPz/AAADAAcAAAADAPv/AAACAAYAAAADAPz/AAACAAcAAAAEAPv/AAADAAYAAAAEAPz/AAADAAcAAAADAPr/AAAGAAcAAAAEAPr/AAAHAAcAAAABAPr/AAAGAAcAAAACAPr/AAAHAAcAAAD///r/AAAGAAcAAAAAAPr/AAAHAAcAAAD9//r/AAAGAAcAAAD+//r/AAAHAAcAAAD7//r/AAAGAAcAAAD8//r/AAAHAAcAAAABAAEAAAAEAAIAAAACAAEAAAAFAAIAAAADAAEAAAAEAAIAAAADAAIAAAAEAAMAAAAEAAEAAAAFAAIAAAAEAAIAAAAFAAMAAAD9/wEAAAAEAAIAAAD+/wEAAAAFAAIAAAD7/wEAAAAEAAIAAAD7/wIAAAAEAAMAAAD8/wEAAAAFAAIAAAD8/wIAAAAFAAMAAAAFAAIAAAAAAAUAAAAFAPr/AAAAAAUAACAFAPv/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAAAAAQAAAAFAP//AAAAAAQAAAAFAAAAAAAAAAQAAAAFAAEAAAAAAAQAAAD6/wIAAAAAAAUAABD6//r/AAAAAAUAADD6//v/AAAAAAQAABD6//z/AAAAAAQAABD6//3/AAAAAAQAABD6//7/AAAAAAQAABD6////AAAAAAQAABD6/wAAAAAAAAQAABD6/wEAAAAAAAQAABA=")
 tile_set = ExtResource("1_6ljeq")
 
-[node name="player" parent="TileMapLayer" unique_id=1289593128 instance=ExtResource("2_e8jt0")]
-unique_name_in_owner = true
-position = Vector2(-4.7683716e-07, 31.999996)
+[node name="unlock" type="TileMapLayer" parent="." unique_id=3417178]
 
-[node name="Camera2D" type="Camera2D" parent="TileMapLayer/player" unique_id=44232609]
-position = Vector2(0.43411255, 2.7852173)
-scale = Vector2(1.2499999, 1.2499999)
-zoom = Vector2(7, 7)
+[node name="7door" type="Area2D" parent="." unique_id=1315139085]
+position = Vector2(63.98294, -48.31366)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="TileMapLayer" unique_id=1728832937]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door" unique_id=1174148091]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
 
-[node name="inventory" parent="TileMapLayer/CanvasLayer" unique_id=1317137626 instance=ExtResource("3_1eoq1")]
-position = Vector2(2610.427, 225.20456)
+[node name="7door2" type="Area2D" parent="." unique_id=196020341]
+position = Vector2(0.2567749, -48.31366)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door2" unique_id=1990434960]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
+
+[node name="7door3" type="Area2D" parent="." unique_id=1108350977]
+position = Vector2(-31.446991, -49.26956)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door3" unique_id=841699702]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
+
+[node name="7door4" type="Area2D" parent="." unique_id=242771568]
+position = Vector2(29.411499, -48.632294)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door4" unique_id=1478250537]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
+
+[node name="7door5" type="Area2D" parent="." unique_id=440924021]
+position = Vector2(-0.2753296, 49.33426)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door5" unique_id=808940184]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
+
+[connection signal="body_shape_entered" from="7door" to="7door" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="7door2" to="7door2" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="7door3" to="7door3" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="7door4" to="7door4" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="7door5" to="7door5" method="_on_body_shape_entered"]

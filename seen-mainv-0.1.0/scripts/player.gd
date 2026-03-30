@@ -16,15 +16,15 @@ func _ready() -> void:
 	await get_tree().create_timer(0.01).timeout
 	is_ghost = 0
 	prev_ghost_state = 0
+	sprite.visible = true
 
 func _physics_process(_delta):
 	if Globals.listening:
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if is_ghost >= 0:
 		set_collision_layer_value(2, true)
-		if not box:
-			set_collision_layer_value(1, false)
-			set_collision_mask_value(3, false)
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(3, false)
 		set_collision_mask_value(4, true)
 		modulate.a = 0.82
 	else:

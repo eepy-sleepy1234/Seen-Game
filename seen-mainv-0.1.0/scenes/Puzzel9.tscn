@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://cuidihu8hi8im"]
 
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_2xpjc"]
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_lulq8"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_lulq8"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_2pmdo"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_2pmdo"]
 
 [node name="Node2D" type="Node2D" unique_id=1633846746]
 position = Vector2(-184, -160)
+script = ExtResource("1_lulq8")
+next_level = "uid://cg3fjg0qntpng"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2030411553]
 z_index = 1
@@ -29,3 +33,7 @@ zoom = Vector2(7, 7)
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_2pmdo")]
 position = Vector2(2610.427, 225.20456)
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_2pmdo")]
+
+[node name="unlock" type="TileMapLayer" parent="." unique_id=2060981546]

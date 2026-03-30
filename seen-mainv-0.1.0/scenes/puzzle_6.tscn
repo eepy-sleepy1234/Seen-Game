@@ -1,10 +1,15 @@
 [gd_scene format=4 uid="uid://d1ifwxxrerlko"]
 
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_aeoxp"]
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_wnwd3"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_ye4sj"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_aeoxp"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="4_8qncq"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_8qncq"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="5_x2f7c"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="6_4twlm"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_8qncq"]
+[ext_resource type="Script" uid="uid://br1hxj62p5o8y" path="res://scripts/boxless.gd" id="10_afdll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
 atlas = ExtResource("5_x2f7c")
@@ -21,26 +26,69 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_wnwd3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1360, 64.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_ye4sj"]
+resource_name = "go"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2378.476, 311.6691), Vector2(-1360, 64.00001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aeoxp"]
+_data = {
+&"RESET": SubResource("Animation_wnwd3"),
+&"go": SubResource("Animation_ye4sj")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhhlu"]
+radius = 79.39037
+
 [node name="Puzzle6" type="Node2D" unique_id=81144770]
 position = Vector2(-120, -144)
+script = ExtResource("1_aeoxp")
+next_level = "uid://bc0uqslbstu3t"
+door_unlocked = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=231622445]
 tile_map_data = PackedByteArray("AAD//wAAAAACAAgAAAAAAAAAAAADAAgAAAD/////AAAEAAAAAAAAAP//AAAFAAAAAAABAP//AAAEAAIAAAABAAAAAAAEAAMAAAACAP//AAAFAAIAAAACAAAAAAAFAAMAAAADAP//AAAEAAIAAAADAAAAAAAEAAMAAAAEAP//AAAFAAIAAAAEAAAAAAAFAAMAAAD9////AAAEAAIAAAD9/wAAAAAEAAMAAAD+////AAAFAAIAAAD+/wAAAAAFAAMAAAD7////AAAEAAIAAAD7/wAAAAAEAAMAAAD8////AAAFAAIAAAD8/wAAAAAFAAMAAAADAP3/AAAEAAAAAAADAP7/AAAEAAEAAAAEAP3/AAAFAAAAAAAEAP7/AAAFAAEAAAABAP3/AAAEAAAAAAABAP7/AAAEAAEAAAACAP3/AAAFAAAAAAACAP7/AAAFAAEAAAD///3/AAAEAAAAAAD///7/AAAEAAEAAAAAAP3/AAAFAAAAAAAAAP7/AAAFAAEAAAD9//3/AAAEAAAAAAD9//7/AAAEAAEAAAD+//3/AAAFAAAAAAD+//7/AAAFAAEAAAD7//3/AAAEAAAAAAD7//7/AAAEAAEAAAD8//3/AAAFAAAAAAD8//7/AAAFAAEAAAD7//v/AAAEAAAAAAD7//z/AAAEAAEAAAD8//v/AAAFAAAAAAD8//z/AAAFAAEAAAD9//v/AAAEAAAAAAD9//z/AAAEAAEAAAD+//v/AAAFAAAAAAD+//z/AAAFAAEAAAD///v/AAAEAAAAAAD///z/AAAEAAEAAAAAAPv/AAAFAAAAAAAAAPz/AAAFAAEAAAABAPv/AAAEAAAAAAABAPz/AAAEAAEAAAACAPv/AAAFAAAAAAACAPz/AAAFAAEAAAADAPv/AAAEAAAAAAADAPz/AAAEAAEAAAAEAPv/AAAFAAAAAAAEAPz/AAAFAAEAAAADAPn/AAAEAAAAAAADAPr/AAAEAAEAAAAEAPn/AAAFAAAAAAAEAPr/AAAFAAEAAAABAPn/AAAEAAAAAAABAPr/AAAEAAEAAAACAPn/AAAFAAAAAAACAPr/AAAFAAEAAAD///n/AAAEAAAAAAD///r/AAAEAAEAAAAAAPn/AAAFAAAAAAAAAPr/AAAFAAEAAAD9//n/AAAEAAAAAAD9//r/AAAEAAEAAAD+//n/AAAFAAAAAAD+//r/AAAFAAEAAAD7//n/AAAEAAAAAAD7//r/AAAEAAEAAAD8//n/AAAFAAAAAAD8//r/AAAFAAEAAAADAPf/AAAGAAAAAAADAPj/AAAGAAEAAAAEAPf/AAAHAAAAAAAEAPj/AAAHAAEAAAABAPf/AAAGAAAAAAABAPj/AAAGAAEAAAACAPf/AAAHAAAAAAACAPj/AAAHAAEAAAD///f/AAAGAAAAAAD///j/AAAGAAEAAAAAAPf/AAAHAAAAAAAAAPj/AAAHAAEAAAD9//f/AAAGAAAAAAD9//j/AAAGAAEAAAD+//f/AAAHAAAAAAD+//j/AAAHAAEAAAD7//f/AAAGAAAAAAD7//j/AAAGAAEAAAD8//f/AAAHAAAAAAD8//j/AAAHAAEAAAADAPX/AAAIAAAAAAADAPb/AAAIAAEAAAAEAPX/AAAJAAAAAAAEAPb/AAAJAAEAAAABAPX/AAAIAAAAAAABAPb/AAAIAAEAAAACAPX/AAAJAAAAAAACAPb/AAAJAAEAAAD///X/AAAIAAAAAAD///b/AAAIAAEAAAAAAPX/AAAJAAAAAAAAAPb/AAAJAAEAAAD9//X/AAAIAAAAAAD9//b/AAAIAAEAAAD+//X/AAAJAAAAAAD+//b/AAAJAAEAAAD7//X/AAAIAAAAAAD7//b/AAAIAAEAAAD8//X/AAAJAAAAAAD8//b/AAAJAAEAAAD7//T/AAACAAMAAAD8//T/AAADAAMAAAD9//T/AAACAAMAAAD+//T/AAADAAMAAAD///T/AAACAAMAAAAAAPT/AAADAAMAAAABAPT/AAACAAMAAAACAPT/AAADAAMAAAADAPT/AAACAAMAAAAEAPT/AAADAAMAAAD6//T/AAAAAAUAADD6//X/AAAAAAQAABD6//b/AAAAAAQAABD6//f/AAAAAAQAABD6//j/AAAAAAQAABD6//n/AAAAAAQAABD6//r/AAAAAAQAABD6//v/AAAAAAQAABD6//z/AAAAAAQAABD6//3/AAAAAAQAABD6//7/AAAAAAQAABD6////AAAAAAQAABD6/wAAAAAAAAUAABAFAAAAAAAAAAUAAAAFAP//AAAAAAQAAAAFAP7/AAAAAAQAAAAFAP3/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAPr/AAAAAAQAAAAFAPn/AAAAAAQAAAAFAPj/AAAAAAQAAAAFAPf/AAAAAAQAAAAFAPb/AAAAAAQAAAAFAPX/AAAAAAQAAAAFAPT/AAAAAAUAACA=")
 tile_set = ExtResource("1_wnwd3")
 
 [node name="Ghost Wall" type="TileMapLayer" parent="." unique_id=293503534]
-z_index = -1
+z_index = 1
 tile_map_data = PackedByteArray("AAD///X/AAACAAYAAAD///b/AAACAAcAAAAAAPX/AAADAAYAAAAAAPb/AAADAAcAAAD///T/AAAGAAcAAAAAAPT/AAAHAAcAAAA=")
 tile_set = ExtResource("1_wnwd3")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1661528270]
+[node name="unlock" type="TileMapLayer" parent="." unique_id=1661528270]
 z_index = 1
 tile_map_data = PackedByteArray("AAD9//7/AAAIAAcAAAD+//7/AAAJAAcAAAA=")
 tile_set = ExtResource("1_wnwd3")
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_ye4sj")]
 unique_name_in_owner = true
-position = Vector2(7.999999, -1.0728836e-06)
+position = Vector2(-0.11467026, 2.0384207)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=2071901809]
 position = Vector2(0.43411255, 2.7852173)
@@ -52,14 +100,38 @@ zoom = Vector2(7, 7)
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_aeoxp")]
 position = Vector2(2610.427, 225.20456)
 
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_8qncq")]
+
+[node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("6_4twlm")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1904201528]
+position = Vector2(-72, -176)
+rotation = 3.085058
+scale = Vector2(0.7929437, -0.9149249)
+skew = -0.09269631
+sprite_frames = SubResource("SpriteFrames_4twlm")
+
 [node name="security camera" parent="." unique_id=471567717 instance=ExtResource("4_8qncq")]
 position = Vector2(-1360, 64.00001)
 rotation = 4.509456
 scale = Vector2(19.478994, 11.760962)
 yes = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="security camera" unique_id=1904201528]
-position = Vector2(-1.2583828, 111.380356)
-rotation = -1.4820018
-scale = Vector2(0.066964276, -0.047087617)
-sprite_frames = SubResource("SpriteFrames_4twlm")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="security camera" unique_id=1366842714]
+libraries/ = SubResource("AnimationLibrary_aeoxp")
+autoplay = &"go"
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_8qncq")]
+position = Vector2(-1, -145)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=742369667]
+position = Vector2(0, -12.903229)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("10_afdll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=252590781]
+position = Vector2(0.6779175, -74.43826)
+shape = SubResource("CircleShape2D_bhhlu")
+
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]

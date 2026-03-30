@@ -14,7 +14,7 @@ Puzzle 6, simple room press e to interact with the camera while holding the box 
 
 Puzzle 7, there are 5 doors, using the combination that was founded in the previous room you must walk through the doors in that order( the room repeats upon walking through any of the doors) but if you walk in the doors in the correct order(5324) Scientist guy says "I Should go back this is taking forever" and after he says that if you leave through the door you entered from(where mat is) it leads to puzzle 8. If you leave the room before scientist guy says that the progress resets and you return to puzzle 6
 
-Puzzle 8. Random voice:"quick grab that camera on the desk and shine it up" You must the n grab the camera and once you do the flying ghosts will go after you in a straight line from the top. The ones that are hit by the camera are then killed. You can then walk to the top. Halfway through walking  to the top ghosts  come after you from the right(entire wall of them spanning top to bottem) And you must  do the same you did with the other ghosts.  This room also has low visiobility so the ghosts are only visible from a short distance. 
+Puzzle 8. Random voice:"quick grab that camera on the desk and shine it up" You must then grab the camera and once you do the flying ghosts will go after you in a straight line from the top. The ones that are hit by the camera are then killed. You can then walk to the top. Halfway through walking  to the top ghosts  come after you from the right(entire wall of them spanning top to bottom) And you must  do the same you did with the other ghosts.  This room also has low visiobility so the ghosts are only visible from a short distance. 
 
 Puzzle 9 its a maze, but every now and then a ghost (the round ones) start following you and if you dont shine them after a certain amount of time they catch you. Make it so that theres very limited visibility on this one.( can see yourself and a little bit around you)
 
@@ -49,4 +49,4 @@ The boss does the same thing as in phase 3 but the ghosts he sends out get faste
 
 The scientist guy then says "I finaly did it" then  "*Drinks potion*" then he turns into a human and is seen back in the lab. "Finally human again"
 
-Big screen "THANK YOU FOR PLAYING OUT GAME" 
+Big screen "THANK YOU FOR PLAYING OUR GAME" 

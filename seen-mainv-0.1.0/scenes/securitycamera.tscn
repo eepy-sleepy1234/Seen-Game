@@ -6,6 +6,8 @@
 script = ExtResource("1_vq6su")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1478557525]
+collision_layer = 16
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1044732130]
 polygon = PackedVector2Array(-58, 182, 57, 182, 0, -1)

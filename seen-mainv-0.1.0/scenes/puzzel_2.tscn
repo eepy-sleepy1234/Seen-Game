@@ -1,25 +1,33 @@
 [gd_scene format=4 uid="uid://84yqabsge77x"]
 
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_lpqt7"]
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_rliuq"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_chquy"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_jju8r"]
+[ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="3_w72j2"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="5_lpqt7"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_w72j2"]
+[ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="7_l2ri6"]
 
 [node name="Puzzel 2" type="Node2D" unique_id=1896792903]
 position = Vector2(-151, -145)
+script = ExtResource("1_lpqt7")
+next_level = "uid://gh7j6i1qbomb"
+door_unlocked = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1006157401]
 z_index = 1
 tile_map_data = PackedByteArray("AAD///7/AAAEAAIAAAD/////AAACAAgAAAAAAP7/AAAFAAIAAAAAAP//AAADAAgAAAD9//7/AAAEAAIAAAD9////AAAEAAMAAAD+//7/AAAFAAIAAAD+////AAAFAAMAAAABAP7/AAAEAAIAAAABAP//AAAEAAMAAAACAP7/AAAFAAIAAAACAP//AAAFAAMAAAABAPz/AAAEAAAAAAABAP3/AAAEAAEAAAACAPz/AAAFAAAAAAACAP3/AAAFAAEAAAD///z/AAAEAAAAAAD///3/AAAEAAEAAAAAAPz/AAAFAAAAAAAAAP3/AAAFAAEAAAD9//z/AAAEAAAAAAD9//3/AAAEAAEAAAD+//z/AAAFAAAAAAD+//3/AAAFAAEAAAD7//7/AAAEAAIAAAD7////AAAEAAMAAAD8//7/AAAFAAIAAAD8////AAAFAAMAAAD7//z/AAAEAAAAAAD7//3/AAAEAAEAAAD8//z/AAAFAAAAAAD8//3/AAAFAAEAAAADAP7/AAAEAAIAAAADAP//AAAEAAMAAAAEAP7/AAAFAAIAAAAEAP//AAAFAAMAAAADAPz/AAAEAAAAAAADAP3/AAAEAAEAAAAEAPz/AAAFAAAAAAAEAP3/AAAFAAEAAAADAPr/AAAEAAAAAAADAPv/AAAEAAEAAAAEAPr/AAAFAAAAAAAEAPv/AAAFAAEAAAABAPr/AAAEAAAAAAABAPv/AAAEAAEAAAACAPr/AAAFAAAAAAACAPv/AAAFAAEAAAD///r/AAAEAAAAAAD///v/AAAEAAEAAAAAAPr/AAAFAAAAAAAAAPv/AAAFAAEAAAD9//r/AAAEAAAAAAD9//v/AAAEAAEAAAD+//r/AAAFAAAAAAD+//v/AAAFAAEAAAD7//r/AAAEAAAAAAD7//v/AAAEAAEAAAD8//r/AAAFAAAAAAD8//v/AAAFAAEAAAD7//j/AAAGAAAAAAD7//n/AAAGAAEAAAD8//j/AAAHAAAAAAD8//n/AAAHAAEAAAD9//j/AAAGAAAAAAD9//n/AAAGAAEAAAD+//j/AAAHAAAAAAD+//n/AAAHAAEAAAD///j/AAAGAAAAAAD///n/AAAGAAEAAAAAAPj/AAAHAAAAAAAAAPn/AAAHAAEAAAABAPj/AAAGAAAAAAABAPn/AAAGAAEAAAACAPj/AAAHAAAAAAACAPn/AAAHAAEAAAADAPj/AAAGAAAAAAADAPn/AAAGAAEAAAAEAPj/AAAHAAAAAAAEAPn/AAAHAAEAAAD6//b/AAAAAAQAADD6//X/AAAAAAUAADD7//b/AAAIAAAAAAD7//f/AAAIAAEAAAD8//b/AAAJAAAAAAD8//f/AAAJAAEAAAD9//b/AAAIAAAAAAD9//f/AAAIAAEAAAD+//b/AAAJAAAAAAD+//f/AAAJAAEAAAD///b/AAAIAAAAAAD///f/AAAIAAEAAAAAAPb/AAAJAAAAAAAAAPf/AAAJAAEAAAABAPb/AAAIAAAAAAABAPf/AAAIAAEAAAACAPb/AAAJAAAAAAACAPf/AAAJAAEAAAADAPb/AAAIAAAAAAADAPf/AAAIAAEAAAAEAPb/AAAJAAAAAAAEAPf/AAAJAAEAAAD7//X/AAACAAMAAAD8//X/AAADAAMAAAD9//X/AAACAAMAAAD+//X/AAADAAMAAAD///X/AAACAAMAAAAAAPX/AAADAAMAAAABAPX/AAACAAMAAAACAPX/AAADAAMAAAADAPX/AAACAAMAAAAEAPX/AAADAAMAAAD6//f/AAAAAAQAABD6//j/AAAAAAQAABD6//n/AAAAAAQAABD6//r/AAAAAAQAABD6//v/AAAAAAQAABD6//z/AAAAAAQAABD6//3/AAAAAAQAABD6//7/AAAAAAQAABAFAP3/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAP7/AAAAAAQAAAAFAPr/AAAAAAQAAAAFAPn/AAAAAAQAAAAFAPj/AAAAAAQAAAAFAPf/AAAAAAQAAAAFAPb/AAAAAAQAAAAFAP//AAAAAAUAAAAFAPX/AAAAAAUAACD6////AAAAAAUAABA=")
 tile_set = ExtResource("1_rliuq")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=225053253]
-z_index = -1
+[node name="unlock" type="TileMapLayer" parent="." unique_id=225053253]
+z_index = 1
 tile_map_data = PackedByteArray("AAD///b/AAACAAYAAAD///f/AAACAAcAAAAAAPb/AAADAAYAAAAAAPf/AAADAAcAAAD///X/AAAGAAcAAAAAAPX/AAAHAAcAAAA=")
 tile_set = ExtResource("1_rliuq")
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_chquy")]
 unique_name_in_owner = true
-position = Vector2(-2, -17)
+position = Vector2(0.027663946, -29.31073)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1888526986]
 position = Vector2(0.43411255, 2.7852173)
@@ -30,3 +38,114 @@ zoom = Vector2(7, 7)
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_jju8r")]
 position = Vector2(2610.427, 225.20456)
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_w72j2")]
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("5_lpqt7")]
+z_index = 2
+position = Vector2(0.062927246, -135.31003)
+
+[node name="box14" type="Sprite2D" parent="." unique_id=248937312]
+z_index = 2
+position = Vector2(-48.864334, -128.6106)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box11" type="Sprite2D" parent="." unique_id=1496619062]
+z_index = 2
+position = Vector2(-24.619812, -128.64493)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box8" type="Sprite2D" parent="." unique_id=504248790]
+z_index = 2
+position = Vector2(49.359787, -128.48648)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box3" type="Sprite2D" parent="." unique_id=374614773]
+z_index = 2
+position = Vector2(24.59018, -128.59134)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box2" type="Sprite2D" parent="." unique_id=1304963401]
+z_index = 2
+position = Vector2(-0.1794281, -128.6962)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box12" type="Sprite2D" parent="." unique_id=1554319508]
+z_index = 2
+position = Vector2(-24.664932, -141.66925)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box4" type="Sprite2D" parent="." unique_id=1470917036]
+z_index = 2
+position = Vector2(-0.22454834, -141.72052)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box6" type="Sprite2D" parent="." unique_id=1278051118]
+z_index = 2
+position = Vector2(24.54506, -141.61566)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box15" type="Sprite2D" parent="." unique_id=1760699738]
+z_index = 2
+position = Vector2(-48.909454, -141.63492)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box9" type="Sprite2D" parent="." unique_id=1013872003]
+z_index = 2
+position = Vector2(49.314667, -141.5108)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box5" type="Sprite2D" parent="." unique_id=408330970]
+z_index = 2
+position = Vector2(-0.17144775, -154.59811)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box7" type="Sprite2D" parent="." unique_id=1063826703]
+z_index = 2
+position = Vector2(24.59816, -154.49326)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box10" type="Sprite2D" parent="." unique_id=300544051]
+z_index = 2
+position = Vector2(49.367767, -154.3884)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box13" type="Sprite2D" parent="." unique_id=439486753]
+z_index = 2
+position = Vector2(-24.611832, -154.54684)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30
+
+[node name="box16" type="Sprite2D" parent="." unique_id=384805824]
+z_index = 2
+position = Vector2(-48.856354, -154.51251)
+texture = ExtResource("7_l2ri6")
+script = ExtResource("3_w72j2")
+size = 30

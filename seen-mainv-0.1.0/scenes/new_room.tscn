@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch13cl6k7gt7t"]
+
+[ext_resource type="Script" uid="uid://cv3fkh14q6k7" path="res://scripts/new_room.gd" id="1_qadtn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbicb"]
+
+[node name="new_room" type="Area2D" unique_id=1000570113]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_qadtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645451935]
+position = Vector2(-112.5405, -63.712738)
+shape = SubResource("CircleShape2D_nbicb")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

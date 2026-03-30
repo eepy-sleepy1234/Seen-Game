@@ -7,9 +7,12 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and str(Globals.inventory) == "0" and player_in_range:
+	if Input.is_action_just_pressed("interact") and (Globals.inventory == "0" or Globals.inventory2 == "0") and player_in_range:
 		level.door_unlocked = true
-		Globals.inventory = ""
+		if Globals.inventory == "0":
+			Globals.inventory = ""
+		else:
+			Globals.inventory2 = ""
 	if player_in_range and level.door_unlocked:
 		level.next = true
 

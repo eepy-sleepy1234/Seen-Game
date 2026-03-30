@@ -43,6 +43,7 @@ scale = Vector2(1.2499999, 1.2499999)
 zoom = Vector2(7, 7)
 
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_pa8r4")]
+position = Vector2(-367.38782, -333.01135)
 
 [connection signal="first_inventory" from="item" to="CanvasLayer/inventory" method="_on_item_first_inventory"]
 [connection signal="get_box" from="item" to="." method="_on_item_get_box"]

@@ -11,7 +11,7 @@ collision_mask = 3
 script = ExtResource("1_lmm34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572166744]
-position = Vector2(-367.1212, -328.63156)
+position = Vector2(-0.07548523, 0.5844879)
 shape = SubResource("RectangleShape2D_15mv3")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

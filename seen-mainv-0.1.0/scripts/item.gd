@@ -18,7 +18,6 @@ func _ready() -> void:
 			self.region_rect = Rect2(17.899, 19.968, 12.148, 8.999)
 		_:
 			self.region_rect = Rect2(0, 0, 0, 0)
-	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
@@ -32,6 +31,13 @@ func _process(delta: float) -> void:
 			if Globals.first_inventory:
 				first_inventory.emit()
 				Globals.first_inventory = false
+		elif Globals.inventory2 == "" and Globals.puzzle == 5:
+			Globals.inventory2 = str(item_type)
+			self.queue_free()
+			if Globals.inventory2 == "1":
+				get_box.emit(false)
+			elif Globals.inventory2 == "2":
+				get_box.emit(true)
 		else:
 			pass
 			#do a thing where it says no inventory space
