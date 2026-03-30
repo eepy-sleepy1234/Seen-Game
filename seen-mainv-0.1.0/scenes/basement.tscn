@@ -1282,6 +1282,7 @@ story = true
 position = Vector2(-262.85693, -231.98825)
 my_progress = 33
 interactable = true
+story = true
 
 [node name="backup" type="Sprite2D" parent="." unique_id=31929066]
 position = Vector2(-263.44586, -224.8526)
@@ -1291,7 +1292,7 @@ region_rect = Rect2(16.91695, 0, 11.146509, 16)
 
 [node name="secret door" parent="." unique_id=862540579 instance=ExtResource("15_t628s")]
 position = Vector2(-396.47125, -247.22705)
-my_progress = 35
+my_progress = 34
 story = true
 
 [node name="stairdetect" parent="." unique_id=1941508930 instance=ExtResource("15_t628s")]
