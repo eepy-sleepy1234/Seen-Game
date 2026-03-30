@@ -10,10 +10,11 @@ extends Node2D
 @onready var keyanim: AnimationPlayer = $CanvasLayer/keyanimation/AnimationPlayer
 @onready var old_ghost_guy: Node2D = $"old ghost guy"
 @onready var camera: Node2D = $"security camera"
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 var new_text = ""
 var next_scene: PackedScene = load("uid://ckyb4hj0cb02f")
-var level_scene: PackedScene = load("uid://dnij0b3j0fci3")
+var level_scene: PackedScene = load("uid://dnv1w0esogpm2")
 
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
@@ -92,6 +93,9 @@ func _ready() -> void:
 		textbox.close_box()
 		await wait_for_progress(34)
 		camera.queue_free()
+		point_light_2d.queue_free()
+		await get_tree().create_timer(0.01).timeout
+		Globals.listening = true
 		new_text = "\n - walk through the stairs now"
 		objectives.write(new_text)
 		await wait_for_progress(35)

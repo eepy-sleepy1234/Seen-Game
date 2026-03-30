@@ -28,7 +28,7 @@ collision_mask = 7
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1025809616]
 position = Vector2(-0.7711028, 59.37365)
 scale = Vector2(5.2969785, 1.9222792)
-energy = 6.31
+energy = 0.01
 texture = ExtResource("2_abqhh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
