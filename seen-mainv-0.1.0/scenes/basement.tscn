@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="15_5j8jl"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
 [ext_resource type="AudioStream" uid="uid://bw60aj6bxmdgc" path="res://assets/Sounds/Old Guy Wait.mp3" id="19_flc8l"]
+[ext_resource type="Texture2D" uid="uid://b2obylxmtoh1y" path="res://assets/UI/lighttexture.png" id="21_6lwow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -1298,8 +1299,8 @@ position = Vector2(-378.60394, -211.81165)
 my_progress = 32
 story = true
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1470645426]
-position = Vector2(-219.48993, -167.79779)
-energy = 3.92
-texture_scale = 17.76
-height = 880.0
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1008351923]
+position = Vector2(-362.54266, -201.2234)
+rotation = 1.335942
+scale = Vector2(2.7409935, 3.2179759)
+texture = ExtResource("21_6lwow")

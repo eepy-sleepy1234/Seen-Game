@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crb004vk1kwvt"]
 
 [ext_resource type="Script" uid="uid://bu5pharl5qk6s" path="res://scripts/npc.gd" id="1_nh2m4"]
+[ext_resource type="Texture2D" uid="uid://b2obylxmtoh1y" path="res://assets/UI/lighttexture.png" id="2_abqhh"]
 
 [node name="npc" type="Node2D" unique_id=1479997646]
 script = ExtResource("1_nh2m4")
@@ -23,6 +24,12 @@ collision_mask = 7
 [node name="RayCast2D3" type="RayCast2D" parent="Area2D/CollisionPolygon2D" unique_id=1743226208]
 target_position = Vector2(110, 82)
 collision_mask = 7
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1025809616]
+position = Vector2(-0.7711028, 59.37365)
+scale = Vector2(5.2969785, 1.9222792)
+energy = 6.31
+texture = ExtResource("2_abqhh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
