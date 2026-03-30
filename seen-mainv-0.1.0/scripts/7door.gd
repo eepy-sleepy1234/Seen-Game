@@ -25,6 +25,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 		else:
 			blackout.play("end level")
 			await get_tree().create_timer(0.5).timeout
+			Globals.count7 = 1
 			get_tree().change_scene_to_packed(load("res://scenes/puzzle_6.tscn"))
 			pass
 	if number == Globals.count7:

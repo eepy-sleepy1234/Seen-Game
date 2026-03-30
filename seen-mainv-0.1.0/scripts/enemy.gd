@@ -6,9 +6,10 @@ extends AnimatedSprite2D
 @export var direction: int
 @export var end: int
 var go = false
-var startpos = 0
+var startpos = Vector2(0.0, 0.0)
 func _ready() -> void:
-	var startpos = position
+	startpos = position
+	anim.play("fade")
 	if big:
 		play("big")
 		rotation_degrees = 0.0
@@ -67,3 +68,14 @@ func startup():
 	go = true
 	position = startpos
 	anim.play("RESET")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	Globals.inventory = ""
+	var _reload = get_tree().reload_current_scene()
+
+
+func _on_area_2d_2_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	position = startpos
+	anim.play("RESET")
+	print("ow")

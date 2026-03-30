@@ -92,6 +92,8 @@ position = Vector2(7.999999, -1.0728836e-06)
 position = Vector2(0.43411255, 2.7852173)
 scale = Vector2(1.2499999, 1.2499999)
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1926184696]
 
@@ -126,5 +128,8 @@ autoplay = &"start"
 [node name="new_room" parent="." unique_id=1000570113 instance=ExtResource("11_s6a17")]
 position = Vector2(147, 64.5)
 next_area = "uid://bto6gg25th6y4"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2107911428]
+color = Color(0.7058824, 0.7058824, 0.7058824, 1)
 
 [connection signal="get_box" from="item" to="." method="_on_item_get_box"]
