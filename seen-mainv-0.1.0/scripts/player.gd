@@ -9,6 +9,10 @@ var box = false
 @export var is_ghost = 0
 var prev_ghost_state = 0
 var direction = Vector2(0, 0)
+var camera = load("uid://f6kedbawoukw")
+var has_camera = false
+@onready var camerachild: Area2D = $Area2D
+
 
 func _ready() -> void:
 	is_ghost = 0
@@ -17,6 +21,7 @@ func _ready() -> void:
 	is_ghost = 0
 	prev_ghost_state = 0
 	sprite.visible = true
+	has_camera = false
 
 func _physics_process(_delta):
 	if Globals.listening:
@@ -38,6 +43,8 @@ func _physics_process(_delta):
 		secret = 1
 	
 	if direction.x > 0:
+		if has_camera:
+			camerachild.rotation_degrees = 270
 		sprite.flip_h = true
 		last_direction = 2
 		if is_ghost >= 0:
@@ -48,6 +55,8 @@ func _physics_process(_delta):
 		else:
 			sprite.play("side")
 	elif direction.x < 0:
+		if has_camera:
+			camerachild.rotation_degrees = 90
 		sprite.flip_h = false
 		last_direction = 4
 		if is_ghost >= 0:
@@ -58,6 +67,8 @@ func _physics_process(_delta):
 		else:
 			sprite.play("side")
 	elif direction.y < 0:
+		if has_camera:
+			camerachild.rotation_degrees = 180
 		last_direction = 1
 		if is_ghost >= 0:
 			if box:
@@ -67,6 +78,8 @@ func _physics_process(_delta):
 		else:
 			sprite.play("up")
 	elif direction.y > 0:
+		if has_camera:
+			camerachild.rotation_degrees = 0
 		last_direction = 3
 		if is_ghost >= 0:
 			if box:

@@ -172,6 +172,8 @@ position = Vector2(4.9999995, -2.000001)
 position = Vector2(0.43411255, 2.7852173)
 scale = Vector2(1.2499999, 1.2499999)
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=783033272]
 
@@ -181,7 +183,7 @@ position = Vector2(2610.427, 225.20456)
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("6_2w48h")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=846569149]
-position = Vector2(-2834.9326, 457.62064)
+position = Vector2(-930, -46.000004)
 rotation = 3.085058
 scale = Vector2(0.7929437, -0.9149249)
 skew = -0.09269631
@@ -215,6 +217,9 @@ libraries/ = SubResource("AnimationLibrary_5ua46")
 
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("9_2w48h")]
 position = Vector2(-32.17502, -53.625015)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=159018908]
+color = Color(0.7058824, 0.7058824, 0.7058824, 1)
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

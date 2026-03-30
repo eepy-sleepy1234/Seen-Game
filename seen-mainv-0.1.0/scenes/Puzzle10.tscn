@@ -42,6 +42,8 @@ position = Vector2(-1.6221317, -12.050812)
 position = Vector2(0.43411255, 2.7852173)
 scale = Vector2(1.2499999, 1.2499999)
 zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1894276056]
 

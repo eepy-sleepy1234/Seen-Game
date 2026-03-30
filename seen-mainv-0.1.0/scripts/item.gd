@@ -3,6 +3,7 @@ enum Items { key, box, ghost_box, gun, broken_camera }
 var player_in_range = false
 @export var item_type: Items
 signal get_box(ghost: bool)
+signal get_camera()
 signal first_inventory()
 func _ready() -> void:
 	match str(item_type):
@@ -28,6 +29,8 @@ func _process(delta: float) -> void:
 				get_box.emit(false)
 			elif Globals.inventory == "2":
 				get_box.emit(true)
+			elif Globals.inventory == "4":
+				get_camera.emit()
 			if Globals.first_inventory:
 				first_inventory.emit()
 				Globals.first_inventory = false
