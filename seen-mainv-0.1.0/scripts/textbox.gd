@@ -2,7 +2,7 @@ extends MarginContainer
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var textlabel: Label = $"../textbox/MarginContainer/HBoxContainer/Label"
-@onready var namelabel: Label = $MarginContainer2/HBoxContainer/Label
+@onready var namelabel: Label = $"../textbox/MarginContainer2/HBoxContainer/Label"
 @onready var oldGuyOh = $"../../AudioStreamPlayer"
 @onready var oldGuyWAIT = $"../../OldGuyWait"
 @onready var angryscout = $"../../AngryScout"
@@ -15,6 +15,7 @@ var scientist_text = ["everything looks good", "I need to shut this down", "phew
 var sepcogg_text = ["Told you so", "Hey there.", "Haven't seen you around, you must be a new dead", "Go walk through those crates to see", "My name's Super Epic Cool Old Ghost Guy, but my friends call me SEPCOGG", "the p is silent", "That's a weird name", "WAIT I NEED YOUR HELP", "Give this to a member of the SEGM", "Just find a ghost wearing a suit", "Welcome back.", "I know someone who can help you,", "but you need to go through an epic secret puzzle dungeon that is designed specifically for partial ghost people.", "Just be careful, that place is crawling with SEGM members"]
 var nurse_text = ["Oh, you're finally awake. Let me get a doctor for you.", "you should get back in bed", "you really can't be wandering off like that"]
 var segm_text = ["depends, who's asking?", "oh right, yeah i am. who's wondering?", "oh right, why?", "who's asking?", "oh right", "it stands for super evil ghost mafia", "what was that?", "boss will definitely be hearing about this"]
+var boss_text = "you think you can make fun of the segm and get away with it? Think again"
 var doctor_text = ["Hey, I recognize you! Why don't you come back to the hospital with me."]
 func write_text(new_text) -> void:
 	if new_text == "you really can't be wandering off like that":
@@ -38,6 +39,8 @@ func write_text(new_text) -> void:
 		namelabel.text = "Segm member"
 	elif new_text in doctor_text:
 		namelabel.text = "Doctor long legs"
+	elif new_text == boss_text:
+		namelabel.text = "SEGM boss"
 	Globals.listening = false
 	textlabel.text = new_text
 	open_box()

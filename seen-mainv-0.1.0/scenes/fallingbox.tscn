@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://l026mnw2phqp"]
+
+[ext_resource type="Texture2D" uid="uid://u0xvlb7hpmk3" path="res://assets/Dungeon/circle.png" id="1_y2rwh"]
+[ext_resource type="Script" uid="uid://ci6lvk8q1lkkq" path="res://scripts/fallingbox.gd" id="2_slpgw"]
+[ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="3_uf8o2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7j7s"]
+radius = 7.55394
+height = 45.484924
+
+[node name="fallingbox" type="Sprite2D" unique_id=399407712]
+scale = Vector2(0.57125044, 0.57125044)
+texture = ExtResource("1_y2rwh")
+script = ExtResource("2_slpgw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468825113]
+position = Vector2(-0.05813077, -172.39584)
+scale = Vector2(2.0627909, 2.0627909)
+texture = ExtResource("3_uf8o2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1679804284]
+collision_layer = 4096
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1884214471]
+position = Vector2(0.19050455, 5.5240645)
+rotation = -1.5722181
+scale = Vector2(1.6925726, 1.1898334)
+shape = SubResource("CapsuleShape2D_c7j7s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

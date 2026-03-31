@@ -4,6 +4,7 @@ class_name enemy extends AnimatedSprite2D
 @export var big: bool
 @export var direction: int
 @export var end: int
+@export var speed = 2
 var go = false
 var startpos = Vector2(0.0, 0.0)
 func _ready() -> void:
@@ -27,25 +28,25 @@ func _process(delta: float) -> void:
 	if big:
 		if direction == 1 and go:
 			if position.y > end:
-				position.y -= 2
+				position.y -= speed
 			else:
 				anim.play("fade")
 				go = false
 		if direction == 2 and go:
 			if position.x < end:
-				position.x += 2
+				position.x += speed
 			else:
 				anim.play("fade")
 				go = false
 		if direction == 3 and go:
 			if position.y < end:
-				position.y += 2
+				position.y += speed
 			else:
 				anim.play("fade")
 				go = false
 		if direction == 4 and go:
 			if position.x > end:
-				position.x -= 2
+				position.x -= speed
 			else:
 				anim.play("fade")
 				go = false
@@ -53,17 +54,17 @@ func _process(delta: float) -> void:
 		if self.position.x - player.position.x < -1.5:
 			play("small side")
 			flip_h = true
-			position.x += 0.5
+			position.x += 0.25 * speed
 		elif self.position.x - player.position.x > 1.5:
 			play("small side")
 			flip_h = false
-			position.x -= 0.5
+			position.x -= 0.25 * speed
 		if self.position.y - player.position.y < -1.5:
 			play("small down")
-			position.y += 0.5
+			position.y += 0.25 * speed
 		elif self.position.y - player.position.y > 1.5:
 			play("small up")
-			position.y -= 0.5
+			position.y -= 0.25 * speed
 
 func startup():
 	go = true

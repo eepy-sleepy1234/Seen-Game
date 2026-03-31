@@ -46,3 +46,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if fmod(boss.phase, 1.0) != 0.0:
 		direction = 3
 		distance = 15
+		boss.boss_was_hit = true

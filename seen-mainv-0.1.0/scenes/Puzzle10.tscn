@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="4_4n8nb"]
 [ext_resource type="Texture2D" uid="uid://t4wbphl7q5ik" path="res://assets/UI/lighttexture2.png" id="5_dwn8x"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="6_4n8nb"]
-[ext_resource type="Script" path="res://scripts/level10camera.gd" id="8_csreo"]
+[ext_resource type="Script" uid="uid://c8hmlwuyrhb7n" path="res://scripts/level10camera.gd" id="8_csreo"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="8_kt3bm"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="9_kt3bm"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="10_6y4vj"]
-[ext_resource type="Script" path="res://scripts/falllvl10.gd" id="11_csreo"]
-[ext_resource type="Script" path="res://scripts/lvl10story.gd" id="13_6y4vj"]
+[ext_resource type="Script" uid="uid://bvqjju0mvenj1" path="res://scripts/falllvl10.gd" id="11_csreo"]
+[ext_resource type="Script" uid="uid://stq2o55h5exp" path="res://scripts/lvl10story.gd" id="13_6y4vj"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="14_hlo2g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hlo2g"]
@@ -99,11 +99,6 @@ _data = {
 position = Vector2(-416, -376)
 script = ExtResource("1_3thbt")
 next_level = "uid://ldgwyh58b6v8"
-
-[node name="item" parent="." unique_id=979002470 instance=ExtResource("1_aw2u7")]
-z_index = 1
-position = Vector2(66.96713, -33.098694)
-item_type = 4
 
 [node name="gun" parent="." unique_id=1474346887 instance=ExtResource("1_aw2u7")]
 z_index = 3
