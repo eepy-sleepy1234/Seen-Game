@@ -10,6 +10,7 @@ var next = false
 var itemScene = load("uid://dak20trdxfplt")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	AudioPlayer.play_music_level()
 	blackout.play("start level")
 	Globals.listening = true

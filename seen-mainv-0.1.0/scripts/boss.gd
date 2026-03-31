@@ -41,6 +41,7 @@ const PHASE3_DURATION := 15.0
 const REST_WINDOW := 5
 
 func _ready() -> void:
+	AudioPlayer.stop_music()
 	Globals.puzzle = 11
 	Globals.inventory = "2"
 	player.last_direction = 1
