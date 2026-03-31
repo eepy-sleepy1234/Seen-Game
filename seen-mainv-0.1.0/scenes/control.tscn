@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://5m4ewijqpmkn"]
+
+[ext_resource type="Script" uid="uid://bqmyn3644gods" path="res://control.gd" id="1_5p55f"]
+
+[node name="Control" type="Control" unique_id=943246447]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p55f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1325064510]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[center][font=res://fonts/title_font.ttf][color=yellow][b]MY GAME[/b][/color][/font][/center]
+
+[center][font=res://fonts/main_font.ttf]Created by Gh05tz[/font][/center]
+
+[center][i]Special Thanks:[/i][/center]
+
+[center][color=lightblue]You 😎[/color][/center]"
