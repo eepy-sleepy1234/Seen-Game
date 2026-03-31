@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cg3fjg0qntpng"]
 
-[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_3thbt"]
 [ext_resource type="PackedScene" uid="uid://dak20trdxfplt" path="res://scenes/item.tscn" id="1_aw2u7"]
+[ext_resource type="Script" uid="uid://bt0inns13p5kq" path="res://scripts/puzzle_10.gd" id="1_hlo2g"]
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="2_8c0ag"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_3thbt"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="4_4n8nb"]
@@ -97,8 +97,7 @@ _data = {
 
 [node name="Node2D" type="Node2D" unique_id=744575498]
 position = Vector2(-416, -376)
-script = ExtResource("1_3thbt")
-next_level = "uid://ldgwyh58b6v8"
+script = ExtResource("1_hlo2g")
 
 [node name="gun" parent="." unique_id=1474346887 instance=ExtResource("1_aw2u7")]
 z_index = 3
