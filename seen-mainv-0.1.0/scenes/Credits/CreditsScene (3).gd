@@ -15,6 +15,9 @@ const crditt = [
 	{ "type": "blank" },
 	{ "type": "header", "text": "Music" },
 	{ "type": "role", "text": "Jean Paul" },
+	{ "type": "header", "text": "Fonts" },
+	{ "type": "role", "text": "Karmatic arcade - Vic Fieger" },
+	{ "type": "role", "text": "Notepen - Jeti" },
 	{ "type": "blank" },
 	{ "type": "header", "text": "Special Thanks" },
 	{ "type": "role", "text": "The open-source community" },
@@ -24,6 +27,24 @@ const crditt = [
 	{ "type": "blank" },
 	{ "type": "blank" },
 	{ "type": "header", "text": "SEEN" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "Programmer" },
+	{ "type": "role", "text": "Jude Nibbelink (GitHub: eepy-sleepy1234)" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "Art & Animation" },
+	{ "type": "role", "text": "Keegan Jones (GitHub: Gh05tz)" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "Music" },
+	{ "type": "role", "text": "Jean Paul" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "Special Thanks" },
+	{ "type": "role", "text": "The open-source community" },
+	{ "type": "role", "text": "To You For Playing Our Game" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "Thank You for Playing" },
+	{ "type": "blank" },
+	{ "type": "blank" },
+	{ "type": "header", "text": "GUY" },
 	{ "type": "blank" },
 	{ "type": "header", "text": "Programmer" },
 	{ "type": "role", "text": "Jude Nibbelink (GitHub: eepy-sleepy1234)" },
@@ -437,25 +458,7 @@ const crditt = [
 	{ "type": "header", "text": "Thank You for Playing" },
 	{ "type": "blank" },
 	{ "type": "blank" },
-	{ "type": "header", "text": "SEEN" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "Programmer" },
-	{ "type": "role", "text": "Jude Nibbelink (GitHub: eepy-sleepy1234)" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "Art & Animation" },
-	{ "type": "role", "text": "Keegan Jones (GitHub: Gh05tz)" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "Music" },
-	{ "type": "role", "text": "Jean Paul" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "Special Thanks" },
-	{ "type": "role", "text": "The open-source community" },
-	{ "type": "role", "text": "To You For Playing Our Game" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "Thank You for Playing" },
-	{ "type": "blank" },
-	{ "type": "blank" },
-	{ "type": "header", "text": "SEEN" },
+	{ "type": "header", "text": "GUY" },
 	{ "type": "blank" },
 	{ "type": "header", "text": "Programmer" },
 	{ "type": "role", "text": "Jude Nibbelink (GitHub: eepy-sleepy1234)" },
@@ -530,24 +533,50 @@ func make_copy(from):
 	for e in crditt:
 		match e["type"]:
 			"header":
-				box.add_child(make_txt(e["text"], 42, true, w, y))
-				y += 52
+				if e["text"] == "SEEN":
+					box.add_child(make_img("res://assets/SEEN Logo.png", w, y))
+					y += 250
+				elif e["text"] == "GUY":
+					box.add_child(make_img("res://assets/Npc/some dude.png", w, y))
+					y += 250
+					
+				else:
+					box.add_child(make_txt(e["text"], 42, true, w, y))
+					y += 52
+				
+				
 			"role":
 				box.add_child(make_txt(e["text"], 28, false, w, y))
 				y += 38
 			"blank":
 				y += 36
 
-
+func make_img(path, w, y):
+	var t = TextureRect.new()
+	t.texture = load(path)
+	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	t.custom_minimum_size = Vector2(w, 250)
+	t.position = Vector2(0, y)
+	return t
 func make_txt(txt, size, big, w, y):
 	var l = Label.new()
 	l.text = txt
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l.custom_minimum_size  = Vector2(w, 0)
 	l.position = Vector2(0, y)
-	l.add_theme_font_size_override("font_size", size)
+
+	var font: FontFile
+	if big:
+		font = load("res://assets/Fonts/ka1.ttf")
+		
+		
+	else:
+		font = load("res://assets/Fonts/ka1.ttf")
+	l.add_theme_font_override("font", font)
+	l	.add_theme_font_size_override("font_size", size)
 	if big:
 		l.add_theme_color_override("font_color", Color(0.0, 0.593, 0.556))
 	else:
 		l.add_theme_color_override("font_color", Color(0.88, 0.88, 0.92))
+
 	return l
