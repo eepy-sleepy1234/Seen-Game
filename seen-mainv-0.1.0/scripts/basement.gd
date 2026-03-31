@@ -70,6 +70,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_packed(next_scene)
 	elif Globals.story_progress == 28:
 		key.queue_free()
+		oldGuyOh.play()
 		for i in range(18):
 			old_ghost_guy.dialogue.pop_front()
 			old_ghost_guy.dialogue_progress.pop_front()

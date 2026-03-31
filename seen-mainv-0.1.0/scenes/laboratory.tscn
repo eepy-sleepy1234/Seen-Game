@@ -575,7 +575,9 @@ parameters/looping = true
 
 [node name="Emergency Sound" type="AudioStreamPlayer" parent="." unique_id=1641078752]
 stream = ExtResource("15_f8rtk")
+volume_db = -13.684
 parameters/looping = true
 
 [node name="Explosion" type="AudioStreamPlayer" parent="." unique_id=1998824262]
 stream = ExtResource("16_wtnrd")
+volume_db = -15.165

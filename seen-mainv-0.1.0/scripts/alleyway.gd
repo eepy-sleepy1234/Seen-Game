@@ -5,6 +5,7 @@ extends Node2D
 @onready var blackout: AnimationPlayer = $CanvasLayer/blackout/AnimationPlayer
 @onready var player: CharacterBody2D = $player
 @onready var segm: AnimatedSprite2D = $"SEGM dude/AnimatedSprite2D"
+@onready var madscout = $AngryScout
 var next_scene: PackedScene = load("uid://jxqn0elibhqv")
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
@@ -21,6 +22,7 @@ func _ready() -> void:
 		await wait_for_progress(21)
 		segm.animation = "mad"
 		var new_text = "\n - get back to the hospital"
+		madscout.play()
 		objectives.write(new_text)
 		await wait_for_progress(22)
 		player.speed = 50

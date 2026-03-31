@@ -7,6 +7,7 @@ extends Node2D
 @onready var ghost_particles: CPUParticles2D = $"bed/ghost particles"
 @onready var bedanim: AnimationPlayer = $bedanim
 @onready var nurse: AnimationPlayer = $nurse/AnimationPlayer
+@onready var angrynoise = $AngryNurse
 var next_scene: PackedScene = load("uid://dd65bmg1sswdc")
 
 func wait_for_progress(target: int) -> void:
@@ -21,6 +22,7 @@ func _ready() -> void:
 	await get_tree().create_timer(2).timeout
 	textbox.continue_text("you should get back in bed")
 	await get_tree().create_timer(2).timeout
+	angrynoise.play()
 	textbox.continue_text("you really can't be wandering off like that")
 	await get_tree().create_timer(2).timeout
 	textbox.close_box()

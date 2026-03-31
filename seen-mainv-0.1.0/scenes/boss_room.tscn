@@ -14,7 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="10_gjdif"]
 [ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="11_010di"]
 [ext_resource type="Script" uid="uid://cgyfmpadlb1x8" path="res://scripts/throwbox.gd" id="11_gjdif"]
+[ext_resource type="AudioStream" uid="uid://dj7sqsl617sae" path="res://assets/Sounds/Boss HYA.mp3" id="13_d53cq"]
 [ext_resource type="PackedScene" uid="uid://l026mnw2phqp" path="res://scenes/fallingbox.tscn" id="13_qvmem"]
+[ext_resource type="AudioStream" uid="uid://ckpouag7qrbju" path="res://assets/Sounds/Boss MWAHAHAHA.mp3" id="14_7l8xw"]
+[ext_resource type="AudioStream" uid="uid://ckqrjf1dss2y" path="res://assets/Sounds/Mafia Boss Death 2.mp3" id="15_votf5"]
+[ext_resource type="AudioStream" uid="uid://ufa2wj8v333d" path="res://assets/Sounds/YOULL NEVER BEAT ME.mp3" id="16_skgx8"]
+[ext_resource type="AudioStream" uid="uid://wp1imlppslnb" path="res://assets/Sounds/credits.ogg" id="17_gjhnn"]
+[ext_resource type="AudioStream" uid="uid://fg6cvbagrrv5" path="res://assets/Sounds/Boss Defeat.mp3" id="18_geu3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bggbs"]
 atlas = ExtResource("3_g2a2m")
@@ -357,6 +363,28 @@ horizontal_alignment = 1
 offset_right = 2935.8843
 offset_bottom = 1810.5566
 color = Color(1, 0, 0, 0)
+
+[node name="BossHya" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1616970743]
+stream = ExtResource("13_d53cq")
+
+[node name="BossMwahahaha" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=378667640]
+stream = ExtResource("14_7l8xw")
+
+[node name="MafiaBossDeath2" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=670496841]
+stream = ExtResource("15_votf5")
+
+[node name="YoullNeverBeatMe" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=583729398]
+stream = ExtResource("16_skgx8")
+
+[node name="Boss Music" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=257014673]
+stream = ExtResource("17_gjhnn")
+parameters/looping = true
+
+[node name="BossDefeat" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=46118324]
+stream = ExtResource("18_geu3j")
+
+[node name="MafiaBossDeath3" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=681966248]
+stream = ExtResource("15_votf5")
 
 [node name="throwbox" type="Sprite2D" parent="." unique_id=1761377891]
 position = Vector2(-59.92395, 147.65839)

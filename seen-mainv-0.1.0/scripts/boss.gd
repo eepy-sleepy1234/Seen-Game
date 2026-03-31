@@ -32,6 +32,12 @@ extends AnimatedSprite2D
 @onready var fallingbox3: Sprite2D = $"../fallingbox3"
 @onready var fallingbox4: Sprite2D = $"../fallingbox4"
 @onready var fallingbox5: Sprite2D = $"../fallingbox5"
+@onready var music = $"../CanvasLayer/Boss Music"
+@onready var BossHYA = $"../CanvasLayer/BossHya"
+@onready var YoullNeverBeatMe = $"../CanvasLayer/YoullNeverBeatMe"
+@onready var BossMwahahaha = $"../CanvasLayer/BossMwahahaha"
+@onready var Youdefeatedme = $"../CanvasLayer/BossDefeat"
+@onready var DeathBurp = $"../CanvasLayer/MafiaBossDeath3"
 
 enum Phase { PHASE1, PHASE2, PHASE3, RESTING, WIN }
 var current_phase: Phase = Phase.PHASE1
@@ -50,14 +56,19 @@ func _ready() -> void:
 	player.last_direction = 1
 	await get_tree().create_timer(0.01).timeout
 	textbox.write_text("you think you can make fun of the segm and get away with it? Think again")
+	Globals.player_health = 3
 	await get_tree().create_timer(5).timeout
 	textbox.close_box()
+	music.play()
+	BossMwahahaha.play()
 	label.text = "survive"
 	anim.play("float")
 	await get_tree().create_timer(1).timeout
+	current_phase = Phase.PHASE3
 	run_fight()
 	
 func run_fight() -> void:
+	
 	while current_phase != Phase.WIN:
 		match current_phase:
 			Phase.PHASE1:
@@ -93,9 +104,11 @@ func rest_window() -> void:
 		elapsed += interval
 		if boss_was_hit:
 			advance_phase()
+			BossHYA.play()
 			return
 	if not boss_was_hit:
 		current_phase = last_phase
+		YoullNeverBeatMe.play()
 	anim.play("float")
 
 func advance_phase() -> void:
@@ -109,12 +122,21 @@ func advance_phase() -> void:
 			win()
 
 func win():
+	music.stop()
+	color_rect.color.a  = 0
 	hide_small_enemies()
+	Youdefeatedme.play()
+	await get_tree().create_timer(6).timeout
+	DeathBurp.play()
+	await get_tree().create_timer(1).timeout
 	label.text = ""
 	textbox.write_text("*drinks potion*")
 	await get_tree().create_timer(3).timeout
 	textbox.continue_text("I finally did it")
 	blackout.play("fade out")
+	get_tree().change_scene_to_packed(load("res://scenes/labend.tscn"))
+	
+	
 
 func hide_small_enemies():
 	for e in [enemy18, enemy19, enemy20, enemy21]:
@@ -133,6 +155,7 @@ func phase1_attack():
 	enemy13.startup(); enemy14.startup(); enemy15.startup()
 	enemy16.startup(); enemy17.startup()
 	hide_small_enemies()
+	
 	await get_tree().create_timer(1.4).timeout
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
 
@@ -163,9 +186,17 @@ func phase3_attack():
 	enemy16.startup(); enemy17.startup()
 	hide_small_enemies()
 	await get_tree().create_timer(1).timeout
+	enemy13.startup(); enemy14.startup(); enemy15.startup()
+	enemy16.startup(); enemy17.startup()
+	hide_small_enemies()
+	await get_tree().create_timer(1).timeout
+	enemy13.startup(); enemy14.startup(); enemy15.startup()
+	enemy16.startup(); enemy17.startup()
+	hide_small_enemies()
+	await get_tree().create_timer(1).timeout
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
 
 
 func _on_enemy_damage() -> void:
-	color_rect.color.a += 0.3
+	color_rect.color.a += 0.1
 	camera_2d.screen_shake(20, 0.25)
