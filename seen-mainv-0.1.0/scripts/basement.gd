@@ -95,6 +95,7 @@ func _ready() -> void:
 		await get_tree().create_timer(3).timeout
 		textbox.close_box()
 		await wait_for_progress(34)
+		security_camera.queue_free()
 		camera.queue_free()
 		point_light_2d.queue_free()
 		await get_tree().create_timer(0.01).timeout

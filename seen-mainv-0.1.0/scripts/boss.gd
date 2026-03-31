@@ -1,4 +1,7 @@
 extends AnimatedSprite2D
+@onready var blackout: AnimationPlayer = $"../CanvasLayer/blackout/AnimationPlayer"
+@onready var label: Label = $"../CanvasLayer/Label"
+@onready var player: CharacterBody2D = %player
 @onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var enemy1: enemy = $"../bigright/enemy"
@@ -31,19 +34,23 @@ extends AnimatedSprite2D
 enum Phase { PHASE1, PHASE2, PHASE3, RESTING, WIN }
 var current_phase: Phase = Phase.PHASE1
 var boss_was_hit := false
-
+var last_phase: Phase
 const PHASE1_DURATION := 15.0
 const PHASE2_DURATION := 15.0
 const PHASE3_DURATION := 15.0
 const REST_WINDOW := 5
 
 func _ready() -> void:
-	await get_tree().create_timer(0.01).timeout
-	textbox.write_text("you think you can make fun of the segm and get away with it? Think again")
-	await get_tree().create_timer(4).timeout
-	textbox.close_box()
 	Globals.puzzle = 11
 	Globals.inventory = "2"
+	player.last_direction = 1
+	await get_tree().create_timer(0.01).timeout
+	textbox.write_text("you think you can make fun of the segm and get away with it? Think again")
+	await get_tree().create_timer(5).timeout
+	textbox.close_box()
+	label.text = "survive"
+	anim.play("float")
+	await get_tree().create_timer(1).timeout
 	run_fight()
 	
 func run_fight() -> void:
@@ -58,17 +65,21 @@ func run_fight() -> void:
 
 func run_phase(duration: float, attack_func: Callable) -> void:
 	anim.play("attacking")
+	label.text = "survive"
 	var timer := 0.0
 	
 	while timer < duration:
 		attack_func.call()
 		await get_tree().create_timer(1.4 * 5).timeout
 		timer += 1.4 * 5
+	last_phase = current_phase
+	current_phase = Phase.RESTING
 	await rest_window()
 
 func rest_window() -> void:
 	boss_was_hit = false
 	anim.play("fall")
+	label.text = "throw your box at \n the boss"
 	hide_small_enemies()
 	var elapsed := 0.0
 	var interval := 0.1
@@ -79,10 +90,12 @@ func rest_window() -> void:
 		if boss_was_hit:
 			advance_phase()
 			return
+	if not boss_was_hit:
+		current_phase = last_phase
 	anim.play("float")
 
 func advance_phase() -> void:
-	match current_phase:
+	match last_phase:
 		Phase.PHASE1:
 			current_phase = Phase.PHASE2
 		Phase.PHASE2:
@@ -92,12 +105,18 @@ func advance_phase() -> void:
 			win()
 
 func win():
-	pass
+	hide_small_enemies()
+	label.text = ""
+	textbox.write_text("*drinks potion*")
+	await get_tree().create_timer(3).timeout
+	textbox.continue_text("I finally did it")
+	blackout.play("fade out")
 
 func hide_small_enemies():
 	for e in [enemy18, enemy19, enemy20, enemy21]:
-		e.anim.play("fade")
-		e.go = false
+		if e.go:
+			e.anim.play("fade")
+			e.go = false
 
 func phase1_attack():
 	await get_tree().create_timer(1.4).timeout
@@ -119,25 +138,25 @@ func phase2_attack():
 	await get_tree().create_timer(1.4).timeout
 	enemy5.startup(); enemy6.startup(); enemy7.startup(); enemy8.startup(); fallingbox.startup(); fallingbox2.startup(); fallingbox3.startup; fallingbox4.startup(); fallingbox5.startup()
 	await get_tree().create_timer(1.4).timeout
-	enemy9.startup(); enemy10.startup(); enemy11.startup(); enemy12.startup(); fallingbox.startup(); fallingbox2.startup(); fallingbox3.startup; fallingbox4.startup(); fallingbox5.startup()
+	enemy9.startup(); enemy10.startup()
 	await get_tree().create_timer(1.4).timeout
-	enemy13.startup(); enemy14.startup(); enemy15.startup()
+	enemy13.startup(); enemy14.startup(); enemy15.startup(); enemy11.startup(); enemy12.startup(); fallingbox.startup(); fallingbox2.startup(); fallingbox3.startup; fallingbox4.startup(); fallingbox5.startup()
 	enemy16.startup(); enemy17.startup()
 	hide_small_enemies()
 	await get_tree().create_timer(1.4).timeout
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
 	
 func phase3_attack():
-	enemy1.speed = 4; enemy2.speed = 4; enemy3.speed = 4; enemy4.speed = 4; enemy5.speed = 4; enemy6.speed = 4; enemy7.speed = 4; enemy8.speed = 4; enemy9.speed = 4; enemy10.speed = 4; enemy11.speed = 4; enemy12.speed = 4; enemy13.speed = 4; enemy14.speed = 4; enemy15.speed = 4; enemy16.speed = 4; enemy17.speed = 4; enemy18.speed = 4; enemy19.speed = 4; enemy20.speed = 4; enemy21.speed = 4; 
-	await get_tree().create_timer(1.4).timeout
+	enemy1.speed = 3; enemy2.speed = 3; enemy3.speed = 3; enemy4.speed = 3; enemy5.speed = 3; enemy6.speed = 3; enemy7.speed = 3; enemy8.speed = 3; enemy9.speed = 3; enemy10.speed = 3; enemy11.speed = 3; enemy12.speed = 3; enemy13.speed = 3; enemy14.speed = 3; enemy15.speed = 3; enemy16.speed = 3; enemy17.speed = 3; enemy18.speed = 3; enemy19.speed = 3; enemy20.speed = 3; enemy21.speed = 3; 
+	await get_tree().create_timer(1).timeout
 	enemy1.startup(); enemy2.startup(); enemy3.startup(); enemy4.startup()
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1).timeout
 	enemy5.startup(); enemy6.startup(); enemy7.startup(); enemy8.startup()
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1).timeout
 	enemy9.startup(); enemy10.startup(); enemy11.startup(); enemy12.startup()
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1).timeout
 	enemy13.startup(); enemy14.startup(); enemy15.startup()
 	enemy16.startup(); enemy17.startup()
 	hide_small_enemies()
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1).timeout
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="9_qub25"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="10_as4wm"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="10_gjdif"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="11_010di"]
 [ext_resource type="Script" uid="uid://cgyfmpadlb1x8" path="res://scripts/throwbox.gd" id="11_gjdif"]
 [ext_resource type="PackedScene" uid="uid://l026mnw2phqp" path="res://scenes/fallingbox.tscn" id="13_qvmem"]
 
@@ -166,6 +167,7 @@ door_unlocked = true
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("1_bpcqn")]
 unique_name_in_owner = true
+position = Vector2(-0.68508863, -125.94432)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=548905260]
 zoom = Vector2(7, 7)
@@ -317,6 +319,17 @@ position = Vector2(2647.1523, 196.78418)
 
 [node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("10_gjdif")]
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=745203610]
+offset_left = 488.9336
+offset_top = 83.85248
+offset_right = 2378.9336
+offset_bottom = 430.85248
+theme_override_colors/font_color = Color(1, 0.24000001, 0.24000001, 1)
+theme_override_fonts/font = ExtResource("11_010di")
+theme_override_font_sizes/font_size = 153
+text = "survive"
+horizontal_alignment = 1
+
 [node name="throwbox" type="Sprite2D" parent="." unique_id=1761377891]
 position = Vector2(-59.92395, 147.65839)
 texture = ExtResource("10_as4wm")
@@ -326,7 +339,7 @@ script = ExtResource("11_gjdif")
 
 [node name="Area2D" type="Area2D" parent="throwbox" unique_id=729789797]
 collision_layer = 640
-collision_mask = 256
+collision_mask = 768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="throwbox/Area2D" unique_id=608209436]
 shape = SubResource("CircleShape2D_gjdif")

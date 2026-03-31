@@ -43,7 +43,7 @@ func _on_inventory_throw() -> void:
 	visible = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if fmod(boss.phase, 1.0) != 0.0:
+	if boss.current_phase == boss.Phase.RESTING:
 		direction = 3
 		distance = 15
 		boss.boss_was_hit = true

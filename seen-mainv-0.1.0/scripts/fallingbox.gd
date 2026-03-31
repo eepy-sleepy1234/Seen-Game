@@ -5,7 +5,6 @@ var go = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
-	startup()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +23,7 @@ func startup():
 	position = Vector2(randi_range(-124, 124), randi_range(-200, 10))
 	visible = true
 	go = true
+	box.position.y = -170
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
