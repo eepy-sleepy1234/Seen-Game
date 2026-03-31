@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dy5oixcsjl1jw" path="res://assets/Npc/Enemies.png" id="3_g2a2m"]
 [ext_resource type="Script" uid="uid://d36yyhy4ud80n" path="res://scripts/boss.gd" id="4_3ertg"]
 [ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="4_ee80j"]
+[ext_resource type="Script" uid="uid://dfrxoa1yb33ae" path="res://scripts/bossdamage.gd" id="6_gjdif"]
 [ext_resource type="Script" uid="uid://d217q41pcqat8" path="res://scripts/health_overlay.gd" id="7_qub25"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="8_pmh52"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="9_qub25"]
@@ -153,6 +154,10 @@ _data = {
 &"float": SubResource("Animation_as4wm")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_as4wm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjdif"]
+
 [node name="Boss Room" type="Node2D" unique_id=1417396557]
 position = Vector2(-280, -216)
 script = ExtResource("1_3ertg")
@@ -183,6 +188,14 @@ script = ExtResource("4_3ertg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="boss" unique_id=1554293163]
 libraries/ = SubResource("AnimationLibrary_qub25")
+
+[node name="Area2D" type="Area2D" parent="boss" unique_id=1487862612]
+collision_layer = 768
+collision_mask = 640
+script = ExtResource("6_gjdif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/Area2D" unique_id=1507335455]
+shape = SubResource("CircleShape2D_as4wm")
 
 [node name="bigright" type="Node2D" parent="." unique_id=1564747090]
 
@@ -309,4 +322,13 @@ region_enabled = true
 region_rect = Rect2(31.919048, 0, 15.279594, 15.923974)
 script = ExtResource("11_gjdif")
 
+[node name="Area2D" type="Area2D" parent="throwbox" unique_id=729789797]
+collision_layer = 640
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="throwbox/Area2D" unique_id=608209436]
+shape = SubResource("CircleShape2D_gjdif")
+
+[connection signal="area_entered" from="boss/Area2D" to="boss/Area2D" method="_on_area_entered"]
 [connection signal="throw" from="CanvasLayer/inventory" to="throwbox" method="_on_inventory_throw"]
+[connection signal="area_entered" from="throwbox/Area2D" to="throwbox" method="_on_area_2d_area_entered"]
