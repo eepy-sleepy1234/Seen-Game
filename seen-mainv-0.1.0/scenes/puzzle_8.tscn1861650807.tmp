@@ -1,0 +1,163 @@
+[gd_scene format=4 uid="uid://bvc5sjommv26h"]
+
+[ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="1_2ofv4"]
+[ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_x3vgr"]
+[ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_bk4xk"]
+[ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_x3vgr"]
+[ext_resource type="Texture2D" uid="uid://t4wbphl7q5ik" path="res://assets/UI/lighttexture2.png" id="4_8ejrv"]
+[ext_resource type="PackedScene" uid="uid://dak20trdxfplt" path="res://scenes/item.tscn" id="4_vdhbx"]
+[ext_resource type="Script" uid="uid://b64lecx6qt3jb" path="res://scripts/broken_camera.gd" id="5_2hfkk"]
+[ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_vdhbx"]
+[ext_resource type="Texture2D" uid="uid://b2obylxmtoh1y" path="res://assets/UI/lighttexture.png" id="6_ryt3u"]
+[ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="7_mdij0"]
+[ext_resource type="Script" uid="uid://dk6ffisl8gyrq" path="res://scripts/enemy_timer.gd" id="8_8ejrv"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="12_ryt3u"]
+
+[node name="Puzzle 8" type="Node2D" unique_id=1281611912]
+position = Vector2(-184, -208)
+script = ExtResource("1_x3vgr")
+next_level = "uid://cuidihu8hi8im"
+door_unlocked = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=81024015]
+tile_map_data = PackedByteArray("AAD/////AAACAAgAAAAAAP//AAADAAgAAAD///7/AAAAAAAAAAAAAP7/AAABAAAAAAD9//7/AAAAAAIAAAD9////AAAAAAMAAAD+//7/AAABAAIAAAD+////AAABAAMAAAD7//7/AAAAAAIAAAD7////AAAAAAMAAAD8//7/AAABAAIAAAD8////AAABAAMAAAABAP7/AAAAAAIAAAABAP//AAAAAAMAAAACAP7/AAABAAIAAAACAP//AAABAAMAAAADAP7/AAAAAAIAAAADAP//AAAAAAMAAAAEAP7/AAABAAIAAAAEAP//AAABAAMAAAD9//z/AAAAAAAAAAD9//3/AAAAAAEAAAD+//z/AAABAAAAAAD+//3/AAABAAEAAAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD8//z/AAABAAAAAAD8//3/AAABAAEAAAD7//r/AAAAAAAAAAD7//v/AAAAAAEAAAD8//r/AAABAAAAAAD8//v/AAABAAEAAAD9//r/AAAAAAAAAAD9//v/AAAAAAEAAAD+//r/AAABAAAAAAD+//v/AAABAAEAAAD///r/AAAAAAAAAAD///v/AAAAAAEAAAAAAPr/AAABAAAAAAAAAPv/AAABAAEAAAD///z/AAAAAAAAAAD///3/AAAAAAEAAAAAAPz/AAABAAAAAAAAAP3/AAABAAEAAAABAPz/AAAAAAAAAAABAP3/AAAAAAEAAAACAPz/AAABAAAAAAACAP3/AAABAAEAAAADAPz/AAAAAAAAAAADAP3/AAAAAAEAAAAEAPz/AAABAAAAAAAEAP3/AAABAAEAAAADAPr/AAAAAAAAAAADAPv/AAAAAAEAAAAEAPr/AAABAAAAAAAEAPv/AAABAAEAAAABAPr/AAAAAAAAAAABAPv/AAAAAAEAAAACAPr/AAABAAAAAAACAPv/AAABAAEAAAABAPj/AAAAAAAAAAABAPn/AAAAAAEAAAACAPj/AAABAAAAAAACAPn/AAABAAEAAAD///j/AAAAAAAAAAD///n/AAAAAAEAAAAAAPj/AAABAAAAAAAAAPn/AAABAAEAAAD9//j/AAAAAAAAAAD9//n/AAAAAAEAAAD+//j/AAABAAAAAAD+//n/AAABAAEAAAD7//j/AAAAAAAAAAD7//n/AAAAAAEAAAD8//j/AAABAAAAAAD8//n/AAABAAEAAAD7//b/AAAAAAAAAAD7//f/AAAAAAEAAAD8//b/AAABAAAAAAD8//f/AAABAAEAAAD9//b/AAAAAAAAAAD9//f/AAAAAAEAAAD+//b/AAABAAAAAAD+//f/AAABAAEAAAD///b/AAAAAAAAAAD///f/AAAAAAEAAAAAAPb/AAABAAAAAAAAAPf/AAABAAEAAAABAPb/AAAAAAAAAAABAPf/AAAAAAEAAAACAPb/AAABAAAAAAACAPf/AAABAAEAAAADAPj/AAAAAAAAAAADAPn/AAAAAAEAAAAEAPj/AAABAAAAAAAEAPn/AAABAAEAAAADAPb/AAAAAAAAAAADAPf/AAAAAAEAAAAEAPb/AAABAAAAAAAEAPf/AAABAAEAAAADAPT/AAAAAAAAAAADAPX/AAAAAAEAAAAEAPT/AAABAAAAAAAEAPX/AAABAAEAAAADAPL/AAAAAAAAAAADAPP/AAAAAAEAAAAEAPL/AAABAAAAAAAEAPP/AAABAAEAAAADAPD/AAAAAAAAAAADAPH/AAAAAAEAAAAEAPD/AAABAAAAAAAEAPH/AAABAAEAAAADAO7/AAAAAAAAAAADAO//AAAAAAEAAAAEAO7/AAABAAAAAAAEAO//AAABAAEAAAABAO7/AAAAAAAAAAABAO//AAAAAAEAAAACAO7/AAABAAAAAAACAO//AAABAAEAAAABAPD/AAAAAAAAAAABAPH/AAAAAAEAAAACAPD/AAABAAAAAAACAPH/AAABAAEAAAD///D/AAAAAAAAAAD///H/AAAAAAEAAAAAAPD/AAABAAAAAAAAAPH/AAABAAEAAAD9//D/AAAAAAAAAAD9//H/AAAAAAEAAAD+//D/AAABAAAAAAD+//H/AAABAAEAAAD7//D/AAAAAAAAAAD7//H/AAAAAAEAAAD8//D/AAABAAAAAAD8//H/AAABAAEAAAD7/+7/AAAAAAAAAAD7/+//AAAAAAEAAAD8/+7/AAABAAAAAAD8/+//AAABAAEAAAD9/+7/AAAAAAAAAAD9/+//AAAAAAEAAAD+/+7/AAABAAAAAAD+/+//AAABAAEAAAD//+7/AAAAAAAAAAD//+//AAAAAAEAAAAAAO7/AAABAAAAAAAAAO//AAABAAEAAAABAPL/AAAAAAAAAAABAPP/AAAAAAEAAAACAPL/AAABAAAAAAACAPP/AAABAAEAAAABAPT/AAAAAAAAAAABAPX/AAAAAAEAAAACAPT/AAABAAAAAAACAPX/AAABAAEAAAD///T/AAAAAAAAAAD///X/AAAAAAEAAAAAAPT/AAABAAAAAAAAAPX/AAABAAEAAAD///L/AAAAAAAAAAD///P/AAAAAAEAAAAAAPL/AAABAAAAAAAAAPP/AAABAAEAAAD9//T/AAAAAAAAAAD9//X/AAAAAAEAAAD+//T/AAABAAAAAAD+//X/AAABAAEAAAD7//T/AAAAAAAAAAD7//X/AAAAAAEAAAD8//T/AAABAAAAAAD8//X/AAABAAEAAAD7//L/AAAAAAAAAAD7//P/AAAAAAEAAAD8//L/AAABAAAAAAD8//P/AAABAAEAAAD9//L/AAAAAAAAAAD9//P/AAAAAAEAAAD+//L/AAABAAAAAAD+//P/AAABAAEAAAD7/+z/AAAAAAAAAAD7/+3/AAAAAAEAAAD8/+z/AAABAAAAAAD8/+3/AAABAAEAAAD9/+z/AAAAAAAAAAD9/+3/AAAAAAEAAAD+/+z/AAABAAAAAAD+/+3/AAABAAEAAAD//+z/AAAAAAAAAAD//+3/AAAAAAEAAAAAAOz/AAABAAAAAAAAAO3/AAABAAEAAAABAOz/AAAAAAAAAAABAO3/AAAAAAEAAAACAOz/AAABAAAAAAACAO3/AAABAAEAAAABAOr/AAAAAAAAAAABAOv/AAAAAAEAAAACAOr/AAABAAAAAAACAOv/AAABAAEAAAADAOr/AAAAAAAAAAADAOv/AAAAAAEAAAAEAOr/AAABAAAAAAAEAOv/AAABAAEAAAADAOz/AAAAAAAAAAADAO3/AAAAAAEAAAAEAOz/AAABAAAAAAAEAO3/AAABAAEAAAD//+r/AAAAAAAAAAD//+v/AAAAAAEAAAAAAOr/AAABAAAAAAAAAOv/AAABAAEAAAD9/+r/AAAAAAAAAAD9/+v/AAAAAAEAAAD+/+r/AAABAAAAAAD+/+v/AAABAAEAAAD7/+r/AAAAAAAAAAD7/+v/AAAAAAEAAAD8/+r/AAABAAAAAAD8/+v/AAABAAEAAAD7/+j/AAACAAAAAAD7/+n/AAACAAEAAAD8/+j/AAADAAAAAAD8/+n/AAADAAEAAAD9/+j/AAACAAAAAAD9/+n/AAACAAEAAAD+/+j/AAADAAAAAAD+/+n/AAADAAEAAAD//+j/AAACAAAAAAD//+n/AAACAAEAAAAAAOj/AAADAAAAAAAAAOn/AAADAAEAAAABAOj/AAACAAAAAAABAOn/AAACAAEAAAACAOj/AAADAAAAAAACAOn/AAADAAEAAAADAOj/AAACAAAAAAADAOn/AAACAAEAAAAEAOj/AAADAAAAAAAEAOn/AAADAAEAAAADAOb/AAAIAAAAAAADAOf/AAAIAAEAAAAEAOb/AAAJAAAAAAAEAOf/AAAJAAEAAAABAOb/AAAIAAAAAAABAOf/AAAIAAEAAAACAOb/AAAJAAAAAAACAOf/AAAJAAEAAAD//+b/AAACAAYAAAD//+f/AAACAAcAAAAAAOb/AAADAAYAAAAAAOf/AAADAAcAAAD9/+b/AAAIAAAAAAD9/+f/AAAIAAEAAAD+/+b/AAAJAAAAAAD+/+f/AAAJAAEAAAD7/+b/AAAIAAAAAAD7/+f/AAAIAAEAAAD8/+b/AAAJAAAAAAD8/+f/AAAJAAEAAAADAOX/AAACAAMAAAAEAOX/AAADAAMAAAABAOX/AAACAAMAAAACAOX/AAADAAMAAAD//+X/AAAGAAcAAAAAAOX/AAAHAAcAAAD9/+X/AAACAAMAAAD+/+X/AAADAAMAAAD7/+X/AAACAAMAAAD8/+X/AAADAAMAAAAFAOb/AAAAAAQAAAAFAOf/AAAAAAQAAAAFAOj/AAAAAAQAAAAFAOn/AAAAAAQAAAAFAOr/AAAAAAQAAAAFAOv/AAAAAAQAAAAFAOz/AAAAAAQAAAAFAO3/AAAAAAQAAAAFAO7/AAAAAAQAAAAFAO//AAAAAAQAAAAFAPD/AAAAAAQAAAAFAPH/AAAAAAQAAAAFAPL/AAAAAAQAAAAFAPP/AAAAAAQAAAAFAPT/AAAAAAQAAAAFAPX/AAAAAAQAAAAFAPb/AAAAAAQAAAAFAPf/AAAAAAQAAAAFAPj/AAAAAAQAAAAFAPr/AAAAAAQAAAAFAPv/AAAAAAQAAAAFAPz/AAAAAAQAAAAFAP3/AAAAAAQAAAAFAP7/AAAAAAQAAAAFAPn/AAAAAAQAAAAFAP//AAAAAAUAAAAFAOX/AAAAAAUAACD6/+X/AAAAAAUAADD6/+b/AAAAAAQAABD6/+f/AAAAAAQAABD6/+j/AAAAAAQAABD6/+n/AAAAAAQAABD6/+r/AAAAAAQAABD6/+v/AAAAAAQAABD6/+z/AAAAAAQAABD6/+3/AAAAAAQAABD6/+7/AAAAAAQAABD6/+//AAAAAAQAABD6//D/AAAAAAQAABD6//H/AAAAAAQAABD6//L/AAAAAAQAABD6//P/AAAAAAQAABD6//T/AAAAAAQAABD6//X/AAAAAAQAABD6//b/AAAAAAQAABD6//f/AAAAAAQAABD6//j/AAAAAAQAABD6//n/AAAAAAQAABD6//r/AAAAAAQAABD6//v/AAAAAAQAABD6//z/AAAAAAQAABD6//3/AAAAAAQAABD6//7/AAAAAAQAABD6////AAAAAAUAABD//wAAAAAFAAUAADAAAAAAAAAFAAUAADA=")
+tile_set = ExtResource("1_2ofv4")
+
+[node name="player" parent="." unique_id=1289593128 instance=ExtResource("2_bk4xk")]
+unique_name_in_owner = true
+position = Vector2(-4.7683716e-07, -16)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=2058240287]
+position = Vector2(0.43411255, 2.7852173)
+scale = Vector2(1.2499999, 1.2499999)
+zoom = Vector2(7, 7)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=2112384109]
+scale = Vector2(1.3031359, 1.3031359)
+texture = ExtResource("4_8ejrv")
+
+[node name="Area2D" type="Area2D" parent="player" unique_id=539469980]
+collision_layer = 16
+collision_mask = 32
+collision_priority = 2.0
+script = ExtResource("5_2hfkk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player/Area2D" unique_id=1896819388]
+scale = Vector2(0.6807953, 0.71646136)
+polygon = PackedVector2Array(-23.049973, 132.75586, 23.456161, 132.75586, 0, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="player/Area2D" unique_id=1937629009]
+position = Vector2(0, 69.99999)
+scale = Vector2(0.80127376, 2.0340428)
+texture = ExtResource("6_ryt3u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1822323528]
+
+[node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_x3vgr")]
+position = Vector2(2610.427, 225.20456)
+
+[node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_vdhbx")]
+
+[node name="item" parent="." unique_id=979002470 instance=ExtResource("4_vdhbx")]
+z_index = 3
+position = Vector2(-32, -23.999992)
+rotation = 3.085058
+scale = Vector2(0.9738493, -0.9149249)
+skew = -0.09269631
+item_type = 4
+
+[node name="unlock" type="TileMapLayer" parent="." unique_id=237413336]
+
+[node name="enemy" parent="." unique_id=1500646270 instance=ExtResource("7_mdij0")]
+position = Vector2(31, -382)
+
+[node name="enemy3" parent="." unique_id=179603361 instance=ExtResource("7_mdij0")]
+position = Vector2(63, -383)
+
+[node name="enemy4" parent="." unique_id=1566788504 instance=ExtResource("7_mdij0")]
+position = Vector2(-2, -382)
+
+[node name="enemy5" parent="." unique_id=1436664438 instance=ExtResource("7_mdij0")]
+position = Vector2(-34, -381)
+
+[node name="enemy6" parent="." unique_id=452125259 instance=ExtResource("7_mdij0")]
+position = Vector2(-65, -382)
+
+[node name="enemy2" parent="." unique_id=1916334379 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -54)
+direction = 2
+end = 84
+
+[node name="enemy7" parent="." unique_id=818488025 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -27)
+direction = 2
+end = 84
+
+[node name="enemy8" parent="." unique_id=1955059092 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -84)
+direction = 2
+end = 84
+
+[node name="enemy9" parent="." unique_id=1097803779 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -113)
+direction = 2
+end = 84
+
+[node name="enemy10" parent="." unique_id=1500968875 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -141)
+direction = 2
+end = 84
+
+[node name="enemy11" parent="." unique_id=1876928267 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -170)
+direction = 2
+end = 84
+
+[node name="enemy12" parent="." unique_id=246212769 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -200)
+direction = 2
+end = 84
+
+[node name="enemy13" parent="." unique_id=1681821926 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -229)
+direction = 2
+end = 84
+
+[node name="enemy14" parent="." unique_id=1302674658 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -257)
+direction = 2
+end = 84
+
+[node name="enemy15" parent="." unique_id=1024946472 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -285)
+direction = 2
+end = 84
+
+[node name="enemy16" parent="." unique_id=589225583 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -313)
+direction = 2
+end = 84
+
+[node name="enemy17" parent="." unique_id=1838398262 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -341)
+direction = 2
+end = 84
+
+[node name="enemy18" parent="." unique_id=951571145 instance=ExtResource("7_mdij0")]
+position = Vector2(-80, -369)
+direction = 2
+end = 84
+
+[node name="enemy timer" type="Node2D" parent="." unique_id=460021814]
+script = ExtResource("8_8ejrv")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1362052178]
+color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("12_ryt3u")]
+position = Vector2(0, -386.2356)
+
+[connection signal="area_entered" from="player/Area2D" to="player/Area2D" method="_on_area_entered"]
+[connection signal="get_camera" from="item" to="player/Area2D" method="_on_item_get_camera"]
