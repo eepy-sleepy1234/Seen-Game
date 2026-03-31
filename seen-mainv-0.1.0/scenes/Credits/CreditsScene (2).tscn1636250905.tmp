@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bp3ggl8jb04li"]
+
+[ext_resource type="Script" uid="uid://734xecych6eh" path="res://scenes/Credits/CreditsScene (3).gd" id="1_credits"]
+
+[node name="CreditsScene" type="Node2D" unique_id=740158757]
+script = ExtResource("1_credits")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1728570474]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.06, 1)
+
+[node name="Box" type="Node2D" parent="." unique_id=1311544159]
