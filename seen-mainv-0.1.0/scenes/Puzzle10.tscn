@@ -213,6 +213,10 @@ script = ExtResource("13_6y4vj")
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("14_hlo2g")]
 position = Vector2(-0.2565918, -162.41449)
 
+[node name="item" parent="." unique_id=979002470 instance=ExtResource("1_aw2u7")]
+position = Vector2(39, -33)
+item_type = 4
+
 [connection signal="get_gun" from="gun" to="story" method="_on_gun_get_gun"]
 [connection signal="get_box" from="box" to="story" method="_on_box_get_box"]
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
