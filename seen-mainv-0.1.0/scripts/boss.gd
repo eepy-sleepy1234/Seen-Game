@@ -1,4 +1,5 @@
 extends AnimatedSprite2D
+@onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var enemy1: enemy = $"../bigright/enemy"
 @onready var enemy2: enemy = $"../bigright/enemy2"
@@ -21,6 +22,11 @@ extends AnimatedSprite2D
 @onready var enemy19: enemy = $"../small/enemy19"
 @onready var enemy20: enemy = $"../small/enemy20"
 @onready var enemy21: enemy = $"../small/enemy21"
+@onready var fallingbox: Sprite2D = $"../fallingbox"
+@onready var fallingbox2: Sprite2D = $"../fallingbox2"
+@onready var fallingbox3: Sprite2D = $"../fallingbox3"
+@onready var fallingbox4: Sprite2D = $"../fallingbox4"
+@onready var fallingbox5: Sprite2D = $"../fallingbox5"
 
 enum Phase { PHASE1, PHASE2, PHASE3, RESTING, WIN }
 var current_phase: Phase = Phase.PHASE1
@@ -32,6 +38,10 @@ const PHASE3_DURATION := 15.0
 const REST_WINDOW := 5
 
 func _ready() -> void:
+	await get_tree().create_timer(0.01).timeout
+	textbox.write_text("you think you can make fun of the segm and get away with it? Think again")
+	await get_tree().create_timer(4).timeout
+	textbox.close_box()
 	Globals.puzzle = 11
 	Globals.inventory = "2"
 	run_fight()
@@ -104,7 +114,30 @@ func phase1_attack():
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
 
 func phase2_attack():
-	pass
+	await get_tree().create_timer(1.4).timeout
+	enemy1.startup(); enemy2.startup(); enemy3.startup(); enemy4.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy5.startup(); enemy6.startup(); enemy7.startup(); enemy8.startup(); fallingbox.startup(); fallingbox2.startup(); fallingbox3.startup; fallingbox4.startup(); fallingbox5.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy9.startup(); enemy10.startup(); enemy11.startup(); enemy12.startup(); fallingbox.startup(); fallingbox2.startup(); fallingbox3.startup; fallingbox4.startup(); fallingbox5.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy13.startup(); enemy14.startup(); enemy15.startup()
+	enemy16.startup(); enemy17.startup()
+	hide_small_enemies()
+	await get_tree().create_timer(1.4).timeout
+	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
 	
 func phase3_attack():
-	pass
+	enemy1.speed = 4; enemy2.speed = 4; enemy3.speed = 4; enemy4.speed = 4; enemy5.speed = 4; enemy6.speed = 4; enemy7.speed = 4; enemy8.speed = 4; enemy9.speed = 4; enemy10.speed = 4; enemy11.speed = 4; enemy12.speed = 4; enemy13.speed = 4; enemy14.speed = 4; enemy15.speed = 4; enemy16.speed = 4; enemy17.speed = 4; enemy18.speed = 4; enemy19.speed = 4; enemy20.speed = 4; enemy21.speed = 4; 
+	await get_tree().create_timer(1.4).timeout
+	enemy1.startup(); enemy2.startup(); enemy3.startup(); enemy4.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy5.startup(); enemy6.startup(); enemy7.startup(); enemy8.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy9.startup(); enemy10.startup(); enemy11.startup(); enemy12.startup()
+	await get_tree().create_timer(1.4).timeout
+	enemy13.startup(); enemy14.startup(); enemy15.startup()
+	enemy16.startup(); enemy17.startup()
+	hide_small_enemies()
+	await get_tree().create_timer(1.4).timeout
+	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()

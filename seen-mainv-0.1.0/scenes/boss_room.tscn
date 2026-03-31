@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dy5oixcsjl1jw" path="res://assets/Npc/Enemies.png" id="3_g2a2m"]
 [ext_resource type="Script" uid="uid://d36yyhy4ud80n" path="res://scripts/boss.gd" id="4_3ertg"]
 [ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="4_ee80j"]
-[ext_resource type="Script" uid="uid://dfrxoa1yb33ae" path="res://scripts/bossdamage.gd" id="6_gjdif"]
 [ext_resource type="Script" uid="uid://d217q41pcqat8" path="res://scripts/health_overlay.gd" id="7_qub25"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="8_pmh52"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="9_qub25"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="10_as4wm"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="10_gjdif"]
 [ext_resource type="Script" uid="uid://cgyfmpadlb1x8" path="res://scripts/throwbox.gd" id="11_gjdif"]
+[ext_resource type="PackedScene" uid="uid://l026mnw2phqp" path="res://scenes/fallingbox.tscn" id="13_qvmem"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bggbs"]
 atlas = ExtResource("3_g2a2m")
@@ -192,7 +193,6 @@ libraries/ = SubResource("AnimationLibrary_qub25")
 [node name="Area2D" type="Area2D" parent="boss" unique_id=1487862612]
 collision_layer = 768
 collision_mask = 640
-script = ExtResource("6_gjdif")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/Area2D" unique_id=1507335455]
 shape = SubResource("CircleShape2D_as4wm")
@@ -315,6 +315,8 @@ script = ExtResource("7_qub25")
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("9_qub25")]
 position = Vector2(2647.1523, 196.78418)
 
+[node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("10_gjdif")]
+
 [node name="throwbox" type="Sprite2D" parent="." unique_id=1761377891]
 position = Vector2(-59.92395, 147.65839)
 texture = ExtResource("10_as4wm")
@@ -328,6 +330,21 @@ collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="throwbox/Area2D" unique_id=608209436]
 shape = SubResource("CircleShape2D_gjdif")
+
+[node name="fallingbox" parent="." unique_id=399407712 instance=ExtResource("13_qvmem")]
+position = Vector2(32.78051, -7.2954464)
+
+[node name="fallingbox2" parent="." unique_id=915686617 instance=ExtResource("13_qvmem")]
+position = Vector2(32.78051, -7.2954464)
+
+[node name="fallingbox3" parent="." unique_id=1936145643 instance=ExtResource("13_qvmem")]
+position = Vector2(32.78051, -7.2954464)
+
+[node name="fallingbox4" parent="." unique_id=1278965158 instance=ExtResource("13_qvmem")]
+position = Vector2(32.78051, -7.2954464)
+
+[node name="fallingbox5" parent="." unique_id=1359465447 instance=ExtResource("13_qvmem")]
+position = Vector2(32.78051, -7.2954464)
 
 [connection signal="area_entered" from="boss/Area2D" to="boss/Area2D" method="_on_area_entered"]
 [connection signal="throw" from="CanvasLayer/inventory" to="throwbox" method="_on_inventory_throw"]

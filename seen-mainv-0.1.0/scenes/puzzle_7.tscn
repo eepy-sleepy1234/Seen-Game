@@ -97,8 +97,20 @@ number = 5
 position = Vector2(0.108795166, 0.09414673)
 shape = SubResource("RectangleShape2D_rxp5v")
 
+[node name="7door6" type="Area2D" parent="." unique_id=1038444009]
+position = Vector2(-64.34311, -48.60196)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("6_nh2vw")
+number = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7door6" unique_id=1158006891]
+position = Vector2(0.108795166, 0.09414673)
+shape = SubResource("RectangleShape2D_rxp5v")
+
 [connection signal="body_shape_entered" from="7door" to="7door" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="7door2" to="7door2" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="7door3" to="7door3" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="7door4" to="7door4" method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="7door5" to="7door5" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="7door6" to="7door6" method="_on_body_shape_entered"]
