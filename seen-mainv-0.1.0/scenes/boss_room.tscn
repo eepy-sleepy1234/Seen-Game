@@ -367,6 +367,7 @@ stream = ExtResource("16_skgx8")
 
 [node name="Boss Music" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=257014673]
 stream = ExtResource("17_gjhnn")
+volume_db = -10.947
 parameters/looping = true
 
 [node name="BossDefeat" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=46118324]

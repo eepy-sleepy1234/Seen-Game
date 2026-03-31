@@ -64,7 +64,7 @@ func _ready() -> void:
 	objectives.write("survive")
 	anim.play("float")
 	await get_tree().create_timer(1).timeout
-	current_phase = Phase.PHASE3
+
 	run_fight()
 	
 func run_fight() -> void:
@@ -80,7 +80,7 @@ func run_fight() -> void:
 
 func run_phase(duration: float, attack_func: Callable) -> void:
 	anim.play("attacking")
-	objectives.write("survive")
+	objectives.write("\nsurvive")
 	var timer := 0.0
 	
 	while timer < duration:
@@ -94,7 +94,7 @@ func run_phase(duration: float, attack_func: Callable) -> void:
 func rest_window() -> void:
 	boss_was_hit = false
 	anim.play("fall")
-	objectives.write("throw your box at the boss (e)")
+	objectives.write("\nthrow your box at the boss (e)")
 	hide_small_enemies()
 	var elapsed := 0.0
 	var interval := 0.1
