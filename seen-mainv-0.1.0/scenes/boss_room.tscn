@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="9_qub25"]
 [ext_resource type="Texture2D" uid="uid://b5wf3i7qccpf" path="res://assets/Level Elements/Items.png" id="10_as4wm"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="10_gjdif"]
-[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="11_010di"]
 [ext_resource type="Script" uid="uid://cgyfmpadlb1x8" path="res://scripts/throwbox.gd" id="11_gjdif"]
 [ext_resource type="AudioStream" uid="uid://dj7sqsl617sae" path="res://assets/Sounds/Boss HYA.mp3" id="13_d53cq"]
 [ext_resource type="PackedScene" uid="uid://l026mnw2phqp" path="res://scenes/fallingbox.tscn" id="13_qvmem"]
@@ -20,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://ckqrjf1dss2y" path="res://assets/Sounds/Mafia Boss Death 2.mp3" id="15_votf5"]
 [ext_resource type="AudioStream" uid="uid://ufa2wj8v333d" path="res://assets/Sounds/YOULL NEVER BEAT ME.mp3" id="16_skgx8"]
 [ext_resource type="AudioStream" uid="uid://wp1imlppslnb" path="res://assets/Sounds/credits.ogg" id="17_gjhnn"]
+[ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="18_d53cq"]
 [ext_resource type="AudioStream" uid="uid://fg6cvbagrrv5" path="res://assets/Sounds/Boss Defeat.mp3" id="18_geu3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bggbs"]
@@ -348,17 +348,6 @@ position = Vector2(2647.1523, 196.78418)
 
 [node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("10_gjdif")]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=745203610]
-offset_left = 488.9336
-offset_top = 83.85248
-offset_right = 2378.9336
-offset_bottom = 430.85248
-theme_override_colors/font_color = Color(1, 0.24000001, 0.24000001, 1)
-theme_override_fonts/font = ExtResource("11_010di")
-theme_override_font_sizes/font_size = 153
-text = "survive"
-horizontal_alignment = 1
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2077007356]
 offset_right = 2935.8843
 offset_bottom = 1810.5566
@@ -385,6 +374,8 @@ stream = ExtResource("18_geu3j")
 
 [node name="MafiaBossDeath3" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=681966248]
 stream = ExtResource("15_votf5")
+
+[node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("18_d53cq")]
 
 [node name="throwbox" type="Sprite2D" parent="." unique_id=1761377891]
 position = Vector2(-59.92395, 147.65839)

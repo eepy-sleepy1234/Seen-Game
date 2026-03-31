@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c8hmlwuyrhb7n" path="res://scripts/level10camera.gd" id="8_csreo"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="8_kt3bm"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="9_kt3bm"]
+[ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="9_p16ur"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="10_6y4vj"]
 [ext_resource type="Script" uid="uid://bvqjju0mvenj1" path="res://scripts/falllvl10.gd" id="11_csreo"]
 [ext_resource type="Script" uid="uid://stq2o55h5exp" path="res://scripts/lvl10story.gd" id="13_6y4vj"]
@@ -148,6 +149,8 @@ position = Vector2(2610.427, 225.20456)
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("6_4n8nb")]
 
 [node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("8_kt3bm")]
+
+[node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("9_p16ur")]
 
 [node name="box" parent="." unique_id=1490757673 instance=ExtResource("1_aw2u7")]
 z_index = 3

@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 @onready var camera_2d: Camera2D = $"../player/Camera2D"
 @onready var color_rect: ColorRect = $"../CanvasLayer/ColorRect"
 @onready var blackout: AnimationPlayer = $"../CanvasLayer/blackout/AnimationPlayer"
-@onready var label: Label = $"../CanvasLayer/Label"
+@onready var objectives: Sprite2D = $"../CanvasLayer/objectives"
 @onready var player: CharacterBody2D = %player
 @onready var textbox: MarginContainer = $"../CanvasLayer/textbox"
 @onready var anim: AnimationPlayer = $AnimationPlayer
@@ -61,7 +61,7 @@ func _ready() -> void:
 	textbox.close_box()
 	music.play()
 	BossMwahahaha.play()
-	label.text = "survive"
+	objectives.write("survive")
 	anim.play("float")
 	await get_tree().create_timer(1).timeout
 	current_phase = Phase.PHASE3
@@ -80,7 +80,7 @@ func run_fight() -> void:
 
 func run_phase(duration: float, attack_func: Callable) -> void:
 	anim.play("attacking")
-	label.text = "survive"
+	objectives.write("survive")
 	var timer := 0.0
 	
 	while timer < duration:
@@ -94,7 +94,7 @@ func run_phase(duration: float, attack_func: Callable) -> void:
 func rest_window() -> void:
 	boss_was_hit = false
 	anim.play("fall")
-	label.text = "throw your box at \n the boss"
+	objectives.write("throw your box at the boss (e)")
 	hide_small_enemies()
 	var elapsed := 0.0
 	var interval := 0.1
@@ -129,7 +129,6 @@ func win():
 	await get_tree().create_timer(6).timeout
 	DeathBurp.play()
 	await get_tree().create_timer(1).timeout
-	label.text = ""
 	textbox.write_text("*drinks potion*")
 	await get_tree().create_timer(3).timeout
 	textbox.continue_text("I finally did it")

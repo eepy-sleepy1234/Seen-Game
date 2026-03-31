@@ -3,6 +3,7 @@ extends Node2D
 @onready var player: CharacterBody2D = %player
 @onready var unlock: TileMapLayer = $unlock
 @export var next_level: String
+@onready var objectives: Sprite2D = $CanvasLayer/objectives
 @export var keylevel = false
 @export var door_unlocked = false
 var next = false
@@ -16,6 +17,7 @@ func _ready() -> void:
 	Globals.puzzle = round(Globals.puzzle)
 	Globals.inventory = "4"
 	await get_tree().create_timer(0.02).timeout
+	objectives.write("place the camera on the wall (g)")
 	if Globals.inventory == "1":
 		player.is_ghost += 1000
 		player.box = true
