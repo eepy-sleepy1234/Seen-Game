@@ -5,8 +5,10 @@ class_name enemy extends AnimatedSprite2D
 @export var direction: int
 @export var end: int
 @export var speed = 2
+@export var boss = false
 var go = false
 var startpos = Vector2(0.0, 0.0)
+signal damage()
 func _ready() -> void:
 	startpos = position
 	anim.play("fade")
@@ -74,5 +76,13 @@ func startup():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if go:
-		Globals.inventory = ""
-		var _reload = get_tree().reload_current_scene()
+		if boss:
+			if Globals.player_health > 1:
+				Globals.player_health -= 1
+				damage.emit()
+			else:
+				Globals.inventory = ""
+				var _reload = get_tree().reload_current_scene()
+		else:
+			Globals.inventory = ""
+			var _reload = get_tree().reload_current_scene()

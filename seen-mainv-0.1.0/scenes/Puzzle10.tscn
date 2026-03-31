@@ -98,6 +98,7 @@ _data = {
 [node name="Node2D" type="Node2D" unique_id=744575498]
 position = Vector2(-416, -376)
 script = ExtResource("1_hlo2g")
+next_level = "uid://ldgwyh58b6v8"
 
 [node name="gun" parent="." unique_id=1474346887 instance=ExtResource("1_aw2u7")]
 z_index = 3

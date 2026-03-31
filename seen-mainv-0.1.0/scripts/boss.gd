@@ -1,4 +1,6 @@
 extends AnimatedSprite2D
+@onready var camera_2d: Camera2D = $"../player/Camera2D"
+@onready var color_rect: ColorRect = $"../CanvasLayer/ColorRect"
 @onready var blackout: AnimationPlayer = $"../CanvasLayer/blackout/AnimationPlayer"
 @onready var label: Label = $"../CanvasLayer/Label"
 @onready var player: CharacterBody2D = %player
@@ -43,6 +45,7 @@ const REST_WINDOW := 5
 func _ready() -> void:
 	Globals.puzzle = 11
 	Globals.inventory = "2"
+	color_rect.color.a = 0
 	player.last_direction = 1
 	await get_tree().create_timer(0.01).timeout
 	textbox.write_text("you think you can make fun of the segm and get away with it? Think again")
@@ -160,3 +163,8 @@ func phase3_attack():
 	hide_small_enemies()
 	await get_tree().create_timer(1).timeout
 	enemy18.startup(); enemy19.startup(); enemy20.startup(); enemy21.startup()
+
+
+func _on_enemy_damage() -> void:
+	color_rect.color.a += 0.3
+	camera_2d.screen_shake(20, 0.25)

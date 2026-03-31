@@ -2,6 +2,7 @@ extends Sprite2D
 @onready var box: Sprite2D = $Sprite2D
 var down = false
 var go = false
+signal damage()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
@@ -28,5 +29,9 @@ func startup():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if down:
-		Globals.inventory = ""
-		var _reload = get_tree().reload_current_scene()
+		if Globals.player_health > 1:
+			Globals.player_health -= 1
+			damage.emit()
+		else:
+			Globals.inventory = ""
+			var _reload = get_tree().reload_current_scene()
