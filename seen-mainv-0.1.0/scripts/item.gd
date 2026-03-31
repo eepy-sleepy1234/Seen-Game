@@ -5,6 +5,7 @@ var player_in_range = false
 signal get_box(ghost: bool)
 signal get_camera()
 signal first_inventory()
+signal get_gun()
 func _ready() -> void:
 	match str(item_type):
 		"0":
@@ -21,7 +22,7 @@ func _ready() -> void:
 			self.region_rect = Rect2(0, 0, 0, 0)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and player_in_range:
+	if Input.is_action_just_pressed("interact") and player_in_range and Globals.listening:
 		if Globals.inventory == "":
 			Globals.inventory = str(item_type)
 			self.queue_free()
@@ -31,6 +32,8 @@ func _process(delta: float) -> void:
 				get_box.emit(true)
 			elif Globals.inventory == "4":
 				get_camera.emit()
+			elif Globals.inventory == "3":
+				get_gun.emit()
 			if Globals.first_inventory:
 				first_inventory.emit()
 				Globals.first_inventory = false

@@ -6,6 +6,7 @@ var inventory = ""
 var inventory2 = ""
 var puzzle = 1
 var count7 = 1
+var player_health = 3
 var first_inventory = true
 var _story_progress = 0
 var story_progress: int:

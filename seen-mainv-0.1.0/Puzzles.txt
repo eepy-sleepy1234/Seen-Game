@@ -18,7 +18,6 @@ Puzzle 8. Random voice:"quick grab that camera on the desk and shine it up" You 
 
 Puzzle 9 its a maze, but every now and then a ghost (the round ones) start following you and if you dont shine them after a certain amount of time they catch you. Make it so that theres very limited visibility on this one.( can see yourself and a little bit around you)
 
-
 Puzzle 10. Place the broken camera you have on the wall making it so that you can cross through the center (ghost tiles)  then you find a gun and you character says  " i need to be a ghost thats the only way out of here. Then you shoot the box, turning it into a ghost box. The gun is then gotten rid of. Once you equip the ghost box you can always be a ghost. There is a hidden door behind the wall in the middle that you can acces as a ghost. 
 
 

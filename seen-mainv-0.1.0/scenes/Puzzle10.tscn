@@ -5,14 +5,107 @@
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="2_8c0ag"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_3thbt"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="4_4n8nb"]
+[ext_resource type="Texture2D" uid="uid://t4wbphl7q5ik" path="res://assets/UI/lighttexture2.png" id="5_dwn8x"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="6_4n8nb"]
+[ext_resource type="Script" uid="uid://c8hmlwuyrhb7n" path="res://scripts/level10camera.gd" id="8_csreo"]
+[ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="8_kt3bm"]
+[ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="9_kt3bm"]
+[ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="10_6y4vj"]
+[ext_resource type="Script" uid="uid://bvqjju0mvenj1" path="res://scripts/falllvl10.gd" id="11_csreo"]
+[ext_resource type="Script" uid="uid://stq2o55h5exp" path="res://scripts/lvl10story.gd" id="13_6y4vj"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="14_hlo2g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlo2g"]
+radius = 14.060041
+
+[sub_resource type="Animation" id="Animation_p16ur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-213.9513, 87.65442), Vector2(-581.1476, 350.97287)]
+}
+
+[sub_resource type="Animation" id="Animation_p5v8g"]
+resource_name = "new_animation"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-597.84674, 340.00833), Vector2(-178.82733, 74.431274)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpuv6"]
+_data = {
+&"RESET": SubResource("Animation_p16ur"),
+&"new_animation": SubResource("Animation_p5v8g")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt3bm"]
+size = Vector2(220.35364, 30.342636)
+
+[sub_resource type="Animation" id="Animation_csreo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.2649536, -79.499756)]
+}
+
+[sub_resource type="Animation" id="Animation_kt3bm"]
+resource_name = "new_animation"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.2649536, -79.499756), Vector2(253.30377, -79.499756)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6y4vj"]
+_data = {
+&"RESET": SubResource("Animation_csreo"),
+&"new_animation": SubResource("Animation_kt3bm")
+}
 
 [node name="Node2D" type="Node2D" unique_id=744575498]
 position = Vector2(-416, -376)
 script = ExtResource("1_3thbt")
 next_level = "uid://ldgwyh58b6v8"
 
-[node name="gun" parent="." unique_id=979002470 instance=ExtResource("1_aw2u7")]
+[node name="item" parent="." unique_id=979002470 instance=ExtResource("1_aw2u7")]
+z_index = 1
+position = Vector2(66.96713, -33.098694)
+item_type = 4
+
+[node name="gun" parent="." unique_id=1474346887 instance=ExtResource("1_aw2u7")]
 z_index = 3
 position = Vector2(0, -104)
 rotation = -0.0039002877
@@ -36,7 +129,7 @@ tile_set = ExtResource("2_8c0ag")
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("3_3thbt")]
 unique_name_in_owner = true
-position = Vector2(-1.6221317, -12.050812)
+position = Vector2(-0.27273607, -25.352074)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1141432747]
 position = Vector2(0.43411255, 2.7852173)
@@ -45,12 +138,21 @@ zoom = Vector2(7, 7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1297974702]
+shadow_enabled = true
+shadow_color = Color(0.012617188, 0.012617188, 0.012617188, 0.5372549)
+shadow_filter = 2
+shadow_filter_smooth = 11.0
+texture = ExtResource("5_dwn8x")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1894276056]
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("4_4n8nb")]
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("6_4n8nb")]
+
+[node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("8_kt3bm")]
 
 [node name="box" parent="." unique_id=1490757673 instance=ExtResource("1_aw2u7")]
 z_index = 3
@@ -60,3 +162,63 @@ scale = Vector2(0.9738493, -0.9149249)
 skew = -0.09269631
 
 [node name="unlock" type="TileMapLayer" parent="." unique_id=3836364]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=341020684]
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1055447688]
+position = Vector2(-110.75604, -42.059265)
+scale = Vector2(0.474162, 0.474162)
+shadow_enabled = true
+shadow_color = Color(0.012617188, 0.012617188, 0.012617188, 0.5372549)
+shadow_filter = 2
+shadow_filter_smooth = 11.0
+texture = ExtResource("5_dwn8x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=933960808]
+position = Vector2(-110.40558, -41.70877)
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("8_csreo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=532006624]
+shape = SubResource("CircleShape2D_hlo2g")
+
+[node name="camera" parent="." unique_id=471567717 instance=ExtResource("9_kt3bm")]
+position = Vector2(-213.9513, 87.65442)
+rotation = -2.373794
+scale = Vector2(5.1544766, 2.6811197)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="camera" unique_id=484269095]
+libraries/ = SubResource("AnimationLibrary_kpuv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1117012635]
+position = Vector2(-107.89636, -39.91513)
+rotation = 2.8648462
+texture = ExtResource("10_6y4vj")
+region_enabled = true
+region_rect = Rect2(16.913784, 2.8984585, 11.11705, 9.188064)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=724078055]
+collision_layer = 64
+collision_mask = 3
+script = ExtResource("11_csreo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=2083945817]
+position = Vector2(-0.2649536, -79.499756)
+shape = SubResource("RectangleShape2D_kt3bm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D2" unique_id=1923567123]
+libraries/ = SubResource("AnimationLibrary_6y4vj")
+autoplay = &"RESET"
+
+[node name="story" type="Node2D" parent="." unique_id=128711052]
+script = ExtResource("13_6y4vj")
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("14_hlo2g")]
+position = Vector2(-0.2565918, -162.41449)
+
+[connection signal="get_gun" from="gun" to="story" method="_on_gun_get_gun"]
+[connection signal="get_box" from="box" to="story" method="_on_box_get_box"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_shape_entered" from="Area2D2" to="Area2D2" method="_on_body_shape_entered"]

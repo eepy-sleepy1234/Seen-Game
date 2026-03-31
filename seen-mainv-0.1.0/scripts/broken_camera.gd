@@ -11,6 +11,10 @@ func _on_item_get_camera() -> void:
 	light.visible = true
 	player.has_camera = true
 
-
-func _on_body_entered(body: Node2D) -> void:
-	print("yeah get him")
+func _on_area_entered(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent is enemy and player.has_camera:
+		parent.position = parent.startpos
+		parent.anim.play("RESET")
+		parent.go = false
+		parent.visible = false

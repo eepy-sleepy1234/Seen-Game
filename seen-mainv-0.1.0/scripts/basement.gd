@@ -9,13 +9,14 @@ extends Node2D
 @onready var inventory: AnimationPlayer = $CanvasLayer/inventory/AnimationPlayer
 @onready var keyanim: AnimationPlayer = $CanvasLayer/keyanimation/AnimationPlayer
 @onready var old_ghost_guy: Node2D = $"old ghost guy"
-@onready var camera: Node2D = $"security camera"
+@onready var camera: Node2D = $"security camera/PointLight2D"
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var oldGuyOh = $"Old Guy Oh"
 
 var new_text = ""
 var next_scene: PackedScene = load("uid://ckyb4hj0cb02f")
 var level_scene: PackedScene = load("uid://dnv1w0esogpm2")
+@onready var security_camera: Node2D = $"security camera"
 
 func wait_for_progress(target: int) -> void:
 	while Globals.story_progress != target:
@@ -23,8 +24,8 @@ func wait_for_progress(target: int) -> void:
 
 func _ready() -> void:
 	blackout.play("fade in")
+	security_camera.visible = false
 	if Globals.story_progress == 9:
-		
 		Globals.listening = false
 		Globals.story_progress += 1
 		player_animation.play("falling")

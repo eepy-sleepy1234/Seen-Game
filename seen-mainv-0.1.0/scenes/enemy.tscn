@@ -143,9 +143,9 @@ shape = SubResource("CircleShape2D_md0e3")
 [node name="Area2D2" type="Area2D" parent="." unique_id=986331264]
 collision_layer = 32
 collision_mask = 16
+collision_priority = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1876945283]
 shape = SubResource("CircleShape2D_md0e3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_body_shape_entered"]

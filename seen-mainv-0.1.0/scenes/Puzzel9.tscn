@@ -4,12 +4,24 @@
 [ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_lulq8"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="2_lulq8"]
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_2pmdo"]
+[ext_resource type="Texture2D" uid="uid://t4wbphl7q5ik" path="res://assets/UI/lighttexture2.png" id="4_syhc3"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_2pmdo"]
+[ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_26qtx"]
+[ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="8_c04w2"]
+[ext_resource type="Script" uid="uid://b4mowh3ui813x" path="res://scripts/enemy_timer2.gd" id="9_qx1hn"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_syhc3"]
+cull_mode = 1
+polygon = PackedVector2Array(16.071152, 16.104248, 116.16609, 16.381134, 116.06938, -180.16608, -115.72003, -181.15097, -116.34277, 15.714081, -15.720764, 16.463715, -16.096695, -16.025162, -19.917786, -15.955048, -19.97313, 12.032806, -112.0087, 11.867706, -111.67761, -175.76593, 80.24597, -176.06033, 80.00138, -143.89053, 84.26546, -143.89053, 84.113144, -175.87106, 112.083435, -176.02335, 112.20021, -127.81909, 51.894028, -127.93085, 51.894012, -160.03833, -84.05179, -160.01044, -84.50635, -111.910126, -79.574066, -111.97769, -79.64166, -156.23291, 48.056625, -155.82751, 47.516098, -128.0582, 44.2054, -128.0582, 44.1716, -99.64026, 0.1730957, -100.30914, 0.17301941, -111.75473, -32.008316, -111.75473, -32.082672, -128.32855, -35.873093, -128.25424, -35.77649, -67.50363, -79.849304, -68.098206, -79.774994, -96.11752, -83.78836, -96.489136, -84.08566, -63.861862, -31.911774, -63.936188, -31.540161, -108.009, -3.743805, -107.93469, -3.6918182, -63.794968, 112.02726, -63.6463, 111.95294, -35.849945, -79.35138, -36.295883, -79.64868, -47.667114, -84.03366, -47.667114, -83.88501, -12.215637, -47.46733, -11.918335, -47.838943, -16.303314, -79.42569, -16.972229, -79.57434, -31.910904, 111.65568, -31.791885, 111.75228, 12.228912, 20.132172, 11.904785, 20.088074, -16.124115, 16.07782, -16.073349)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_26qtx"]
+polygon = PackedVector2Array(111.22237, -123.06497, 48.220383, -124.0788, 48.654877, -96.99518, 0.28094482, -95.83652, 0.42578125, -69.33223, 112.091354, -68.318405)
 
 [node name="Node2D" type="Node2D" unique_id=1633846746]
 position = Vector2(-184, -160)
 script = ExtResource("1_lulq8")
 next_level = "uid://cg3fjg0qntpng"
+door_unlocked = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2030411553]
 z_index = 1
@@ -31,6 +43,13 @@ zoom = Vector2(7, 7)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1757213895]
+shadow_enabled = true
+shadow_color = Color(0.012617188, 0.012617188, 0.012617188, 0.5372549)
+shadow_filter = 2
+shadow_filter_smooth = 11.0
+texture = ExtResource("4_syhc3")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1313849803]
 
 [node name="inventory" parent="CanvasLayer" unique_id=1317137626 instance=ExtResource("3_2pmdo")]
@@ -39,3 +58,27 @@ position = Vector2(2610.427, 225.20456)
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_2pmdo")]
 
 [node name="unlock" type="TileMapLayer" parent="." unique_id=2060981546]
+
+[node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("7_26qtx")]
+position = Vector2(-0.47459412, -120.20914)
+scale = Vector2(0.8529581, 0.5690689)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=594703489]
+color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=2136352832]
+light_mask = 1023
+occluder = SubResource("OccluderPolygon2D_syhc3")
+sdf_collision = false
+occluder_light_mask = 1023
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." unique_id=985423500]
+occluder = SubResource("OccluderPolygon2D_26qtx")
+occluder_light_mask = 1023
+
+[node name="enemy" parent="." unique_id=1500646270 instance=ExtResource("8_c04w2")]
+position = Vector2(94.93883, -4.098068)
+big = false
+
+[node name="ghost timer" type="Node2D" parent="." unique_id=1537183455]
+script = ExtResource("9_qx1hn")

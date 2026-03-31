@@ -1,7 +1,6 @@
-extends AnimatedSprite2D
+class_name enemy extends AnimatedSprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var player: CharacterBody2D = %player
-
 @export var big: bool
 @export var direction: int
 @export var end: int
@@ -21,6 +20,7 @@ func _ready() -> void:
 			rotation_degrees = -90.0
 	else:
 		play("small down")
+	await get_tree().create_timer(0.01).timeout
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -50,32 +50,28 @@ func _process(delta: float) -> void:
 				anim.play("fade")
 				go = false
 	else:
-		if position.x - player.position.x < 1:
+		if self.position.x - player.position.x < -1.5:
 			play("small side")
 			flip_h = true
-			position.x += 1
-		elif position.x - player.position.x > 1:
+			position.x += 0.5
+		elif self.position.x - player.position.x > 1.5:
 			play("small side")
-			position.x -= 1
-		elif position.y - player.position.y < 1:
+			flip_h = false
+			position.x -= 0.5
+		if self.position.y - player.position.y < -1.5:
 			play("small down")
-			position.y += 1
-		elif position.y - player.position.y > 1:
+			position.y += 0.5
+		elif self.position.y - player.position.y > 1.5:
 			play("small up")
-			position.y -= 1
+			position.y -= 0.5
 
 func startup():
 	go = true
 	position = startpos
 	anim.play("RESET")
-
+	visible = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Globals.inventory = ""
-	var _reload = get_tree().reload_current_scene()
-
-
-func _on_area_2d_2_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	position = startpos
-	anim.play("RESET")
-	print("ow")
+	if go:
+		Globals.inventory = ""
+		var _reload = get_tree().reload_current_scene()

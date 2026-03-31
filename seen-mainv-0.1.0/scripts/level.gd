@@ -45,6 +45,18 @@ func _process(delta: float) -> void:
 				add_child(item_instance)
 				if item_instance.item_type == 1:
 					item_instance.get_box.connect(_on_item_get_box)
+		else:
+			item_instance.item_type = Globals.inventory
+			item_instance.position = player.position
+			if Globals.inventory == "1":
+				player.is_ghost -= 1000
+				player.box = false
+			if Globals.inventory == "4":
+				player.has_camera = false
+			Globals.inventory = ""
+			add_child(item_instance)
+			if item_instance.item_type == 1:
+				item_instance.get_box.connect(_on_item_get_box)
 	if door_unlocked:
 		unlock.visible = true
 	else:
