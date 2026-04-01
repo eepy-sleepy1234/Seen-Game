@@ -14,3 +14,7 @@ func _on_credits_pressed() -> void:
 func _on_audio_stream_player_finished() -> void:
 	pass # Replace with function body.
 	
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
