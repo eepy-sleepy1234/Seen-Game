@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="15_t628s"]
 [ext_resource type="AudioStream" uid="uid://bw60aj6bxmdgc" path="res://assets/Sounds/Old Guy Wait.mp3" id="19_flc8l"]
 [ext_resource type="Texture2D" uid="uid://b2obylxmtoh1y" path="res://assets/UI/lighttexture.png" id="21_6lwow"]
+[ext_resource type="AudioStream" uid="uid://b5ep60pr5w844" path="res://assets/Sounds/lemonmusiclab-dark-ambient-soundscape-505384.mp3" id="22_flc8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mks5"]
 texture = ExtResource("1_852lj")
@@ -1311,3 +1312,10 @@ texture = ExtResource("21_6lwow")
 
 [node name="Old Guy Oh" type="AudioStreamPlayer" parent="." unique_id=2002413276]
 stream = ExtResource("2_6lwow")
+
+[node name="LemonmusiclabDarkAmbientSoundscape505384" type="AudioStreamPlayer" parent="." unique_id=802048145]
+stream = ExtResource("22_flc8l")
+volume_db = -36.917
+pitch_scale = 0.76
+autoplay = true
+parameters/looping = false

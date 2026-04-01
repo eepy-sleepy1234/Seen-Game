@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="14_7gyev"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="15_wd6c3"]
 [ext_resource type="AudioStream" uid="uid://jm4l6yr460rq" path="res://assets/Sounds/Long Leg Relief.mp3" id="16_7gyev"]
+[ext_resource type="AudioStream" uid="uid://bmc24y3f1epvc" path="res://assets/Sounds/u_vr5icvkppa-nature-ambience-323729.mp3" id="17_1x85o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t23v0"]
 texture = ExtResource("2_3ffmx")
@@ -1764,3 +1765,8 @@ story = true
 
 [node name="LongLegRelief" type="AudioStreamPlayer" parent="." unique_id=329701074]
 stream = ExtResource("16_7gyev")
+
+[node name="UVr5IcvkppaNatureAmbience323729" type="AudioStreamPlayer" parent="." unique_id=1947355779]
+stream = ExtResource("17_1x85o")
+autoplay = true
+parameters/looping = true
