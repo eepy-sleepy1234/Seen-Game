@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://v125w7lh44ly" path="res://assets/Credits.png" id="5_mslyy"]
 [ext_resource type="Texture2D" uid="uid://cd80ko5vj5cpq" path="res://assets/Credits Hover.png" id="7_im4cs"]
 [ext_resource type="AudioStream" uid="uid://cr11dbad16j4g" path="res://assets/Sounds/puzzle (1).ogg" id="7_mslyy"]
+[ext_resource type="Texture2D" uid="uid://jdlqjc437cca" path="res://assets/Exit.png" id="9_n0q5r"]
+[ext_resource type="Texture2D" uid="uid://cxrfluf6wp6wx" path="res://assets/Exit Hover.png" id="10_skvia"]
 
 [node name="Control" type="Control" unique_id=141362738]
 layout_mode = 3
@@ -61,8 +63,20 @@ volume_db = -8.667
 autoplay = true
 parameters/looping = true
 
+[node name="Exit" type="TextureButton" parent="." unique_id=1276736965]
+layout_mode = 0
+offset_left = 338.00003
+offset_top = 1213.0001
+offset_right = 468.00003
+offset_bottom = 1236.0001
+scale = Vector2(5.9025993, 5.9025993)
+texture_normal = ExtResource("9_n0q5r")
+texture_pressed = ExtResource("9_n0q5r")
+texture_hover = ExtResource("10_skvia")
+
 [connection signal="pressed" from="New" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
