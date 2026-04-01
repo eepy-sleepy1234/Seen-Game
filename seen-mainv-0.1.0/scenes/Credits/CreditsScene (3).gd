@@ -19,6 +19,12 @@ const crditt = [
 	{ "type": "role", "text": "Karmatic arcade - Vic Fieger" },
 	{ "type": "role", "text": "Notepen - Jeti" },
 	{ "type": "blank" },
+	{ "type": "header", "text": "Ambience" },
+	{ "type": "role", "text": "CottageCore  pixabay - lindseysewell " },
+	{ "type": "role", "text": "Nature Ambience  pixabay - u_vr5icvkppa " },
+	{ "type": "role", "text": "More Artists found on pixabay that I could not find the names to" },
+	
+	{ "type": "blank" },
 	{ "type": "header", "text": "Special Thanks" },
 	{ "type": "role", "text": "The open-source community" },
 	{ "type": "role", "text": "To You For Playing Our Game" },
