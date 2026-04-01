@@ -12,6 +12,8 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = !get_tree().paused
 			pause = true
 		else:
+			get_tree().paused = false
+			pause = false
 			get_tree().change_scene_to_packed(load("res://scenes/Main Menu.tscn"))
 	elif Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("drop") or Input.is_action_just_pressed("move_down") or Input.is_action_just_pressed("move_up") or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
 		if pause:

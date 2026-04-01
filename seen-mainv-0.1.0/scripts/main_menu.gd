@@ -4,7 +4,6 @@ extends Control
 
 
 func _on_new_pressed() -> void:
-	print("yeah")
 	get_tree().change_scene_to_packed(next_scene)
 
 
