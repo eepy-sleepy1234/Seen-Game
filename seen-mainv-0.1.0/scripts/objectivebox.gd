@@ -2,10 +2,12 @@ extends Sprite2D
 @onready var text: Label = $objectives
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var writesound = $AudioStreamPlayer
+@onready var excl: AnimationPlayer = $Label/AnimationPlayer
 var new_page = false
 
 func write(new_text):
 	writesound.play()
+	excl.play("fade")
 	if new_page:
 		for i in 20:
 			text.visible_ratio -= 0.05
@@ -17,6 +19,7 @@ func write(new_text):
 		text.text += i
 		await get_tree().create_timer(0.01).timeout
 	new_page = true
+	excl.play_backwards("fade")
 
 
 func _on_panel_mouse_entered() -> void:
