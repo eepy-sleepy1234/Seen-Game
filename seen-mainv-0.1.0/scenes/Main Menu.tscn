@@ -74,8 +74,8 @@ texture_normal = ExtResource("9_n0q5r")
 texture_pressed = ExtResource("9_n0q5r")
 texture_hover = ExtResource("10_skvia")
 
-[connection signal="pressed" from="New" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="New" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
