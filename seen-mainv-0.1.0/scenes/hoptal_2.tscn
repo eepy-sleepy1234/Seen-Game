@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="2_2xp3e"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="3_bwlft"]
 [ext_resource type="Texture2D" uid="uid://dciau75udx5tj" path="res://assets/Hospital/Hospital.png" id="4_ut1bd"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="5_grj0j"]
 [ext_resource type="Texture2D" uid="uid://cu0oqjlx6wrsd" path="res://assets/Hospital/Guy IN hospital.png" id="6_2xug5"]
 [ext_resource type="Texture2D" uid="uid://c2dnqyoivcncn" path="res://assets/Npc/Nurse.png" id="7_oreqn"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="8_2xug5"]
@@ -483,6 +484,8 @@ position = Vector2(-344, -101)
 [node name="textbox" parent="CanvasLayer" unique_id=1264743791 instance=ExtResource("2_2xp3e")]
 
 [node name="blackout" parent="CanvasLayer" unique_id=1566479702 instance=ExtResource("3_bwlft")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("5_grj0j")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=700124836]
 position = Vector2(-344, -76)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="5_ptj6n"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="6_2w48h"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="6_8aa2a"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="8_k1c8t"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="9_2w48h"]
 
 [sub_resource type="Animation" id="Animation_nbvqg"]
@@ -181,6 +182,8 @@ position_smoothing_speed = 10.0
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("6_2w48h")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("8_k1c8t")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=846569149]
 position = Vector2(-930, -46.000004)

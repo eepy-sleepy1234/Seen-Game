@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbs4hcpujh0dn"]
+
+[ext_resource type="Script" uid="uid://do143gpmjoi07" path="res://scripts/pause.gd" id="1_r8yp4"]
+[ext_resource type="FontFile" uid="uid://dwoandmpl6ugs" path="res://assets/Fonts/ka1.ttf" id="2_m0klm"]
+
+[node name="pause" type="Node2D" unique_id=1561433917]
+process_mode = 3
+script = ExtResource("1_r8yp4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1561838884]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(72.983246, 45.802128)
+color = Color(0.37, 0.37, 0.37, 0.33333334)
+
+[node name="Label" type="Label" parent="." unique_id=2119444676]
+offset_left = 111.34279
+offset_top = 150.55185
+offset_right = 791.3428
+offset_bottom = 178.55185
+scale = Vector2(2.9466558, 2.9466558)
+theme_override_fonts/font = ExtResource("2_m0klm")
+theme_override_font_sizes/font_size = 24
+text = "press escape again to quit to main menu
+press any other key to resume game"

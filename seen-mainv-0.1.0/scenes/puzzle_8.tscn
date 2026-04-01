@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b2obylxmtoh1y" path="res://assets/UI/lighttexture.png" id="6_ryt3u"]
 [ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="7_mdij0"]
 [ext_resource type="Script" uid="uid://dk6ffisl8gyrq" path="res://scripts/enemy_timer.gd" id="8_8ejrv"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="9_kb1xh"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="12_ryt3u"]
 
 [node name="Puzzle 8" type="Node2D" unique_id=1281611912]
@@ -59,6 +60,8 @@ texture = ExtResource("6_ryt3u")
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_vdhbx")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("9_kb1xh")]
 
 [node name="item" parent="." unique_id=979002470 instance=ExtResource("4_vdhbx")]
 z_index = 3

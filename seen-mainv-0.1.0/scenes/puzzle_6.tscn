@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="5_x2f7c"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="6_4twlm"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_8qncq"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="7_afdll"]
 [ext_resource type="Script" uid="uid://br1hxj62p5o8y" path="res://scripts/boxless.gd" id="10_afdll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
@@ -105,6 +106,8 @@ position = Vector2(2610.427, 225.20456)
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_8qncq")]
 
 [node name="textbox" parent="CanvasLayer" unique_id=1114253155 instance=ExtResource("6_4twlm")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("7_afdll")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1904201528]
 position = Vector2(-72, -176)

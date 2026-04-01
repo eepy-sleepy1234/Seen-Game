@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bofn1felbv2k4" path="res://assets/Hospital/basementweb.png" id="8_tih0b"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="9_bt61f"]
 [ext_resource type="Texture2D" uid="uid://27behxy814m6" path="res://assets/UI/Slot.png" id="9_c5vcu"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="9_jlfbm"]
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="10_2q2yi"]
 [ext_resource type="Texture2D" uid="uid://68cwj2jemc4q" path="res://assets/Hospital/basementserver.png" id="11_tsb5b"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="12_gmeda"]
@@ -1070,6 +1071,8 @@ region_rect = Rect2(1.9201746, 5.8799224, 11.146507, 5.215076)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/keyanimation" unique_id=1906381891]
 libraries/ = SubResource("AnimationLibrary_8voiy")
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("9_jlfbm")]
 
 [node name="old ghost guy" parent="." unique_id=895533649 instance=ExtResource("5_18rnf")]
 position = Vector2(-165, -156)

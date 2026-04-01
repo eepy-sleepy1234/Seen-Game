@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://684ol2msjv04" path="res://scripts/level.gd" id="1_pc265"]
 [ext_resource type="PackedScene" uid="uid://d4alpdcbxcama" path="res://scenes/player.tscn" id="3_muq8u"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="3_pc265"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="4_muq8u"]
 [ext_resource type="TileSet" uid="uid://d4jcfbv126l20" path="res://assets/Dungeon/tileset.tres" id="4_trkub"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="5_u7ekv"]
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="6_twcus"]
@@ -22,6 +23,8 @@ keylevel = true
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("3_pc265")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("4_muq8u")]
 
 [node name="player" parent="." unique_id=1289593128 instance=ExtResource("3_muq8u")]
 unique_name_in_owner = true

@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://wp1imlppslnb" path="res://assets/Sounds/credits.ogg" id="17_gjhnn"]
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="18_d53cq"]
 [ext_resource type="AudioStream" uid="uid://fg6cvbagrrv5" path="res://assets/Sounds/Boss Defeat.mp3" id="18_geu3j"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="19_7l8xw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bggbs"]
 atlas = ExtResource("3_g2a2m")
@@ -377,6 +378,8 @@ stream = ExtResource("18_geu3j")
 stream = ExtResource("15_votf5")
 
 [node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("18_d53cq")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("19_7l8xw")]
 
 [node name="throwbox" type="Sprite2D" parent="." unique_id=1761377891]
 position = Vector2(-59.92395, 147.65839)

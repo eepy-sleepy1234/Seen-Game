@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vjow7f8vdu8" path="res://scenes/inventory.tscn" id="3_dtm20"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="5_feknv"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_hkr5w"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="6_ga107"]
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="6_hkr5w"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_ga107"]
 
@@ -41,6 +42,8 @@ position_smoothing_speed = 10.0
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_hkr5w")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("6_ga107")]
 
 [node name="box8" type="Sprite2D" parent="." unique_id=1400648930]
 position = Vector2(-24.055511, -90.72116)

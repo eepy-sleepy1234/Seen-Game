@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="6_i7dll"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="7_n4ffd"]
 [ext_resource type="PackedScene" uid="uid://crb004vk1kwvt" path="res://scenes/npc.tscn" id="7_scv08"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="8_3bqev"]
 [ext_resource type="Texture2D" uid="uid://h068gxk362w2" path="res://assets/Laboratory/Lab Tube.png" id="8_740sf"]
 [ext_resource type="Texture2D" uid="uid://calwrclkv2g1e" path="res://assets/Laboratory/Bionic Arms.png" id="9_rrnpu"]
 [ext_resource type="Texture2D" uid="uid://dirgocs1lb2hu" path="res://assets/Laboratory/lab sign.png" id="10_wo4vf"]
@@ -469,6 +470,8 @@ color = Color(1, 0, 0, 1)
 libraries/ = SubResource("AnimationLibrary_j3spj")
 
 [node name="objectives" parent="CanvasLayer" unique_id=1118920830 instance=ExtResource("6_i7dll")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("8_3bqev")]
 
 [node name="npc" parent="." unique_id=237979540 instance=ExtResource("7_scv08")]
 position = Vector2(170, -50)

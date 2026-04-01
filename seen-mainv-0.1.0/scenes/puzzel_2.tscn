@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="3_w72j2"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="5_lpqt7"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_w72j2"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="6_40msh"]
 [ext_resource type="Texture2D" uid="uid://bv1wj47oxnkbm" path="res://assets/Hospital/basementbox.png" id="7_l2ri6"]
 
 [node name="Puzzel 2" type="Node2D" unique_id=1896792903]
@@ -42,6 +43,8 @@ position_smoothing_speed = 10.0
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_w72j2")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("6_40msh")]
 
 [node name="door unlock" parent="." unique_id=1136511214 instance=ExtResource("5_lpqt7")]
 z_index = 2

@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://t4wbphl7q5ik" path="res://assets/UI/lighttexture2.png" id="4_syhc3"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_2pmdo"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="7_26qtx"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="7_qx1hn"]
 [ext_resource type="PackedScene" uid="uid://oqde8y6wbmiv" path="res://scenes/enemy.tscn" id="8_c04w2"]
-[ext_resource type="Script" path="res://scripts/enemy_timer2.gd" id="9_qx1hn"]
+[ext_resource type="Script" uid="uid://b4mowh3ui813x" path="res://scripts/enemy_timer2.gd" id="9_qx1hn"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_syhc3"]
 cull_mode = 1
@@ -56,6 +57,8 @@ texture = ExtResource("4_syhc3")
 position = Vector2(2610.427, 225.20456)
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("5_2pmdo")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("7_qx1hn")]
 
 [node name="unlock" type="TileMapLayer" parent="." unique_id=2060981546]
 

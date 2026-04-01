@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="5_7tytf"]
 [ext_resource type="PackedScene" uid="uid://f6kedbawoukw" path="res://scenes/securitycamera.tscn" id="5_rjlvp"]
 [ext_resource type="Texture2D" uid="uid://ndtv0wywotmc" path="res://assets/Level Elements/Camera.png" id="6_hgvbh"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="9_h8o8h"]
 [ext_resource type="PackedScene" uid="uid://ch13cl6k7gt7t" path="res://scenes/new_room.tscn" id="10_h8o8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
@@ -107,6 +108,8 @@ item_type = 0
 
 [node name="inventory" parent="CanvasLayer2" unique_id=353951423 instance=ExtResource("3_rjlvp")]
 position = Vector2(2610.427, 225.20456)
+
+[node name="pause" parent="CanvasLayer2" unique_id=1561433917 instance=ExtResource("9_h8o8h")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933841529]
 position = Vector2(22.688583, -81.31969)

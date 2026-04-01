@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="6_vdb6e"]
 [ext_resource type="PackedScene" uid="uid://jj3jgtdbf1aj" path="res://scenes/objectives.tscn" id="8_tjaqe"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="9_a7mov"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="9_s86ym"]
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="10_vdb6e"]
 [ext_resource type="Texture2D" uid="uid://046o2tyon7tq" path="res://assets/Alleyway/brokenlamppost.png" id="11_nmxoq"]
 [ext_resource type="Script" uid="uid://boi6a3msxak48" path="res://scripts/deco.gd" id="12_x6t8b"]
@@ -284,6 +285,8 @@ autoplay = "default"
 [node name="textbox" parent="CanvasLayer" unique_id=369902820 instance=ExtResource("6_vdb6e")]
 
 [node name="blackout" parent="CanvasLayer" unique_id=614790416 instance=ExtResource("9_a7mov")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("9_s86ym")]
 
 [node name="element" parent="." unique_id=265222248 instance=ExtResource("10_vdb6e")]
 position = Vector2(-324, 20)

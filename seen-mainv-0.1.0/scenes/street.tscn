@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bds7j465iqsyn" path="res://scenes/element.tscn" id="13_wd6c3"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="14_7gyev"]
 [ext_resource type="PackedScene" uid="uid://b52g0txrpaxgi" path="res://scenes/textbox.tscn" id="15_wd6c3"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="16_0otry"]
 [ext_resource type="AudioStream" uid="uid://jm4l6yr460rq" path="res://assets/Sounds/Long Leg Relief.mp3" id="16_7gyev"]
 [ext_resource type="AudioStream" uid="uid://bmc24y3f1epvc" path="res://assets/Sounds/u_vr5icvkppa-nature-ambience-323729.mp3" id="17_1x85o"]
 
@@ -1756,6 +1757,8 @@ story = true
 [node name="blackout" parent="CanvasLayer" unique_id=1740795836 instance=ExtResource("14_7gyev")]
 
 [node name="textbox" parent="CanvasLayer" unique_id=427282521 instance=ExtResource("15_wd6c3")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("16_0otry")]
 
 [node name="element2" parent="." unique_id=955371824 instance=ExtResource("13_wd6c3")]
 position = Vector2(-426, -194.00002)

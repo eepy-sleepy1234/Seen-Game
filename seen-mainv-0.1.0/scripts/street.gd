@@ -22,7 +22,7 @@ func _ready() -> void:
 		docker.play("walk")
 		await get_tree().create_timer(4.5).timeout
 		textbox.write_text("Hey, I recognize you! Why don't you come back to the hospital with me.")
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(5).timeout
 		textbox.close_box()
 		docker.play("walk 2 the electric boogaloo")
 		Globals.story_progress += 1

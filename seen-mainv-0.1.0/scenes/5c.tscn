@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://xyqgqbu5rljc" path="res://scripts/inventory2.gd" id="6_0nbt5"]
 [ext_resource type="PackedScene" uid="uid://dak20trdxfplt" path="res://scenes/item.tscn" id="6_3tyfw"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="8_0nbt5"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="9_is1qc"]
 [ext_resource type="PackedScene" uid="uid://ch13cl6k7gt7t" path="res://scenes/new_room.tscn" id="11_s6a17"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ey4qp"]
@@ -105,6 +106,8 @@ position = Vector2(2312.3232, 225.20456)
 script = ExtResource("6_0nbt5")
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("8_0nbt5")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("9_is1qc")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=145006117]
 position = Vector2(-565, -69.99994)

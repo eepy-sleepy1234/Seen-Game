@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://xyqgqbu5rljc" path="res://scripts/inventory2.gd" id="4_dwv6c"]
 [ext_resource type="PackedScene" uid="uid://butgehethbwih" path="res://scenes/blackout.tscn" id="6_8tkpo"]
 [ext_resource type="PackedScene" uid="uid://ch13cl6k7gt7t" path="res://scenes/new_room.tscn" id="7_n3xp3"]
+[ext_resource type="PackedScene" uid="uid://cbs4hcpujh0dn" path="res://scenes/pause.tscn" id="7_nbicb"]
 [ext_resource type="PackedScene" uid="uid://b16lnefc7qupx" path="res://scenes/door_unlock.tscn" id="10_nbicb"]
 
 [node name="Puzzle5" type="Node2D" unique_id=220826445]
@@ -43,6 +44,8 @@ position = Vector2(2312.3232, 225.20456)
 script = ExtResource("4_dwv6c")
 
 [node name="blackout" parent="CanvasLayer" unique_id=623706361 instance=ExtResource("6_8tkpo")]
+
+[node name="pause" parent="CanvasLayer" unique_id=1561433917 instance=ExtResource("7_nbicb")]
 
 [node name="new_room" parent="." unique_id=1000570113 instance=ExtResource("7_n3xp3")]
 next_area = "uid://yxrltwlr7ku7"

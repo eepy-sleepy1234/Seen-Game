@@ -70,7 +70,6 @@ func _ready() -> void:
 		get_tree().change_scene_to_packed(next_scene)
 	elif Globals.story_progress == 28:
 		key.queue_free()
-		oldGuyOh.play()
 		for i in range(18):
 			old_ghost_guy.dialogue.pop_front()
 			old_ghost_guy.dialogue_progress.pop_front()
@@ -79,6 +78,7 @@ func _ready() -> void:
 		player_animation.play("falling")
 		await get_tree().create_timer(0.1).timeout
 		player.is_ghost = 0
+		oldGuyOh.play()
 		await get_tree().create_timer(5).timeout
 		Globals.listening = true
 		Globals.story_progress += 1
